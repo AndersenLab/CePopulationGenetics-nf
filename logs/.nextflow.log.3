@@ -1,0 +1,2244 @@
+Jun-17 15:09:04.219 [main] DEBUG nextflow.cli.Launcher - $> /home/szs315/.linuxbrew/bin/nextflow run cepopgen-nf.nf -profile admixture_full --out_base=GATK-STRELKA-INTERSECT_LD0pt1_COMPLETE_admixture --anc=XZ1516 --cpu=8 --snv_vcf=/projects/b1059/projects/Stefan/CePopGen-nf/input_files/Ce330_GATK4_STRELKA2_Intersect.vcf.gz --pops=input_files/strain_sets_admixture.tsv --admix_ld=0.1 --admix_k=20 --best_Ks=input_files/rerun_ks.txt -resume
+Jun-17 15:09:04.797 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 0.32.0
+Jun-17 15:09:04.825 [main] INFO  nextflow.cli.CmdRun - Launching `cepopgen-nf.nf` [compassionate_thompson] - revision: 3643a8141b
+Jun-17 15:09:04.882 [main] DEBUG nextflow.config.ConfigBuilder - Found config home: /home/szs315/.nextflow/config
+Jun-17 15:09:04.883 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /projects/b1059/projects/Stefan/CePopulationGenetics-nf/nextflow.config
+Jun-17 15:09:04.883 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/szs315/.nextflow/config
+Jun-17 15:09:04.883 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /projects/b1059/projects/Stefan/CePopulationGenetics-nf/nextflow.config
+Jun-17 15:09:04.912 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `admixture_full`
+Jun-17 15:09:05.770 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `admixture_full`
+Jun-17 15:09:05.944 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [popgenome, admixture_cv, admixture_full, full]
+Jun-17 15:09:06.007 [main] DEBUG nextflow.Session - Session uuid: 17bf0dc8-e2e8-478c-9461-69834d5b4505
+Jun-17 15:09:06.007 [main] DEBUG nextflow.Session - Run name: compassionate_thompson
+Jun-17 15:09:06.008 [main] DEBUG nextflow.Session - Executor pool size: 28
+Jun-17 15:09:06.024 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 0.32.0 build 4897
+  Modified: 27-09-2018 10:17 UTC (05:17 CDT)
+  System: Linux 3.10.0-862.el7.x86_64
+  Runtime: Groovy 2.5.1 on OpenJDK 64-Bit Server VM 1.8.0_192-b01
+  Encoding: UTF-8 (UTF-8)
+  Process: 13383@quser21 [172.20.4.21]
+  CPUs: 28 - Mem: 124.1 GB (84.4 GB) - Swap: 0 (0)
+Jun-17 15:09:06.111 [main] DEBUG nextflow.Session - Work-dir: /projects/b1042/AndersenLab/work/stefan [gpfs]
+Jun-17 15:09:06.667 [main] DEBUG nextflow.Session - Session start invoked
+Jun-17 15:09:06.675 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Jun-17 15:09:06.676 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Jun-17 15:09:08.887 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-17 15:09:08.906 [main] INFO  nextflow.Nextflow - 
+╔═╗   ╔═╗╦  ╔═╗╔═╗╔═╗╔╗╔╔═╗  ╔═╗╔═╗╔═╗╔═╗╔═╗╔╗╔  ╔╗╔╔═╗
+║     ║╣ ║  ║╣ ║ ╦╠═╣║║║╚═╗  ╠═╝║ ║╠═╝║ ╦║╣ ║║║  ║║║╠╣ 
+╚═╝o  ╚═╝╩═╝╚═╝╚═╝╩ ╩╝╚╝╚═╝  ╩  ╚═╝╩  ╚═╝╚═╝╝╚╝  ╝╚╝╚  
+
+Jun-17 15:09:08.907 [main] INFO  nextflow.Nextflow - 
+Jun-17 15:09:08.907 [main] INFO  nextflow.Nextflow - Reference                               = /projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/WS245.fa
+Jun-17 15:09:08.908 [main] INFO  nextflow.Nextflow - Ancestor                                = XZ1516
+Jun-17 15:09:08.908 [main] INFO  nextflow.Nextflow - Small Variant VCF                       = /projects/b1059/projects/Stefan/CePopGen-nf/input_files/Ce330_GATK4_STRELKA2_Intersect.vcf.gz
+Jun-17 15:09:08.908 [main] INFO  nextflow.Nextflow - Structural Variant VCF                  = /projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/Ce330_MERGED_SV.vcf.gz
+Jun-17 15:09:08.908 [main] INFO  nextflow.Nextflow - Population File                         = input_files/strain_sets_admixture.tsv
+Jun-17 15:09:08.909 [main] INFO  nextflow.Nextflow - Max Population                          = 20
+Jun-17 15:09:08.913 [main] INFO  nextflow.Nextflow - LD to test                              = 0.1
+Jun-17 15:09:08.913 [main] INFO  nextflow.Nextflow - cpu                                     = 8
+Jun-17 15:09:08.914 [main] INFO  nextflow.Nextflow - Output folder                           = 20190617-GATK-STRELKA-INTERSECT_LD0pt1_COMPLETE_admixture
+Jun-17 15:09:08.914 [main] INFO  nextflow.Nextflow - GFF3 File                               = /projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/Popgenome_files/WS245_exons.gff
+Jun-17 15:09:08.914 [main] INFO  nextflow.Nextflow - 
+Jun-17 15:09:09.884 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:10.019 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:10.094 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:10.098 [main] INFO  nextflow.executor.Executor - [warm up] executor > slurm
+Jun-17 15:09:10.107 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
+Jun-17 15:09:10.113 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: TaskPollingMonitor
+Jun-17 15:09:10.175 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: slurm)
+Jun-17 15:09:10.179 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: slurm
+Jun-17 15:09:10.180 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:10.295 [main] DEBUG nextflow.Session - >>> barrier register (process: extract_ancestor_bed)
+Jun-17 15:09:10.299 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > extract_ancestor_bed -- maxForks: 28
+Jun-17 15:09:10.410 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:10.410 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:10.411 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:10.412 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:10.414 [main] DEBUG nextflow.Session - >>> barrier register (process: annotate_small_vcf)
+Jun-17 15:09:10.474 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > annotate_small_vcf -- maxForks: 28
+Jun-17 15:09:10.501 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:10.502 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:10.502 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:10.503 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:10.505 [main] DEBUG nextflow.Session - >>> barrier register (process: vcf2phylip)
+Jun-17 15:09:10.506 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > vcf2phylip -- maxForks: 28
+Jun-17 15:09:10.581 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:10.581 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:10.581 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:10.582 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:10.583 [main] DEBUG nextflow.Session - >>> barrier register (process: generate_tree)
+Jun-17 15:09:10.584 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > generate_tree -- maxForks: 28
+Jun-17 15:09:10.678 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:10.679 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:10.679 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:10.680 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:10.687 [main] DEBUG nextflow.Session - >>> barrier register (process: vcf_to_ped)
+Jun-17 15:09:10.687 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > vcf_to_ped -- maxForks: 28
+Jun-17 15:09:10.875 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:10.876 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:10.876 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:10.877 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:10.879 [main] DEBUG nextflow.Session - >>> barrier register (process: run_admixture)
+Jun-17 15:09:10.879 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > run_admixture -- maxForks: 28
+Jun-17 15:09:10.897 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: local
+Jun-17 15:09:10.898 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jun-17 15:09:10.901 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jun-17 15:09:10.901 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Jun-17 15:09:10.906 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=28; memory=124.1 GB; capacity=28; pollInterval=100ms; dumpInterval=5m
+Jun-17 15:09:10.909 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Jun-17 15:09:10.910 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jun-17 15:09:10.975 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Jun-17 15:09:10.976 [main] DEBUG nextflow.Session - >>> barrier register (process: concat_replicate_logs)
+Jun-17 15:09:10.976 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > concat_replicate_logs -- maxForks: 28
+Jun-17 15:09:10.992 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: local
+Jun-17 15:09:10.993 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jun-17 15:09:10.993 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jun-17 15:09:10.995 [main] DEBUG nextflow.Session - >>> barrier register (process: concat_pop_logs)
+Jun-17 15:09:10.997 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > concat_pop_logs -- maxForks: 28
+Jun-17 15:09:11.178 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:11.178 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:11.178 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:11.179 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:11.180 [main] DEBUG nextflow.Session - >>> barrier register (process: run_admixture_besk_k)
+Jun-17 15:09:11.181 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > run_admixture_besk_k -- maxForks: 28
+Jun-17 15:09:11.197 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:11.197 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:11.198 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:11.198 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:11.199 [main] DEBUG nextflow.Session - >>> barrier register (process: ibdseq_haplotype)
+Jun-17 15:09:11.199 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > ibdseq_haplotype -- maxForks: 28
+Jun-17 15:09:11.204 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:11.205 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:11.205 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:11.205 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:11.207 [main] DEBUG nextflow.Session - >>> barrier register (process: analyze_ibdseq)
+Jun-17 15:09:11.208 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > analyze_ibdseq -- maxForks: 28
+Jun-17 15:09:11.277 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:11.277 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:11.278 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:11.278 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:11.279 [main] DEBUG nextflow.Session - >>> barrier register (process: plot_ibdseq)
+Jun-17 15:09:11.279 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > plot_ibdseq -- maxForks: 28
+Jun-17 15:09:11.292 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:11.292 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:11.292 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:11.292 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:11.293 [main] DEBUG nextflow.Session - >>> barrier register (process: popgenome_whole_pop)
+Jun-17 15:09:11.296 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1]
+Jun-17 15:09:11.308 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > popgenome_whole_pop -- maxForks: 28
+Jun-17 15:09:11.402 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:11.403 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:11.404 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:11.405 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:11.407 [main] DEBUG nextflow.Session - >>> barrier register (process: plot_popgenome_whole_pop)
+Jun-17 15:09:11.407 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > plot_popgenome_whole_pop -- maxForks: 28
+Jun-17 15:09:11.482 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:11.482 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:11.482 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:11.483 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:11.484 [main] DEBUG nextflow.Session - >>> barrier register (process: popgenome_window_kpop)
+Jun-17 15:09:11.486 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1, 2]
+Jun-17 15:09:11.488 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > popgenome_window_kpop -- maxForks: 28
+Jun-17 15:09:11.498 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:11.499 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:11.502 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:11.503 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:11.507 [main] DEBUG nextflow.Session - >>> barrier register (process: combine_popgenome_subpops)
+Jun-17 15:09:11.574 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > combine_popgenome_subpops -- maxForks: 28
+Jun-17 15:09:11.577 [Actor Thread 4] DEBUG n.splitter.AbstractTextSplitter - Splitter `Text` collector path: nextflow.splitter.TextFileCollector$CachePath(/projects/b1042/AndersenLab/work/stefan/f2/14732e344e6a1a7f4bbee8b7c4f824/chunk, null)
+Jun-17 15:09:11.588 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:11.588 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:11.588 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:11.589 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:11.590 [main] DEBUG nextflow.Session - >>> barrier register (process: popgenome_gene_complete)
+Jun-17 15:09:11.591 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1]
+Jun-17 15:09:11.592 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > popgenome_gene_complete -- maxForks: 28
+Jun-17 15:09:11.600 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:11.601 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:11.601 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:11.602 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:11.603 [main] DEBUG nextflow.Session - >>> barrier register (process: popgenome_gene_kpop)
+Jun-17 15:09:11.604 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1, 2]
+Jun-17 15:09:11.675 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > popgenome_gene_kpop -- maxForks: 28
+Jun-17 15:09:11.681 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:11.682 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:11.682 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:11.682 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:11.683 [main] DEBUG nextflow.Session - >>> barrier register (process: vcf_to_eigstrat_files)
+Jun-17 15:09:11.683 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > vcf_to_eigstrat_files -- maxForks: 28
+Jun-17 15:09:11.693 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:11.693 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:11.693 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:11.693 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:11.694 [main] DEBUG nextflow.Session - >>> barrier register (process: run_eigenstrat_no_outlier_removal)
+Jun-17 15:09:11.694 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > run_eigenstrat_no_outlier_removal -- maxForks: 28
+Jun-17 15:09:11.700 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:09:11.700 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:09:11.700 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:09:11.701 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:09:11.701 [main] DEBUG nextflow.Session - >>> barrier register (process: run_eigenstrat_with_outlier_removal)
+Jun-17 15:09:11.702 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > run_eigenstrat_with_outlier_removal -- maxForks: 28
+Jun-17 15:09:11.703 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Jun-17 15:09:11.703 [main] DEBUG nextflow.Session - Session await
+Jun-17 15:09:11.929 [Actor Thread 4] DEBUG n.splitter.AbstractTextSplitter - Splitter `Text` collector path: nextflow.splitter.TextFileCollector$CachePath(/projects/b1042/AndersenLab/work/stefan/12/72c0b6e03a29b7dc42bfc680309123/chunk, null)
+Jun-17 15:09:12.043 [Actor Thread 4] DEBUG n.splitter.AbstractTextSplitter - Splitter `Text` collector path: nextflow.splitter.TextFileCollector$CachePath(/projects/b1042/AndersenLab/work/stefan/aa/358e0b14c937cfae4601b5cac8bbce/chunk, null)
+Jun-17 15:09:12.115 [Actor Thread 4] DEBUG n.splitter.AbstractTextSplitter - Splitter `Text` collector path: nextflow.splitter.TextFileCollector$CachePath(/projects/b1042/AndersenLab/work/stefan/e5/2b1a9ef3ff997862268884be38a5a3/chunk, null)
+Jun-17 15:09:12.165 [Actor Thread 4] DEBUG n.splitter.AbstractTextSplitter - Splitter `Text` collector path: nextflow.splitter.TextFileCollector$CachePath(/projects/b1042/AndersenLab/work/stefan/07/7a0d270be948304993c8aed8067a4c/chunk, null)
+Jun-17 15:09:18.597 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [ca/638370] Cached process > extract_ancestor_bed (1)
+Jun-17 15:09:18.625 [Actor Thread 3] DEBUG nextflow.Session - <<< barrier arrive (process: extract_ancestor_bed)
+Jun-17 15:09:24.235 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [f3/c71cd8] Cached process > annotate_small_vcf (1)
+Jun-17 15:09:24.258 [Actor Thread 3] DEBUG nextflow.Session - <<< barrier arrive (process: annotate_small_vcf)
+Jun-17 15:09:24.259 [Actor Thread 3] DEBUG nextflow.Session - <<< barrier arrive (process: vcf2phylip)
+Jun-17 15:09:24.260 [Actor Thread 16] DEBUG nextflow.Session - <<< barrier arrive (process: generate_tree)
+Jun-17 15:09:24.262 [Actor Thread 16] DEBUG nextflow.Session - <<< barrier arrive (process: ibdseq_haplotype)
+Jun-17 15:09:24.262 [Actor Thread 3] DEBUG nextflow.Session - <<< barrier arrive (process: analyze_ibdseq)
+Jun-17 15:09:24.263 [Actor Thread 7] DEBUG nextflow.Session - <<< barrier arrive (process: plot_ibdseq)
+Jun-17 15:09:24.265 [Actor Thread 26] DEBUG nextflow.Session - <<< barrier arrive (process: popgenome_whole_pop)
+Jun-17 15:09:24.266 [Actor Thread 26] DEBUG nextflow.Session - <<< barrier arrive (process: plot_popgenome_whole_pop)
+Jun-17 15:09:24.277 [Actor Thread 26] DEBUG nextflow.Session - <<< barrier arrive (process: popgenome_gene_complete)
+Jun-17 15:09:28.833 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process vcf_to_ped (PRUNING VCF FOR ADMIXTURE) > jobId: 560999; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6
+Jun-17 15:09:28.840 [Task submitter] INFO  nextflow.Session - [49/4e39eb] Submitted process > vcf_to_ped (PRUNING VCF FOR ADMIXTURE)
+Jun-17 15:09:29.176 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES) > jobId: 561000; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1
+Jun-17 15:09:29.177 [Task submitter] INFO  nextflow.Session - [61/7fbb23] Submitted process > vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES)
+Jun-17 15:14:11.170 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 15:14:15.192 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 15:19:11.176 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 15:19:15.201 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 15:24:11.238 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 15:24:15.208 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 15:29:11.290 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 15:29:15.215 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 15:34:11.333 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 15:34:15.223 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 15:39:11.434 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 15:39:15.230 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 15:44:11.495 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 15:44:15.243 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 15:49:11.570 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 15:49:15.252 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 15:54:11.642 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 15:54:15.261 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 15:59:11.692 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 15:59:15.269 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 16:04:11.761 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 16:04:15.278 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 16:09:11.828 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 16:09:15.283 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 16:14:11.903 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 16:14:15.316 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 16:19:11.991 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 16:19:15.325 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 16:24:12.045 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 16:24:15.331 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 16:29:12.086 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 16:29:15.339 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 16:34:12.175 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 16:34:15.347 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 16:39:12.251 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 16:39:15.359 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: -; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: -; exited: -; ]
+Jun-17 16:44:12.306 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 16:44:15.368 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: 1560807735387; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: 1560807740834; exited: -; ]
+Jun-17 16:49:12.355 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 16:49:15.375 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: 1560807735387; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: 1560807740834; exited: -; ]
+Jun-17 16:54:12.408 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 16:54:15.383 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: 1560807735387; exited: -; ]
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: 1560807740834; exited: -; ]
+Jun-17 16:54:25.432 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 560999; id: 6; name: vcf_to_ped (PRUNING VCF FOR ADMIXTURE); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/4e39ebbb7b3f5149e18f0972a08aa6 started: 1560807735387; exited: 2019-06-17T21:54:22.428898Z; ]
+Jun-17 16:54:26.119 [Actor Thread 26] DEBUG nextflow.Session - <<< barrier arrive (process: vcf_to_ped)
+Jun-17 16:54:26.476 [Actor Thread 42] DEBUG nextflow.Session - <<< barrier arrive (process: run_admixture)
+Jun-17 16:54:26.478 [Actor Thread 42] DEBUG nextflow.Session - <<< barrier arrive (process: concat_replicate_logs)
+Jun-17 16:54:26.485 [Actor Thread 26] DEBUG nextflow.Session - <<< barrier arrive (process: concat_pop_logs)
+Jun-17 16:54:32.162 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture_besk_k (5) > jobId: 570295; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661
+Jun-17 16:54:32.164 [Task submitter] INFO  nextflow.Session - [15/549563] Submitted process > run_admixture_besk_k (5)
+Jun-17 16:54:32.688 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture_besk_k (1) > jobId: 570298; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e
+Jun-17 16:54:32.689 [Task submitter] INFO  nextflow.Session - [e2/a9b27b] Submitted process > run_admixture_besk_k (1)
+Jun-17 16:54:32.736 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture_besk_k (4) > jobId: 570300; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e
+Jun-17 16:54:32.737 [Task submitter] INFO  nextflow.Session - [50/044b85] Submitted process > run_admixture_besk_k (4)
+Jun-17 16:54:32.790 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture_besk_k (3) > jobId: 570301; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640
+Jun-17 16:54:32.791 [Task submitter] INFO  nextflow.Session - [bc/24ec8e] Submitted process > run_admixture_besk_k (3)
+Jun-17 16:54:33.010 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture_besk_k (2) > jobId: 570304; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1
+Jun-17 16:54:33.010 [Task submitter] INFO  nextflow.Session - [ed/0a0454] Submitted process > run_admixture_besk_k (2)
+Jun-17 16:59:12.413 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_no_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+[process] run_eigenstrat_with_outlier_removal
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: eigenparameters
+  port 2: (cntrl) -     ; channel: $
+
+Jun-17 16:59:15.392 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 6 -- pending tasks are shown below
+~> TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: 1560807740834; exited: -; ]
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+~> TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: -; ]
+Jun-17 17:03:35.681 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 561000; id: 5; name: vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/7fbb23e54e40a6346513e03f03c6e1 started: 1560807740834; exited: 2019-06-17T22:03:31.964626Z; ]
+Jun-17 17:03:35.847 [Actor Thread 57] DEBUG nextflow.Session - <<< barrier arrive (process: vcf_to_eigstrat_files)
+Jun-17 17:03:37.619 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_eigenstrat_no_outlier_removal (1) > jobId: 574074; workDir: /projects/b1042/AndersenLab/work/stefan/f5/6ceb3c84c69e3d9d18508743b4bbe2
+Jun-17 17:03:37.620 [Task submitter] INFO  nextflow.Session - [f5/6ceb3c] Submitted process > run_eigenstrat_no_outlier_removal (1)
+Jun-17 17:03:37.916 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_eigenstrat_with_outlier_removal (1) > jobId: 574075; workDir: /projects/b1042/AndersenLab/work/stefan/8f/59038ab6dd131715b600b411f0b5a1
+Jun-17 17:03:37.917 [Task submitter] INFO  nextflow.Session - [8f/59038a] Submitted process > run_eigenstrat_with_outlier_removal (1)
+Jun-17 17:04:12.486 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 17:04:15.417 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 7 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+~> TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: -; ]
+~> TaskHandler[jobId: 574074; id: 216; name: run_eigenstrat_no_outlier_removal (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f5/6ceb3c84c69e3d9d18508743b4bbe2 started: 1560809020537; exited: -; ]
+~> TaskHandler[jobId: 574075; id: 215; name: run_eigenstrat_with_outlier_removal (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/8f/59038ab6dd131715b600b411f0b5a1 started: 1560809025489; exited: -; ]
+Jun-17 17:06:00.644 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 574075; id: 215; name: run_eigenstrat_with_outlier_removal (1); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/8f/59038ab6dd131715b600b411f0b5a1 started: 1560809025489; exited: 2019-06-17T22:05:55.797085Z; ]
+Jun-17 17:06:01.587 [Actor Thread 57] DEBUG nextflow.Session - <<< barrier arrive (process: run_eigenstrat_with_outlier_removal)
+Jun-17 17:06:55.641 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 574074; id: 216; name: run_eigenstrat_no_outlier_removal (1); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f5/6ceb3c84c69e3d9d18508743b4bbe2 started: 1560809020537; exited: 2019-06-17T22:06:50.689613Z; ]
+Jun-17 17:06:56.068 [Actor Thread 60] DEBUG nextflow.Session - <<< barrier arrive (process: run_eigenstrat_no_outlier_removal)
+Jun-17 17:09:12.516 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 17:09:15.426 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+~> TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: -; ]
+Jun-17 17:14:12.544 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 17:14:15.435 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+~> TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: -; ]
+Jun-17 17:19:12.582 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 17:19:15.463 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+~> TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: -; ]
+Jun-17 17:24:12.651 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 17:24:15.472 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+~> TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: -; ]
+Jun-17 17:29:12.720 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 17:29:15.501 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+~> TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: -; ]
+Jun-17 17:34:12.791 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 17:34:15.511 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+~> TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: -; ]
+Jun-17 17:39:12.852 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 17:39:15.532 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+~> TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: -; ]
+Jun-17 17:44:12.892 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 17:44:15.545 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+~> TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: -; ]
+Jun-17 17:49:12.986 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 17:49:15.566 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+~> TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: -; ]
+Jun-17 17:54:13.045 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 17:54:15.575 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+~> TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: -; ]
+Jun-17 17:59:13.114 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 17:59:15.592 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+~> TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: -; ]
+Jun-17 18:04:13.189 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 18:04:15.602 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+~> TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: -; ]
+Jun-17 18:04:55.611 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 570304; id: 20; name: run_admixture_besk_k (2); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ed/0a0454be1b5e1187b82b1cb8a346d1 started: 1560808495444; exited: 2019-06-17T23:04:52.452405Z; ]
+Jun-17 18:09:13.252 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 18:09:15.615 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 4 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+~> TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: -; ]
+~> TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: -; ]
+~> TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: -; ]
+Jun-17 18:09:45.717 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 570300; id: 22; name: run_admixture_besk_k (4); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/50/044b85d56b1dc2b3b9bd5886b0cb8e started: 1560808490437; exited: 2019-06-17T23:09:42.402451Z; ]
+Jun-17 18:11:20.625 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 570301; id: 21; name: run_admixture_besk_k (3); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/24ec8eec851d63f49d4895cbaea640 started: 1560808495423; exited: 2019-06-17T23:11:16.385232Z; ]
+Jun-17 18:12:00.830 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 570298; id: 19; name: run_admixture_besk_k (1); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e2/a9b27bdc8fccb7d6f510c9360c3f4e started: 1560808490416; exited: 2019-06-17T23:11:56.769053Z; ]
+Jun-17 18:14:13.323 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 18:14:15.627 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 18:19:13.370 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 18:19:15.635 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 18:24:13.396 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 18:24:15.645 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 18:29:13.427 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 18:29:15.650 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 18:34:13.456 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 18:34:15.659 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 18:39:13.508 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 18:39:15.668 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 18:44:13.538 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 18:44:15.676 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 18:49:13.585 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 18:49:15.684 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 18:54:13.617 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 18:54:15.695 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 18:59:13.682 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 18:59:15.705 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 19:04:13.712 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 19:04:15.711 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 19:09:13.737 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 19:09:15.719 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 19:14:13.781 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 19:14:15.725 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 19:19:13.798 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 19:19:15.731 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 19:24:13.819 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 19:24:15.739 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 19:29:13.847 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 19:29:15.748 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 19:34:13.900 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 19:34:15.753 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 19:39:13.941 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 19:39:15.761 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 19:44:13.969 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 19:44:15.767 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 19:49:13.999 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-17 19:49:15.777 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: -; ]
+Jun-17 19:50:20.895 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 570295; id: 23; name: run_admixture_besk_k (5); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/15/5495635545e972a56df99d2cf6c661 started: 1560808485414; exited: 2019-06-18T00:50:18.376576Z; ]
+Jun-17 19:50:21.354 [Actor Thread 61] DEBUG nextflow.Session - <<< barrier arrive (process: run_admixture_besk_k)
+Jun-17 19:50:21.477 [Actor Thread 73] DEBUG nextflow.Session - <<< barrier arrive (process: popgenome_gene_kpop)
+Jun-17 19:50:21.477 [Actor Thread 61] DEBUG nextflow.Session - <<< barrier arrive (process: popgenome_window_kpop)
+Jun-17 19:50:21.477 [Actor Thread 74] DEBUG nextflow.Session - <<< barrier arrive (process: combine_popgenome_subpops)
+Jun-17 19:50:21.478 [main] DEBUG nextflow.Session - Session await > all process finished
+Jun-17 19:50:21.490 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local)
+Jun-17 19:50:25.779 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: slurm)
+Jun-17 19:50:25.780 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jun-17 19:50:25.834 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=9; failedCount=0; ignoredCount=0; cachedCount=2; succeedDuration=1d 8h 15m 21s; failedDuration=0ms; cachedDuration=2h 20m 16s]
+Jun-17 19:50:26.032 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Jun-17 19:50:26.186 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

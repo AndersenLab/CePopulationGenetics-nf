@@ -1,0 +1,160 @@
+Jun-17 15:08:18.013 [main] DEBUG nextflow.cli.Launcher - $> /home/szs315/.linuxbrew/bin/nextflow run cepopgen-nf.nf -profile admixture_full --out_base=GATK-STRELKA-INTERSECT_LD0pt1_COMPLETE_admixture --anc=XZ1516 --cpu=8 --snv_vcf=/projects/b1059/projects/Stefan/CePopGen-nf/input_files/Ce330_GATK4_STRELKA2_Intersect.vcf.gz --pops=input_files/strain_sets_admixture.tsv --admix_ld=0.1 --admix_k=20 --best_Ks=input_files/rerun_ks.txt -resume
+Jun-17 15:08:18.386 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 0.32.0
+Jun-17 15:08:18.406 [main] INFO  nextflow.cli.CmdRun - Launching `cepopgen-nf.nf` [exotic_meucci] - revision: c5dd7ffba0
+Jun-17 15:08:18.422 [main] DEBUG nextflow.config.ConfigBuilder - Found config home: /home/szs315/.nextflow/config
+Jun-17 15:08:18.422 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /projects/b1059/projects/Stefan/CePopulationGenetics-nf/nextflow.config
+Jun-17 15:08:18.423 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/szs315/.nextflow/config
+Jun-17 15:08:18.423 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /projects/b1059/projects/Stefan/CePopulationGenetics-nf/nextflow.config
+Jun-17 15:08:18.505 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `admixture_full`
+Jun-17 15:08:19.321 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `admixture_full`
+Jun-17 15:08:19.476 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [popgenome, admixture_cv, admixture_full, full]
+Jun-17 15:08:19.516 [main] DEBUG nextflow.Session - Session uuid: 17bf0dc8-e2e8-478c-9461-69834d5b4505
+Jun-17 15:08:19.516 [main] DEBUG nextflow.Session - Run name: exotic_meucci
+Jun-17 15:08:19.517 [main] DEBUG nextflow.Session - Executor pool size: 28
+Jun-17 15:08:19.581 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 0.32.0 build 4897
+  Modified: 27-09-2018 10:17 UTC (05:17 CDT)
+  System: Linux 3.10.0-862.el7.x86_64
+  Runtime: Groovy 2.5.1 on OpenJDK 64-Bit Server VM 1.8.0_192-b01
+  Encoding: UTF-8 (UTF-8)
+  Process: 12584@quser21 [172.20.4.21]
+  CPUs: 28 - Mem: 124.1 GB (84.4 GB) - Swap: 0 (0)
+Jun-17 15:08:19.694 [main] DEBUG nextflow.Session - Work-dir: /projects/b1042/AndersenLab/work/stefan [gpfs]
+Jun-17 15:08:21.031 [main] DEBUG nextflow.Session - Session start invoked
+Jun-17 15:08:21.040 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Jun-17 15:08:21.041 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Jun-17 15:08:22.883 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-17 15:08:22.900 [main] INFO  nextflow.Nextflow - 
+╔═╗   ╔═╗╦  ╔═╗╔═╗╔═╗╔╗╔╔═╗  ╔═╗╔═╗╔═╗╔═╗╔═╗╔╗╔  ╔╗╔╔═╗
+║     ║╣ ║  ║╣ ║ ╦╠═╣║║║╚═╗  ╠═╝║ ║╠═╝║ ╦║╣ ║║║  ║║║╠╣ 
+╚═╝o  ╚═╝╩═╝╚═╝╚═╝╩ ╩╝╚╝╚═╝  ╩  ╚═╝╩  ╚═╝╚═╝╝╚╝  ╝╚╝╚  
+
+Jun-17 15:08:22.901 [main] INFO  nextflow.Nextflow - 
+Jun-17 15:08:22.901 [main] INFO  nextflow.Nextflow - Reference                               = /projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/WS245.fa
+Jun-17 15:08:22.902 [main] INFO  nextflow.Nextflow - Ancestor                                = XZ1516
+Jun-17 15:08:22.902 [main] INFO  nextflow.Nextflow - Small Variant VCF                       = /projects/b1059/projects/Stefan/CePopGen-nf/input_files/Ce330_GATK4_STRELKA2_Intersect.vcf.gz
+Jun-17 15:08:22.902 [main] INFO  nextflow.Nextflow - Structural Variant VCF                  = /projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/Ce330_MERGED_SV.vcf.gz
+Jun-17 15:08:22.902 [main] INFO  nextflow.Nextflow - Population File                         = input_files/strain_sets_admixture.tsv
+Jun-17 15:08:22.903 [main] INFO  nextflow.Nextflow - Max Population                          = 20
+Jun-17 15:08:22.906 [main] INFO  nextflow.Nextflow - LD to test                              = 0.1
+Jun-17 15:08:22.906 [main] INFO  nextflow.Nextflow - cpu                                     = 8
+Jun-17 15:08:22.906 [main] INFO  nextflow.Nextflow - Output folder                           = 20190617-GATK-STRELKA-INTERSECT_LD0pt1_COMPLETE_admixture
+Jun-17 15:08:22.906 [main] INFO  nextflow.Nextflow - GFF3 File                               = /projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/Popgenome_files/WS245_exons.gff
+Jun-17 15:08:22.907 [main] INFO  nextflow.Nextflow - 
+Jun-17 15:08:23.893 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:08:23.894 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:08:23.913 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:08:23.976 [main] INFO  nextflow.executor.Executor - [warm up] executor > slurm
+Jun-17 15:08:23.988 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
+Jun-17 15:08:23.994 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: TaskPollingMonitor
+Jun-17 15:08:23.996 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: slurm)
+Jun-17 15:08:23.999 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: slurm
+Jun-17 15:08:24.000 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:08:24.104 [main] DEBUG nextflow.Session - >>> barrier register (process: extract_ancestor_bed)
+Jun-17 15:08:24.109 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > extract_ancestor_bed -- maxForks: 28
+Jun-17 15:08:24.205 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:08:24.206 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:08:24.207 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:08:24.207 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:08:24.210 [main] DEBUG nextflow.Session - >>> barrier register (process: annotate_small_vcf)
+Jun-17 15:08:24.210 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > annotate_small_vcf -- maxForks: 28
+Jun-17 15:08:24.290 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:08:24.290 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:08:24.290 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:08:24.292 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:08:24.293 [main] DEBUG nextflow.Session - >>> barrier register (process: vcf2phylip)
+Jun-17 15:08:24.295 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > vcf2phylip -- maxForks: 28
+Jun-17 15:08:24.303 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:08:24.303 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:08:24.303 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:08:24.304 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:08:24.305 [main] DEBUG nextflow.Session - >>> barrier register (process: generate_tree)
+Jun-17 15:08:24.306 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > generate_tree -- maxForks: 28
+Jun-17 15:08:24.400 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:08:24.401 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:08:24.401 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:08:24.401 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:08:24.409 [main] DEBUG nextflow.Session - >>> barrier register (process: vcf_to_ped)
+Jun-17 15:08:24.409 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > vcf_to_ped -- maxForks: 28
+Jun-17 15:08:24.596 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-17 15:08:24.596 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-17 15:08:24.596 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-17 15:08:24.597 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-17 15:08:24.599 [main] DEBUG nextflow.Session - >>> barrier register (process: run_admixture)
+Jun-17 15:08:24.599 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > run_admixture -- maxForks: 28
+Jun-17 15:08:24.689 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: local
+Jun-17 15:08:24.689 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jun-17 15:08:24.692 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jun-17 15:08:24.693 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Jun-17 15:08:24.697 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=28; memory=124.1 GB; capacity=28; pollInterval=100ms; dumpInterval=5m
+Jun-17 15:08:24.701 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Jun-17 15:08:24.701 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jun-17 15:08:24.702 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Jun-17 15:08:24.703 [main] DEBUG nextflow.Session - >>> barrier register (process: concat_replicate_logs)
+Jun-17 15:08:24.703 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > concat_replicate_logs -- maxForks: 28
+Jun-17 15:08:24.780 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: local
+Jun-17 15:08:24.781 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jun-17 15:08:24.782 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jun-17 15:08:24.788 [main] DEBUG nextflow.Session - >>> barrier register (process: concat_pop_logs)
+Jun-17 15:08:24.791 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > concat_pop_logs -- maxForks: 28
+Jun-17 15:08:24.883 [main] DEBUG nextflow.Session - Session aborted -- Cause: No signature of method: static nextflow.Channel.fromF() is applicable for argument types: (ArrayList) values: [[[12], [13], [14], [15], [16]]]
+Possible solutions: from([Ljava.lang.Object;), from(java.util.Collection), grep(), dump(), find(), fromPath(java.lang.Object)
+Jun-17 15:08:24.979 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local)
+Jun-17 15:08:25.009 [main] DEBUG nextflow.Session - The following nodes are still active:
+[process] extract_ancestor_bed
+  status=ACTIVE
+  port 0: (queue) closed; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] annotate_small_vcf
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) OPEN  ; channel: -
+  port 2: (cntrl) -     ; channel: $
+
+[process] vcf2phylip
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] generate_tree
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] vcf_to_ped
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+Jun-17 15:08:25.085 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: slurm)
+Jun-17 15:08:25.496 [main] ERROR nextflow.cli.Launcher - @unknown
+groovy.lang.MissingMethodException: No signature of method: static nextflow.Channel.fromF() is applicable for argument types: (ArrayList) values: [[[12], [13], [14], [15], [16]]]
+Possible solutions: from([Ljava.lang.Object;), from(java.util.Collection), grep(), dump(), find(), fromPath(java.lang.Object)
+	at groovy.lang.MetaClassImpl.invokeStaticMissingMethod(MetaClassImpl.java:1528)
+	at groovy.lang.MetaClassImpl.invokeStaticMethod(MetaClassImpl.java:1514)
+	at org.codehaus.groovy.runtime.callsite.StaticMetaClassSite.call(StaticMetaClassSite.java:52)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:128)
+	at _nf_script_2f9e74d5.run(_nf_script_2f9e74d5:484)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:380)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:168)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:235)
+	at nextflow.cli.Launcher.run(Launcher.groovy:432)
+	at nextflow.cli.Launcher.main(Launcher.groovy:590)

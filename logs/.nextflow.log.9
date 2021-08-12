@@ -1,0 +1,1078 @@
+Jun-14 11:53:57.678 [main] DEBUG nextflow.cli.Launcher - $> /home/szs315/.linuxbrew/bin/nextflow run cepopgen-nf.nf -profile quest --out_base=GATK-STRELKA-INTERSECT_LD0pt1_COMPLETE --anc=XZ1516 --cpu=8 --snv_vcf=/projects/b1059/projects/Stefan/CePopGen-nf/input_files/Ce330_GATK4_STRELKA2_Intersect.vcf.gz --pops=input_files/strain_sets_admixture.tsv --admix_ld=0.1 -resume
+Jun-14 11:53:57.904 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 0.32.0
+Jun-14 11:53:57.927 [main] INFO  nextflow.cli.CmdRun - Launching `cepopgen-nf.nf` [deadly_magritte] - revision: 4823cd2b86
+Jun-14 11:53:57.949 [main] DEBUG nextflow.config.ConfigBuilder - Found config home: /home/szs315/.nextflow/config
+Jun-14 11:53:57.949 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /projects/b1059/projects/Stefan/CePopulationGenetics-nf/nextflow.config
+Jun-14 11:53:57.950 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/szs315/.nextflow/config
+Jun-14 11:53:57.950 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /projects/b1059/projects/Stefan/CePopulationGenetics-nf/nextflow.config
+Jun-14 11:53:57.982 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `quest`
+Jun-14 11:53:58.439 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `quest`
+Jun-14 11:53:58.522 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [debug, quest]
+Jun-14 11:53:58.570 [main] DEBUG nextflow.Session - Session uuid: 17bf0dc8-e2e8-478c-9461-69834d5b4505
+Jun-14 11:53:58.571 [main] DEBUG nextflow.Session - Run name: deadly_magritte
+Jun-14 11:53:58.571 [main] DEBUG nextflow.Session - Executor pool size: 6
+Jun-14 11:53:58.584 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 0.32.0 build 4897
+  Modified: 27-09-2018 10:17 UTC (05:17 CDT)
+  System: Linux 3.10.0-514.21.1.el7.x86_64
+  Runtime: Groovy 2.5.1 on OpenJDK 64-Bit Server VM 1.8.0_192-b01
+  Encoding: UTF-8 (UTF-8)
+  Process: 32652@qnode5110 [172.20.129.110]
+  CPUs: 6 - Mem: 125.6 GB (77.6 GB) - Swap: 0 (0)
+Jun-14 11:53:58.625 [main] DEBUG nextflow.Session - Work-dir: /projects/b1042/AndersenLab/work/stefan [gpfs]
+Jun-14 11:54:00.199 [main] DEBUG nextflow.Session - Session start invoked
+Jun-14 11:54:00.206 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Jun-14 11:54:00.207 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Jun-14 11:54:01.322 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-14 11:54:01.334 [main] INFO  nextflow.Nextflow - 
+╔═╗   ╔═╗╦  ╔═╗╔═╗╔═╗╔╗╔╔═╗  ╔═╗╔═╗╔═╗╔═╗╔═╗╔╗╔  ╔╗╔╔═╗
+║     ║╣ ║  ║╣ ║ ╦╠═╣║║║╚═╗  ╠═╝║ ║╠═╝║ ╦║╣ ║║║  ║║║╠╣ 
+╚═╝o  ╚═╝╩═╝╚═╝╚═╝╩ ╩╝╚╝╚═╝  ╩  ╚═╝╩  ╚═╝╚═╝╝╚╝  ╝╚╝╚  
+
+Jun-14 11:54:01.335 [main] INFO  nextflow.Nextflow - 
+Jun-14 11:54:01.335 [main] INFO  nextflow.Nextflow - Reference                               = /projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/WS245.fa
+Jun-14 11:54:01.336 [main] INFO  nextflow.Nextflow - Ancestor                                = XZ1516
+Jun-14 11:54:01.336 [main] INFO  nextflow.Nextflow - Small Variant VCF                       = /projects/b1059/projects/Stefan/CePopGen-nf/input_files/Ce330_GATK4_STRELKA2_Intersect.vcf.gz
+Jun-14 11:54:01.336 [main] INFO  nextflow.Nextflow - Structural Variant VCF                  = /projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/Ce330_MERGED_SV.vcf.gz
+Jun-14 11:54:01.336 [main] INFO  nextflow.Nextflow - Population File                         = input_files/strain_sets_admixture.tsv
+Jun-14 11:54:01.336 [main] INFO  nextflow.Nextflow - Max Population                          = 10
+Jun-14 11:54:01.336 [main] INFO  nextflow.Nextflow - LD to test                              = 0.1
+Jun-14 11:54:01.338 [main] INFO  nextflow.Nextflow - cpu                                     = 8
+Jun-14 11:54:01.339 [main] INFO  nextflow.Nextflow - Output folder                           = 20190614-GATK-STRELKA-INTERSECT_LD0pt1_COMPLETE
+Jun-14 11:54:01.339 [main] INFO  nextflow.Nextflow - GFF3 File                               = /projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/Popgenome_files/WS245_exons.gff
+Jun-14 11:54:01.339 [main] INFO  nextflow.Nextflow - 
+Jun-14 11:54:01.610 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:01.611 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:01.621 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:01.622 [main] INFO  nextflow.executor.Executor - [warm up] executor > slurm
+Jun-14 11:54:01.627 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
+Jun-14 11:54:01.632 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: TaskPollingMonitor
+Jun-14 11:54:01.633 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: slurm)
+Jun-14 11:54:01.642 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: slurm
+Jun-14 11:54:01.642 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:01.671 [main] DEBUG nextflow.Session - >>> barrier register (process: extract_ancestor_bed)
+Jun-14 11:54:01.674 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > extract_ancestor_bed -- maxForks: 6
+Jun-14 11:54:01.709 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:01.709 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:01.709 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:01.709 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:01.710 [main] DEBUG nextflow.Session - >>> barrier register (process: annotate_small_vcf)
+Jun-14 11:54:01.711 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > annotate_small_vcf -- maxForks: 6
+Jun-14 11:54:01.741 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:01.741 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:01.741 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:01.741 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:01.742 [main] DEBUG nextflow.Session - >>> barrier register (process: vcf2phylip)
+Jun-14 11:54:01.756 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > vcf2phylip -- maxForks: 6
+Jun-14 11:54:01.763 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:01.763 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:01.763 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:01.763 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:01.764 [main] DEBUG nextflow.Session - >>> barrier register (process: generate_tree)
+Jun-14 11:54:01.764 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > generate_tree -- maxForks: 6
+Jun-14 11:54:01.792 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:01.792 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:01.793 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:01.793 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:01.793 [main] DEBUG nextflow.Session - >>> barrier register (process: vcf_to_ped)
+Jun-14 11:54:01.793 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > vcf_to_ped -- maxForks: 6
+Jun-14 11:54:01.843 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:01.844 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:01.844 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:01.844 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:01.845 [main] DEBUG nextflow.Session - >>> barrier register (process: run_admixture)
+Jun-14 11:54:01.845 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > run_admixture -- maxForks: 6
+Jun-14 11:54:01.859 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: local
+Jun-14 11:54:01.859 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jun-14 11:54:01.860 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jun-14 11:54:01.861 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Jun-14 11:54:01.872 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=6; memory=125.6 GB; capacity=6; pollInterval=100ms; dumpInterval=5m
+Jun-14 11:54:01.874 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Jun-14 11:54:01.874 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jun-14 11:54:01.883 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Jun-14 11:54:01.884 [main] DEBUG nextflow.Session - >>> barrier register (process: concat_replicate_logs)
+Jun-14 11:54:01.884 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > concat_replicate_logs -- maxForks: 6
+Jun-14 11:54:01.894 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: local
+Jun-14 11:54:01.894 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jun-14 11:54:01.894 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jun-14 11:54:01.895 [main] DEBUG nextflow.Session - >>> barrier register (process: concat_pop_logs)
+Jun-14 11:54:01.896 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > concat_pop_logs -- maxForks: 6
+Jun-14 11:54:01.938 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:01.938 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:01.938 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:01.939 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:01.940 [main] DEBUG nextflow.Session - >>> barrier register (process: run_admixture_besk_k)
+Jun-14 11:54:01.940 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > run_admixture_besk_k -- maxForks: 6
+Jun-14 11:54:01.950 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:01.951 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:01.951 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:01.951 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:01.952 [main] DEBUG nextflow.Session - >>> barrier register (process: ibdseq_haplotype)
+Jun-14 11:54:01.953 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > ibdseq_haplotype -- maxForks: 6
+Jun-14 11:54:01.968 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:01.968 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:01.968 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:01.968 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:01.983 [main] DEBUG nextflow.Session - >>> barrier register (process: analyze_ibdseq)
+Jun-14 11:54:01.983 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > analyze_ibdseq -- maxForks: 6
+Jun-14 11:54:01.988 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:01.988 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:01.988 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:01.988 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:01.988 [main] DEBUG nextflow.Session - >>> barrier register (process: plot_ibdseq)
+Jun-14 11:54:01.989 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > plot_ibdseq -- maxForks: 6
+Jun-14 11:54:01.993 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:01.994 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:01.994 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:01.994 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:01.994 [main] DEBUG nextflow.Session - >>> barrier register (process: popgenome_whole_pop)
+Jun-14 11:54:01.997 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1]
+Jun-14 11:54:02.001 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > popgenome_whole_pop -- maxForks: 6
+Jun-14 11:54:02.009 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:02.009 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:02.010 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:02.010 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:02.010 [main] DEBUG nextflow.Session - >>> barrier register (process: plot_popgenome_whole_pop)
+Jun-14 11:54:02.011 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > plot_popgenome_whole_pop -- maxForks: 6
+Jun-14 11:54:02.015 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:02.015 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:02.015 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:02.015 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:02.015 [main] DEBUG nextflow.Session - >>> barrier register (process: popgenome_window_kpop)
+Jun-14 11:54:02.016 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1, 2]
+Jun-14 11:54:02.017 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > popgenome_window_kpop -- maxForks: 6
+Jun-14 11:54:02.038 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:02.039 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:02.039 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:02.040 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:02.041 [main] DEBUG nextflow.Session - >>> barrier register (process: combine_popgenome_subpops)
+Jun-14 11:54:02.041 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > combine_popgenome_subpops -- maxForks: 6
+Jun-14 11:54:02.046 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:02.046 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:02.046 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:02.046 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:02.047 [main] DEBUG nextflow.Session - >>> barrier register (process: popgenome_gene_complete)
+Jun-14 11:54:02.047 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1]
+Jun-14 11:54:02.048 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > popgenome_gene_complete -- maxForks: 6
+Jun-14 11:54:02.051 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:02.052 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:02.052 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:02.052 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:02.052 [main] DEBUG nextflow.Session - >>> barrier register (process: popgenome_gene_kpop)
+Jun-14 11:54:02.053 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1, 2]
+Jun-14 11:54:02.054 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > popgenome_gene_kpop -- maxForks: 6
+Jun-14 11:54:02.057 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:02.057 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:02.057 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:02.057 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:02.099 [main] DEBUG nextflow.Session - >>> barrier register (process: vcf_to_h21)
+Jun-14 11:54:02.100 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1]
+Jun-14 11:54:02.100 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > vcf_to_h21 -- maxForks: 6
+Jun-14 11:54:02.104 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:02.104 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:02.104 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:02.104 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:02.104 [main] DEBUG nextflow.Session - >>> barrier register (process: vcf_to_eigstrat_files)
+Jun-14 11:54:02.104 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > vcf_to_eigstrat_files -- maxForks: 6
+Jun-14 11:54:02.107 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:02.107 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:02.108 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:02.108 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:02.108 [main] DEBUG nextflow.Session - >>> barrier register (process: run_eigenstrat_no_outlier_removal)
+Jun-14 11:54:02.108 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > run_eigenstrat_no_outlier_removal -- maxForks: 6
+Jun-14 11:54:02.110 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:02.110 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:02.110 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:02.111 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:02.111 [main] DEBUG nextflow.Session - >>> barrier register (process: run_eigenstrat_with_outlier_removal)
+Jun-14 11:54:02.111 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > run_eigenstrat_with_outlier_removal -- maxForks: 6
+Jun-14 11:54:02.113 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-14 11:54:02.113 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-14 11:54:02.113 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-14 11:54:02.113 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-14 11:54:02.113 [main] DEBUG nextflow.Session - >>> barrier register (process: prep_files_for_DAPC)
+Jun-14 11:54:02.113 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > prep_files_for_DAPC -- maxForks: 6
+Jun-14 11:54:02.115 [main] WARN  nextflow.extension.IntoOp - The `into` operator should be used to connect two or more target channels -- consider to replace it with `.set { dapc_pop_input }`
+Jun-14 11:54:02.115 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Jun-14 11:54:02.115 [main] DEBUG nextflow.Session - Session await
+Jun-14 11:54:29.344 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [ca/638370] Cached process > extract_ancestor_bed (1)
+Jun-14 11:54:29.403 [Actor Thread 3] DEBUG nextflow.Session - <<< barrier arrive (process: extract_ancestor_bed)
+Jun-14 11:54:36.476 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [f3/c71cd8] Cached process > annotate_small_vcf (1)
+Jun-14 11:54:36.522 [Actor Thread 3] DEBUG nextflow.Session - <<< barrier arrive (process: annotate_small_vcf)
+Jun-14 11:55:08.896 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [65/54e45b] Cached process > vcf_to_h21 (V)
+Jun-14 11:55:09.719 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [8a/2d4436] Cached process > popgenome_gene_complete (V)
+Jun-14 11:55:10.387 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [85/fdcf6d] Cached process > vcf2phylip (1)
+Jun-14 11:55:10.392 [Actor Thread 33] DEBUG nextflow.Session - <<< barrier arrive (process: vcf2phylip)
+Jun-14 11:55:10.718 [Actor Thread 28] INFO  nextflow.processor.TaskProcessor - [fc/303f93] Cached process > popgenome_whole_pop (III)
+Jun-14 11:55:10.736 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [67/310dfc] Cached process > popgenome_gene_complete (III)
+Jun-14 11:55:10.791 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [e0/4b2d27] Cached process > ibdseq_haplotype (1)
+Jun-14 11:55:10.794 [Actor Thread 42] DEBUG nextflow.Session - <<< barrier arrive (process: ibdseq_haplotype)
+Jun-14 11:55:10.960 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [9a/b61c0e] Cached process > popgenome_whole_pop (IV)
+Jun-14 11:55:11.024 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [07/ef6f50] Cached process > vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES)
+Jun-14 11:55:11.026 [Actor Thread 42] DEBUG nextflow.Session - <<< barrier arrive (process: vcf_to_eigstrat_files)
+Jun-14 11:55:11.085 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [f1/444a90] Cached process > popgenome_gene_complete (II)
+Jun-14 11:55:11.260 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [a1/f9ab9f] Cached process > vcf_to_ped (PRUNING VCF FOR ADMIXTURE)
+Jun-14 11:55:11.262 [Actor Thread 43] DEBUG nextflow.Session - <<< barrier arrive (process: vcf_to_ped)
+Jun-14 11:55:11.340 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [42/b077ad] Cached process > popgenome_whole_pop (I)
+Jun-14 11:55:11.342 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [58/1bd432] Cached process > vcf_to_h21 (I)
+Jun-14 11:55:11.431 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [63/11f7a9] Cached process > vcf_to_h21 (II)
+Jun-14 11:55:11.433 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [a4/3de652] Cached process > popgenome_whole_pop (II)
+Jun-14 11:55:11.433 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [6e/972db0] Cached process > popgenome_whole_pop (V)
+Jun-14 11:55:11.474 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [c5/740ad3] Cached process > vcf_to_h21 (III)
+Jun-14 11:55:11.484 [Actor Thread 41] INFO  nextflow.processor.TaskProcessor - [af/a507a3] Cached process > vcf_to_h21 (X)
+Jun-14 11:55:11.529 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [4f/6e6d9e] Cached process > popgenome_gene_complete (X)
+Jun-14 11:55:11.573 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [08/d20df9] Cached process > popgenome_gene_complete (I)
+Jun-14 11:55:11.584 [Actor Thread 30] INFO  nextflow.processor.TaskProcessor - [89/dc102c] Cached process > popgenome_gene_complete (IV)
+Jun-14 11:55:11.588 [Actor Thread 43] DEBUG nextflow.Session - <<< barrier arrive (process: popgenome_gene_complete)
+Jun-14 11:55:11.670 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [60/22f6b3] Cached process > prep_files_for_DAPC (1)
+Jun-14 11:55:11.671 [Actor Thread 43] DEBUG nextflow.Session - <<< barrier arrive (process: prep_files_for_DAPC)
+Jun-14 11:55:11.683 [Actor Thread 39] INFO  nextflow.processor.TaskProcessor - [1c/f2ea1c] Cached process > vcf_to_h21 (IV)
+Jun-14 11:55:11.685 [Actor Thread 43] DEBUG nextflow.Session - <<< barrier arrive (process: vcf_to_h21)
+Jun-14 11:55:11.896 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process analyze_ibdseq (1) > jobId: 382430; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85
+Jun-14 11:55:11.900 [Task submitter] INFO  nextflow.Session - [f1/6d05f8] Submitted process > analyze_ibdseq (1)
+Jun-14 11:55:11.956 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_whole_pop (X) > jobId: 382431; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085
+Jun-14 11:55:11.956 [Task submitter] INFO  nextflow.Session - [00/617d8f] Submitted process > popgenome_whole_pop (X)
+Jun-14 11:55:14.053 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [f5/7ca772] Cached process > run_eigenstrat_no_outlier_removal (1)
+Jun-14 11:55:14.054 [Actor Thread 43] DEBUG nextflow.Session - <<< barrier arrive (process: run_eigenstrat_no_outlier_removal)
+Jun-14 11:55:14.066 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [52/b5196f] Cached process > run_eigenstrat_with_outlier_removal (1)
+Jun-14 11:55:14.068 [Actor Thread 43] DEBUG nextflow.Session - <<< barrier arrive (process: run_eigenstrat_with_outlier_removal)
+Jun-14 11:55:16.350 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [3b/3113f3] Cached process > generate_tree (1)
+Jun-14 11:55:16.359 [Actor Thread 43] DEBUG nextflow.Session - <<< barrier arrive (process: generate_tree)
+Jun-14 11:55:18.370 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [06/c174cd] Cached process > run_admixture ( 2 - 1999 )
+Jun-14 11:55:19.186 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [20/d95d10] Cached process > run_admixture ( 2 - 1123 )
+Jun-14 11:55:19.240 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [e5/7498fd] Cached process > run_admixture ( 2 - 1336 )
+Jun-14 11:55:19.250 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [80/896458] Cached process > run_admixture ( 2 - 1942 )
+Jun-14 11:55:19.257 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [aa/be3992] Cached process > run_admixture ( 2 - 1593 )
+Jun-14 11:55:19.279 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [24/fa447e] Cached process > run_admixture ( 2 - 1365 )
+Jun-14 11:55:24.407 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [e3/5e353c] Cached process > run_admixture ( 2 - 1854 )
+Jun-14 11:55:25.916 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [05/c027e5] Cached process > run_admixture ( 2 - 1907 )
+Jun-14 11:55:25.949 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [f8/ceac7b] Cached process > run_admixture ( 3 - 1123 )
+Jun-14 11:55:26.274 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [cd/5e3e21] Cached process > run_admixture ( 2 - 1103 )
+Jun-14 11:55:26.332 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [ae/de7859] Cached process > run_admixture ( 2 - 1499 )
+Jun-14 11:55:26.449 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [c0/675a5e] Cached process > run_admixture ( 3 - 1365 )
+Jun-14 11:55:31.411 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [39/cb8e16] Cached process > run_admixture ( 3 - 1336 )
+Jun-14 11:55:32.306 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [be/6ad2ec] Cached process > run_admixture ( 3 - 1942 )
+Jun-14 11:55:32.357 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [66/60f3b4] Cached process > run_admixture ( 3 - 1999 )
+Jun-14 11:55:32.984 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [4e/d0d734] Cached process > run_admixture ( 3 - 1907 )
+Jun-14 11:55:33.109 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [14/bb67a8] Cached process > run_admixture ( 3 - 1854 )
+Jun-14 11:55:33.287 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [5f/ab9b1a] Cached process > run_admixture ( 3 - 1593 )
+Jun-14 11:55:37.900 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [28/b72f62] Cached process > run_admixture ( 3 - 1103 )
+Jun-14 11:55:38.926 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [19/0deb26] Cached process > run_admixture ( 4 - 1365 )
+Jun-14 11:55:39.050 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [74/ed65ae] Cached process > run_admixture ( 3 - 1499 )
+Jun-14 11:55:39.474 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [56/9629b6] Cached process > run_admixture ( 4 - 1123 )
+Jun-14 11:55:40.070 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [84/949b3a] Cached process > run_admixture ( 4 - 1999 )
+Jun-14 11:55:40.594 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [7f/efc2f7] Cached process > run_admixture ( 4 - 1336 )
+Jun-14 11:55:45.120 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [57/825c66] Cached process > run_admixture ( 4 - 1942 )
+Jun-14 11:55:45.776 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [98/eef0b7] Cached process > run_admixture ( 4 - 1593 )
+Jun-14 11:55:46.297 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [8e/773308] Cached process > run_admixture ( 4 - 1854 )
+Jun-14 11:55:46.863 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [89/b7fe01] Cached process > run_admixture ( 4 - 1103 )
+Jun-14 11:55:47.411 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [36/10eb8e] Cached process > run_admixture ( 4 - 1499 )
+Jun-14 11:55:47.615 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [e9/ef2e10] Cached process > run_admixture ( 4 - 1907 )
+Jun-14 11:55:52.521 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [3e/200578] Cached process > run_admixture ( 5 - 1123 )
+Jun-14 11:55:52.647 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [73/01032c] Cached process > run_admixture ( 5 - 1365 )
+Jun-14 11:55:53.740 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [df/d2cca1] Cached process > run_admixture ( 5 - 1999 )
+Jun-14 11:55:53.906 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [52/c02600] Cached process > run_admixture ( 5 - 1336 )
+Jun-14 11:55:54.326 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [52/822cb7] Cached process > run_admixture ( 5 - 1593 )
+Jun-14 11:55:54.411 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [5b/958cdd] Cached process > run_admixture ( 5 - 1942 )
+Jun-14 11:56:00.341 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [07/760d07] Cached process > run_admixture ( 5 - 1854 )
+Jun-14 11:56:00.898 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [71/901828] Cached process > run_admixture ( 5 - 1907 )
+Jun-14 11:56:00.973 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [37/eeb87b] Cached process > run_admixture ( 6 - 1365 )
+Jun-14 11:56:01.089 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [b9/7418b0] Cached process > run_admixture ( 6 - 1123 )
+Jun-14 11:56:02.524 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [3b/82e158] Cached process > run_admixture ( 5 - 1499 )
+Jun-14 11:56:02.704 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [aa/203fe8] Cached process > run_admixture ( 5 - 1103 )
+Jun-14 11:56:07.391 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [73/da9fb1] Cached process > run_admixture ( 6 - 1942 )
+Jun-14 11:56:07.687 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [56/6327cf] Cached process > run_admixture ( 6 - 1336 )
+Jun-14 11:56:07.753 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [e4/f7981e] Cached process > run_admixture ( 6 - 1999 )
+Jun-14 11:56:07.820 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [d2/3bc6cf] Cached process > run_admixture ( 6 - 1593 )
+Jun-14 11:56:09.064 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [4c/d3ba23] Cached process > run_admixture ( 6 - 1854 )
+Jun-14 11:56:09.585 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [f7/5e4527] Cached process > run_admixture ( 6 - 1907 )
+Jun-14 11:56:14.320 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [4d/4425eb] Cached process > run_admixture ( 7 - 1365 )
+Jun-14 11:56:14.446 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [6b/e4fe35] Cached process > run_admixture ( 7 - 1336 )
+Jun-14 11:56:14.454 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [a7/c02e6c] Cached process > run_admixture ( 6 - 1499 )
+Jun-14 11:56:15.385 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [dd/9cce9a] Cached process > run_admixture ( 6 - 1103 )
+Jun-14 11:56:16.134 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [a3/25c895] Cached process > run_admixture ( 7 - 1123 )
+Jun-14 11:56:18.637 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [dc/807b93] Cached process > run_admixture ( 7 - 1999 )
+Jun-14 11:56:21.294 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [9f/efb741] Cached process > run_admixture ( 7 - 1593 )
+Jun-14 11:56:21.476 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [3b/e7b9c0] Cached process > run_admixture ( 7 - 1854 )
+Jun-14 11:56:22.328 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [f7/980ea3] Cached process > run_admixture ( 7 - 1942 )
+Jun-14 11:56:23.016 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [e4/c8703b] Cached process > run_admixture ( 7 - 1907 )
+Jun-14 11:56:23.412 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [ac/0a9cbb] Cached process > run_admixture ( 7 - 1103 )
+Jun-14 11:56:25.653 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [c5/0961a2] Cached process > run_admixture ( 7 - 1499 )
+Jun-14 11:56:27.516 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [c6/06abb7] Cached process > run_admixture ( 8 - 1365 )
+Jun-14 11:56:27.733 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [cc/0a0164] Cached process > run_admixture ( 8 - 1123 )
+Jun-14 11:56:29.284 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [f1/abe21d] Cached process > run_admixture ( 8 - 1999 )
+Jun-14 11:56:29.335 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [96/2d2732] Cached process > run_admixture ( 8 - 1336 )
+Jun-14 11:56:30.181 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [2c/eb2a4d] Cached process > run_admixture ( 8 - 1942 )
+Jun-14 11:56:32.357 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [9f/0213a8] Cached process > run_admixture ( 8 - 1593 )
+Jun-14 11:56:34.181 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [3e/5bf1b0] Cached process > run_admixture ( 8 - 1854 )
+Jun-14 11:56:34.340 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [f2/85b471] Cached process > run_admixture ( 8 - 1907 )
+Jun-14 11:56:36.030 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [ad/116169] Cached process > run_admixture ( 8 - 1103 )
+Jun-14 11:56:36.118 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [ac/6c59d5] Cached process > run_admixture ( 8 - 1499 )
+Jun-14 11:56:36.512 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [39/cd6e38] Cached process > run_admixture ( 9 - 1365 )
+Jun-14 11:56:39.481 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [e0/bb3365] Cached process > run_admixture ( 9 - 1123 )
+Jun-14 11:56:40.762 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [71/2b5a43] Cached process > run_admixture ( 9 - 1999 )
+Jun-14 11:56:40.816 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [e3/975959] Cached process > run_admixture ( 9 - 1336 )
+Jun-14 11:56:42.886 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [ea/ef1581] Cached process > run_admixture ( 9 - 1593 )
+Jun-14 11:56:43.107 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [34/f2d604] Cached process > run_admixture ( 9 - 1942 )
+Jun-14 11:56:43.178 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [83/7543b1] Cached process > run_admixture ( 9 - 1854 )
+Jun-14 11:56:46.154 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [d9/7e9ffd] Cached process > run_admixture ( 9 - 1907 )
+Jun-14 11:56:47.785 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [c2/4eb044] Cached process > run_admixture ( 9 - 1499 )
+Jun-14 11:56:47.847 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [c5/cc64cb] Cached process > run_admixture ( 9 - 1103 )
+Jun-14 11:56:49.545 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [21/42ad6a] Cached process > run_admixture ( 10 - 1365 )
+Jun-14 11:56:50.342 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [c8/4b8ef9] Cached process > run_admixture ( 10 - 1336 )
+Jun-14 11:56:50.426 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [07/7b6980] Cached process > run_admixture ( 10 - 1123 )
+Jun-14 11:56:52.778 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [24/20898a] Cached process > run_admixture ( 10 - 1999 )
+Jun-14 11:56:54.657 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [01/37b689] Cached process > run_admixture ( 10 - 1942 )
+Jun-14 11:56:54.749 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [da/169e0f] Cached process > run_admixture ( 10 - 1593 )
+Jun-14 11:56:55.386 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [07/f0652d] Cached process > run_admixture ( 10 - 1854 )
+Jun-14 11:56:55.769 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [66/7971c3] Cached process > run_admixture ( 10 - 1103 )
+Jun-14 11:56:56.005 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [b6/a1177a] Cached process > run_admixture ( 10 - 1907 )
+Jun-14 11:56:56.613 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [41/f0f0d3] Cached process > run_admixture ( 10 - 1499 )
+Jun-14 11:56:56.614 [Actor Thread 46] DEBUG nextflow.Session - <<< barrier arrive (process: run_admixture)
+Jun-14 11:56:57.018 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [fa/a14d5f] Cached process > concat_replicate_logs ( 4 )
+Jun-14 11:56:57.056 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [31/17a68e] Cached process > concat_replicate_logs ( 5 )
+Jun-14 11:56:57.130 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [7f/78f7bb] Cached process > concat_replicate_logs ( 6 )
+Jun-14 11:56:57.297 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [6f/4487fe] Cached process > concat_replicate_logs ( 2 )
+Jun-14 11:56:57.304 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [f7/f068a1] Cached process > concat_replicate_logs ( 7 )
+Jun-14 11:56:57.358 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [76/27b577] Cached process > concat_replicate_logs ( 3 )
+Jun-14 11:56:57.525 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [42/c87eb0] Cached process > concat_replicate_logs ( 8 )
+Jun-14 11:56:57.598 [Actor Thread 48] INFO  nextflow.processor.TaskProcessor - [43/b50829] Cached process > concat_replicate_logs ( 9 )
+Jun-14 11:56:57.680 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [3d/90e8b5] Cached process > concat_replicate_logs ( 10 )
+Jun-14 11:56:57.682 [Actor Thread 47] DEBUG nextflow.Session - <<< barrier arrive (process: concat_replicate_logs)
+Jun-14 11:56:57.686 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [03/776b4e] Cached process > concat_pop_logs
+Jun-14 11:56:57.689 [Actor Thread 46] DEBUG nextflow.Session - <<< barrier arrive (process: concat_pop_logs)
+Jun-14 11:56:57.694 [Actor Thread 48] DEBUG n.splitter.AbstractTextSplitter - Splitter `Text` collector path: nextflow.splitter.TextFileCollector$CachePath(/projects/b1042/AndersenLab/work/stefan/22/2bc4a766cffbadc974b97729d89098/bestK.txt, null)
+Jun-14 11:56:57.702 [Actor Thread 48] DEBUG nextflow.splitter.AbstractSplitter - Operator `Text` reusing cached chunks at path: /projects/b1042/AndersenLab/work/stefan/22/2bc4a766cffbadc974b97729d89098/bestK.txt
+Jun-14 11:57:02.805 [Actor Thread 48] INFO  nextflow.processor.TaskProcessor - [b3/ccfbbe] Cached process > run_admixture_besk_k (4)
+Jun-14 11:57:03.119 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [8d/5d6008] Cached process > run_admixture_besk_k (2)
+Jun-14 11:57:03.200 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [86/abe218] Cached process > run_admixture_besk_k (5)
+Jun-14 11:57:03.217 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [55/7ca226] Cached process > run_admixture_besk_k (3)
+Jun-14 11:57:03.309 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [c6/881468] Cached process > run_admixture_besk_k (1)
+Jun-14 11:57:03.312 [Actor Thread 46] DEBUG nextflow.Session - <<< barrier arrive (process: run_admixture_besk_k)
+Jun-14 11:57:21.167 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [6f/c06a78] Cached process > popgenome_gene_kpop (I)
+Jun-14 11:57:22.024 [Actor Thread 53] INFO  nextflow.processor.TaskProcessor - [42/6b552f] Cached process > popgenome_gene_kpop (II)
+Jun-14 11:57:22.089 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (I) > jobId: 382443; workDir: /projects/b1042/AndersenLab/work/stefan/de/d12eac34b242ab0a84fc7be56f3521
+Jun-14 11:57:22.089 [Task submitter] INFO  nextflow.Session - [de/d12eac] Submitted process > popgenome_window_kpop (I)
+Jun-14 11:57:22.170 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (I) > jobId: 382444; workDir: /projects/b1042/AndersenLab/work/stefan/57/f2dfc17a8ddb5d0ba9987c8522762e
+Jun-14 11:57:22.170 [Task submitter] INFO  nextflow.Session - [57/f2dfc1] Submitted process > popgenome_window_kpop (I)
+Jun-14 11:57:22.659 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (I) > jobId: 382445; workDir: /projects/b1042/AndersenLab/work/stefan/a3/a7939baf8f7685ab398bd83dac03b1
+Jun-14 11:57:22.659 [Task submitter] INFO  nextflow.Session - [a3/a7939b] Submitted process > popgenome_window_kpop (I)
+Jun-14 11:57:23.361 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (I) > jobId: 382446; workDir: /projects/b1042/AndersenLab/work/stefan/7c/da6ecf0e38d23df629f33dc29ec531
+Jun-14 11:57:23.361 [Task submitter] INFO  nextflow.Session - [7c/da6ecf] Submitted process > popgenome_window_kpop (I)
+Jun-14 11:57:23.404 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (I) > jobId: 382447; workDir: /projects/b1042/AndersenLab/work/stefan/e1/fa69d04aa650981b33668ce09104bf
+Jun-14 11:57:23.405 [Task submitter] INFO  nextflow.Session - [e1/fa69d0] Submitted process > popgenome_window_kpop (I)
+Jun-14 11:57:23.682 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [67/989f62] Cached process > popgenome_gene_kpop (I)
+Jun-14 11:57:23.742 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [7e/d3da32] Cached process > popgenome_gene_kpop (I)
+Jun-14 11:57:23.854 [Actor Thread 51] INFO  nextflow.processor.TaskProcessor - [92/d8e3ce] Cached process > popgenome_gene_kpop (I)
+Jun-14 11:57:24.144 [Actor Thread 52] INFO  nextflow.processor.TaskProcessor - [41/97ed96] Cached process > popgenome_gene_kpop (I)
+Jun-14 11:57:26.947 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (II) > jobId: 382448; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01
+Jun-14 11:57:26.948 [Task submitter] INFO  nextflow.Session - [22/025b10] Submitted process > popgenome_window_kpop (II)
+Jun-14 11:57:41.348 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [a0/d8463b] Cached process > popgenome_gene_kpop (II)
+Jun-14 11:57:41.965 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (III) > jobId: 382451; workDir: /projects/b1042/AndersenLab/work/stefan/49/11827eec56cb3bb6669323c360f796
+Jun-14 11:57:41.965 [Task submitter] INFO  nextflow.Session - [49/11827e] Submitted process > popgenome_window_kpop (III)
+Jun-14 11:57:42.006 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (II) > jobId: 382452; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660
+Jun-14 11:57:42.007 [Task submitter] INFO  nextflow.Session - [84/1981f8] Submitted process > popgenome_window_kpop (II)
+Jun-14 11:57:42.547 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (II) > jobId: 382453; workDir: /projects/b1042/AndersenLab/work/stefan/e6/25a34056fe7515fd0a03318b43ce18
+Jun-14 11:57:42.547 [Task submitter] INFO  nextflow.Session - [e6/25a340] Submitted process > popgenome_window_kpop (II)
+Jun-14 11:57:42.710 [Actor Thread 55] INFO  nextflow.processor.TaskProcessor - [c7/0ae40a] Cached process > popgenome_gene_kpop (II)
+Jun-14 11:57:43.037 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (II) > jobId: 382454; workDir: /projects/b1042/AndersenLab/work/stefan/54/179c4e5a83960aaa093e9cfe2df2a1
+Jun-14 11:57:43.037 [Task submitter] INFO  nextflow.Session - [54/179c4e] Submitted process > popgenome_window_kpop (II)
+Jun-14 11:57:43.545 [Actor Thread 51] INFO  nextflow.processor.TaskProcessor - [98/514e46] Cached process > popgenome_gene_kpop (III)
+Jun-14 11:57:43.740 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (II) > jobId: 382455; workDir: /projects/b1042/AndersenLab/work/stefan/73/0ed7d0190cb390db28f881b2197f59
+Jun-14 11:57:43.740 [Task submitter] INFO  nextflow.Session - [73/0ed7d0] Submitted process > popgenome_window_kpop (II)
+Jun-14 11:57:43.740 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [f6/312fc7] Cached process > popgenome_gene_kpop (III)
+Jun-14 11:57:44.145 [Actor Thread 53] INFO  nextflow.processor.TaskProcessor - [3a/d0a0e1] Cached process > popgenome_gene_kpop (II)
+Jun-14 11:57:45.805 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [5d/d4b16f] Cached process > popgenome_gene_kpop (II)
+Jun-14 11:57:53.039 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (III) > jobId: 382456; workDir: /projects/b1042/AndersenLab/work/stefan/81/fe57eb2b679e926ce677e47b81df3d
+Jun-14 11:57:53.040 [Task submitter] INFO  nextflow.Session - [81/fe57eb] Submitted process > popgenome_window_kpop (III)
+Jun-14 11:58:02.044 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (III) > jobId: 382458; workDir: /projects/b1042/AndersenLab/work/stefan/e6/c53835ece24795b6e0a3f77cde5ee7
+Jun-14 11:58:02.044 [Task submitter] INFO  nextflow.Session - [e6/c53835] Submitted process > popgenome_window_kpop (III)
+Jun-14 11:58:03.156 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [8e/7dafa1] Cached process > popgenome_gene_kpop (III)
+Jun-14 11:58:03.588 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (III) > jobId: 382459; workDir: /projects/b1042/AndersenLab/work/stefan/f7/b6bab6dd2bbc027014123a9bd2fa44
+Jun-14 11:58:03.588 [Task submitter] INFO  nextflow.Session - [f7/b6bab6] Submitted process > popgenome_window_kpop (III)
+Jun-14 11:58:03.890 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [13/d438bb] Cached process > popgenome_gene_kpop (III)
+Jun-14 11:58:04.131 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (IV) > jobId: 382460; workDir: /projects/b1042/AndersenLab/work/stefan/57/18dc9114ebaa002f9fc472b5d0ab62
+Jun-14 11:58:04.131 [Task submitter] INFO  nextflow.Session - [57/18dc91] Submitted process > popgenome_window_kpop (IV)
+Jun-14 11:58:04.281 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (III) > jobId: 382461; workDir: /projects/b1042/AndersenLab/work/stefan/35/e055173065a515a61cca5ea36b1a75
+Jun-14 11:58:04.281 [Task submitter] INFO  nextflow.Session - [35/e05517] Submitted process > popgenome_window_kpop (III)
+Jun-14 11:58:05.108 [Actor Thread 51] INFO  nextflow.processor.TaskProcessor - [1c/725afa] Cached process > popgenome_gene_kpop (III)
+Jun-14 11:58:05.488 [Actor Thread 53] INFO  nextflow.processor.TaskProcessor - [3a/4ae5d9] Cached process > popgenome_gene_kpop (IV)
+Jun-14 11:58:05.549 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (IV) > jobId: 382462; workDir: /projects/b1042/AndersenLab/work/stefan/bc/c1ce48f3e528584320f86f876f4672
+Jun-14 11:58:05.549 [Task submitter] INFO  nextflow.Session - [bc/c1ce48] Submitted process > popgenome_window_kpop (IV)
+Jun-14 11:58:05.994 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [1d/a4be36] Cached process > popgenome_gene_kpop (IV)
+Jun-14 11:58:06.123 [Actor Thread 55] INFO  nextflow.processor.TaskProcessor - [f1/3bd449] Cached process > popgenome_gene_kpop (IV)
+Jun-14 11:58:13.671 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (IV) > jobId: 382463; workDir: /projects/b1042/AndersenLab/work/stefan/3e/59b4f7a978b11930ac801bfca3a744
+Jun-14 11:58:13.671 [Task submitter] INFO  nextflow.Session - [3e/59b4f7] Submitted process > popgenome_window_kpop (IV)
+Jun-14 11:58:20.594 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (IV) > jobId: 382464; workDir: /projects/b1042/AndersenLab/work/stefan/5a/047961eeb898640052558497206cf6
+Jun-14 11:58:20.595 [Task submitter] INFO  nextflow.Session - [5a/047961] Submitted process > popgenome_window_kpop (IV)
+Jun-14 11:58:21.362 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (IV) > jobId: 382465; workDir: /projects/b1042/AndersenLab/work/stefan/f8/e50134a9ad53dd7db1c3b38aef4610
+Jun-14 11:58:21.366 [Task submitter] INFO  nextflow.Session - [f8/e50134] Submitted process > popgenome_window_kpop (IV)
+Jun-14 11:58:22.072 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [9a/aa379c] Cached process > popgenome_gene_kpop (IV)
+Jun-14 11:58:22.189 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [fd/e375d2] Cached process > popgenome_gene_kpop (V)
+Jun-14 11:58:22.342 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [84/633342] Cached process > popgenome_gene_kpop (IV)
+Jun-14 11:58:22.402 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (V) > jobId: 382466; workDir: /projects/b1042/AndersenLab/work/stefan/e7/4e3b813729ab41557f7611c3276239
+Jun-14 11:58:22.403 [Task submitter] INFO  nextflow.Session - [e7/4e3b81] Submitted process > popgenome_window_kpop (V)
+Jun-14 11:58:22.651 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (V) > jobId: 382467; workDir: /projects/b1042/AndersenLab/work/stefan/23/c13259f76611683bb2ce2a77cf5ad1
+Jun-14 11:58:22.652 [Task submitter] INFO  nextflow.Session - [23/c13259] Submitted process > popgenome_window_kpop (V)
+Jun-14 11:58:22.784 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [9e/71b786] Cached process > popgenome_gene_kpop (V)
+Jun-14 11:58:22.920 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [e8/1f6358] Cached process > popgenome_gene_kpop (V)
+Jun-14 11:58:23.053 [Actor Thread 53] INFO  nextflow.processor.TaskProcessor - [5a/d08f49] Cached process > popgenome_gene_kpop (V)
+Jun-14 11:58:23.161 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (V) > jobId: 382468; workDir: /projects/b1042/AndersenLab/work/stefan/74/8c0796fa3cdc8c110fe0b3ccdffb99
+Jun-14 11:58:23.161 [Task submitter] INFO  nextflow.Session - [74/8c0796] Submitted process > popgenome_window_kpop (V)
+Jun-14 11:58:29.338 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (V) > jobId: 382469; workDir: /projects/b1042/AndersenLab/work/stefan/dc/f223ebbe3fd43997ae9fb1472f108d
+Jun-14 11:58:29.339 [Task submitter] INFO  nextflow.Session - [dc/f223eb] Submitted process > popgenome_window_kpop (V)
+Jun-14 11:58:39.297 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (X) > jobId: 382471; workDir: /projects/b1042/AndersenLab/work/stefan/a7/a5b2e123ff11ca1a3340d61b6c3129
+Jun-14 11:58:39.297 [Task submitter] INFO  nextflow.Session - [a7/a5b2e1] Submitted process > popgenome_window_kpop (X)
+Jun-14 11:58:39.504 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (V) > jobId: 382472; workDir: /projects/b1042/AndersenLab/work/stefan/f8/ed497084a61517c5dfaef72f988057
+Jun-14 11:58:39.505 [Task submitter] INFO  nextflow.Session - [f8/ed4970] Submitted process > popgenome_window_kpop (V)
+Jun-14 11:58:39.925 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [27/7216a6] Cached process > popgenome_gene_kpop (X)
+Jun-14 11:58:39.925 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [df/7028f9] Cached process > popgenome_gene_kpop (V)
+Jun-14 11:58:40.543 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [3f/9cd8f3] Cached process > popgenome_gene_kpop (X)
+Jun-14 11:58:40.736 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (X) > jobId: 382473; workDir: /projects/b1042/AndersenLab/work/stefan/80/f9237abffc1217cbd53a12e547f755
+Jun-14 11:58:40.736 [Task submitter] INFO  nextflow.Session - [80/f9237a] Submitted process > popgenome_window_kpop (X)
+Jun-14 11:58:40.936 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [32/c0ee1f] Cached process > popgenome_gene_kpop (X)
+Jun-14 11:58:40.946 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (X) > jobId: 382474; workDir: /projects/b1042/AndersenLab/work/stefan/29/8ba0a58ab41c7b873f86faaea013b9
+Jun-14 11:58:40.946 [Task submitter] INFO  nextflow.Session - [29/8ba0a5] Submitted process > popgenome_window_kpop (X)
+Jun-14 11:58:41.042 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [f5/097051] Cached process > popgenome_gene_kpop (X)
+Jun-14 11:58:41.116 [Actor Thread 53] INFO  nextflow.processor.TaskProcessor - [a8/9db2c1] Cached process > popgenome_gene_kpop (X)
+Jun-14 11:58:41.118 [Actor Thread 60] DEBUG nextflow.Session - <<< barrier arrive (process: popgenome_gene_kpop)
+Jun-14 11:58:41.153 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (X) > jobId: 382475; workDir: /projects/b1042/AndersenLab/work/stefan/a1/f62b6e5d23886787a29529cac50628
+Jun-14 11:58:41.154 [Task submitter] INFO  nextflow.Session - [a1/f62b6e] Submitted process > popgenome_window_kpop (X)
+Jun-14 11:58:41.960 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process popgenome_window_kpop (X) > jobId: 382476; workDir: /projects/b1042/AndersenLab/work/stefan/c1/d576a4a83dc26b6eb016c5efc8a581
+Jun-14 11:58:41.961 [Task submitter] INFO  nextflow.Session - [c1/d576a4] Submitted process > popgenome_window_kpop (X)
+Jun-14 11:59:02.029 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 11:59:06.649 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 32 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: -; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: -; exited: -; ]
+~> TaskHandler[jobId: 382443; id: 138; name: popgenome_window_kpop (I); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/d12eac34b242ab0a84fc7be56f3521 started: -; exited: -; ]
+~> TaskHandler[jobId: 382444; id: 140; name: popgenome_window_kpop (I); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/f2dfc17a8ddb5d0ba9987c8522762e started: -; exited: -; ]
+~> TaskHandler[jobId: 382445; id: 139; name: popgenome_window_kpop (I); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a3/a7939baf8f7685ab398bd83dac03b1 started: -; exited: -; ]
+~> TaskHandler[jobId: 382446; id: 135; name: popgenome_window_kpop (I); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/7c/da6ecf0e38d23df629f33dc29ec531 started: -; exited: -; ]
+~> TaskHandler[jobId: 382447; id: 136; name: popgenome_window_kpop (I); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e1/fa69d04aa650981b33668ce09104bf started: -; exited: -; ]
+~> TaskHandler[jobId: 382448; id: 137; name: popgenome_window_kpop (II); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01 started: -; exited: -; ]
+~> TaskHandler[jobId: 382451; id: 153; name: popgenome_window_kpop (III); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/11827eec56cb3bb6669323c360f796 started: -; exited: -; ]
+~> TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: -; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 12:04:02.014 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 12:04:06.719 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 32 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382443; id: 138; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/d12eac34b242ab0a84fc7be56f3521 started: 1560531706977; exited: -; ]
+~> TaskHandler[jobId: 382444; id: 140; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/f2dfc17a8ddb5d0ba9987c8522762e started: 1560531707161; exited: -; ]
+~> TaskHandler[jobId: 382445; id: 139; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a3/a7939baf8f7685ab398bd83dac03b1 started: 1560531711960; exited: -; ]
+~> TaskHandler[jobId: 382446; id: 135; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/7c/da6ecf0e38d23df629f33dc29ec531 started: 1560531721877; exited: -; ]
+~> TaskHandler[jobId: 382447; id: 136; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e1/fa69d04aa650981b33668ce09104bf started: 1560531752012; exited: -; ]
+~> TaskHandler[jobId: 382448; id: 137; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01 started: 1560531767010; exited: -; ]
+~> TaskHandler[jobId: 382451; id: 153; name: popgenome_window_kpop (III); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/11827eec56cb3bb6669323c360f796 started: 1560531836875; exited: -; ]
+~> TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: 1560531842327; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 12:09:02.071 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 12:09:06.731 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 32 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382443; id: 138; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/d12eac34b242ab0a84fc7be56f3521 started: 1560531706977; exited: -; ]
+~> TaskHandler[jobId: 382444; id: 140; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/f2dfc17a8ddb5d0ba9987c8522762e started: 1560531707161; exited: -; ]
+~> TaskHandler[jobId: 382445; id: 139; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a3/a7939baf8f7685ab398bd83dac03b1 started: 1560531711960; exited: -; ]
+~> TaskHandler[jobId: 382446; id: 135; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/7c/da6ecf0e38d23df629f33dc29ec531 started: 1560531721877; exited: -; ]
+~> TaskHandler[jobId: 382447; id: 136; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e1/fa69d04aa650981b33668ce09104bf started: 1560531752012; exited: -; ]
+~> TaskHandler[jobId: 382448; id: 137; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01 started: 1560531767010; exited: -; ]
+~> TaskHandler[jobId: 382451; id: 153; name: popgenome_window_kpop (III); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/11827eec56cb3bb6669323c360f796 started: 1560531836875; exited: -; ]
+~> TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: 1560531842327; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 12:14:02.121 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 12:14:06.741 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 32 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382443; id: 138; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/d12eac34b242ab0a84fc7be56f3521 started: 1560531706977; exited: -; ]
+~> TaskHandler[jobId: 382444; id: 140; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/f2dfc17a8ddb5d0ba9987c8522762e started: 1560531707161; exited: -; ]
+~> TaskHandler[jobId: 382445; id: 139; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a3/a7939baf8f7685ab398bd83dac03b1 started: 1560531711960; exited: -; ]
+~> TaskHandler[jobId: 382446; id: 135; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/7c/da6ecf0e38d23df629f33dc29ec531 started: 1560531721877; exited: -; ]
+~> TaskHandler[jobId: 382447; id: 136; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e1/fa69d04aa650981b33668ce09104bf started: 1560531752012; exited: -; ]
+~> TaskHandler[jobId: 382448; id: 137; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01 started: 1560531767010; exited: -; ]
+~> TaskHandler[jobId: 382451; id: 153; name: popgenome_window_kpop (III); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/11827eec56cb3bb6669323c360f796 started: 1560531836875; exited: -; ]
+~> TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: 1560531842327; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 12:19:02.169 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 12:19:06.749 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 32 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382443; id: 138; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/d12eac34b242ab0a84fc7be56f3521 started: 1560531706977; exited: -; ]
+~> TaskHandler[jobId: 382444; id: 140; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/f2dfc17a8ddb5d0ba9987c8522762e started: 1560531707161; exited: -; ]
+~> TaskHandler[jobId: 382445; id: 139; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a3/a7939baf8f7685ab398bd83dac03b1 started: 1560531711960; exited: -; ]
+~> TaskHandler[jobId: 382446; id: 135; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/7c/da6ecf0e38d23df629f33dc29ec531 started: 1560531721877; exited: -; ]
+~> TaskHandler[jobId: 382447; id: 136; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e1/fa69d04aa650981b33668ce09104bf started: 1560531752012; exited: -; ]
+~> TaskHandler[jobId: 382448; id: 137; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01 started: 1560531767010; exited: -; ]
+~> TaskHandler[jobId: 382451; id: 153; name: popgenome_window_kpop (III); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/11827eec56cb3bb6669323c360f796 started: 1560531836875; exited: -; ]
+~> TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: 1560531842327; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 12:24:02.221 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 12:24:06.760 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 32 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382443; id: 138; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/d12eac34b242ab0a84fc7be56f3521 started: 1560531706977; exited: -; ]
+~> TaskHandler[jobId: 382444; id: 140; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/f2dfc17a8ddb5d0ba9987c8522762e started: 1560531707161; exited: -; ]
+~> TaskHandler[jobId: 382445; id: 139; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a3/a7939baf8f7685ab398bd83dac03b1 started: 1560531711960; exited: -; ]
+~> TaskHandler[jobId: 382446; id: 135; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/7c/da6ecf0e38d23df629f33dc29ec531 started: 1560531721877; exited: -; ]
+~> TaskHandler[jobId: 382447; id: 136; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e1/fa69d04aa650981b33668ce09104bf started: 1560531752012; exited: -; ]
+~> TaskHandler[jobId: 382448; id: 137; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01 started: 1560531767010; exited: -; ]
+~> TaskHandler[jobId: 382451; id: 153; name: popgenome_window_kpop (III); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/11827eec56cb3bb6669323c360f796 started: 1560531836875; exited: -; ]
+~> TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: 1560531842327; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 12:29:02.277 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 12:29:06.771 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 32 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382443; id: 138; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/d12eac34b242ab0a84fc7be56f3521 started: 1560531706977; exited: -; ]
+~> TaskHandler[jobId: 382444; id: 140; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/f2dfc17a8ddb5d0ba9987c8522762e started: 1560531707161; exited: -; ]
+~> TaskHandler[jobId: 382445; id: 139; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a3/a7939baf8f7685ab398bd83dac03b1 started: 1560531711960; exited: -; ]
+~> TaskHandler[jobId: 382446; id: 135; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/7c/da6ecf0e38d23df629f33dc29ec531 started: 1560531721877; exited: -; ]
+~> TaskHandler[jobId: 382447; id: 136; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e1/fa69d04aa650981b33668ce09104bf started: 1560531752012; exited: -; ]
+~> TaskHandler[jobId: 382448; id: 137; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01 started: 1560531767010; exited: -; ]
+~> TaskHandler[jobId: 382451; id: 153; name: popgenome_window_kpop (III); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/11827eec56cb3bb6669323c360f796 started: 1560531836875; exited: -; ]
+~> TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: 1560531842327; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 12:34:02.329 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 12:34:06.779 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 32 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382443; id: 138; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/d12eac34b242ab0a84fc7be56f3521 started: 1560531706977; exited: -; ]
+~> TaskHandler[jobId: 382444; id: 140; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/f2dfc17a8ddb5d0ba9987c8522762e started: 1560531707161; exited: -; ]
+~> TaskHandler[jobId: 382445; id: 139; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a3/a7939baf8f7685ab398bd83dac03b1 started: 1560531711960; exited: -; ]
+~> TaskHandler[jobId: 382446; id: 135; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/7c/da6ecf0e38d23df629f33dc29ec531 started: 1560531721877; exited: -; ]
+~> TaskHandler[jobId: 382447; id: 136; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e1/fa69d04aa650981b33668ce09104bf started: 1560531752012; exited: -; ]
+~> TaskHandler[jobId: 382448; id: 137; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01 started: 1560531767010; exited: -; ]
+~> TaskHandler[jobId: 382451; id: 153; name: popgenome_window_kpop (III); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/11827eec56cb3bb6669323c360f796 started: 1560531836875; exited: -; ]
+~> TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: 1560531842327; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 12:39:02.371 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 12:39:06.786 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 32 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382443; id: 138; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/d12eac34b242ab0a84fc7be56f3521 started: 1560531706977; exited: -; ]
+~> TaskHandler[jobId: 382444; id: 140; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/f2dfc17a8ddb5d0ba9987c8522762e started: 1560531707161; exited: -; ]
+~> TaskHandler[jobId: 382445; id: 139; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a3/a7939baf8f7685ab398bd83dac03b1 started: 1560531711960; exited: -; ]
+~> TaskHandler[jobId: 382446; id: 135; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/7c/da6ecf0e38d23df629f33dc29ec531 started: 1560531721877; exited: -; ]
+~> TaskHandler[jobId: 382447; id: 136; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e1/fa69d04aa650981b33668ce09104bf started: 1560531752012; exited: -; ]
+~> TaskHandler[jobId: 382448; id: 137; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01 started: 1560531767010; exited: -; ]
+~> TaskHandler[jobId: 382451; id: 153; name: popgenome_window_kpop (III); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/11827eec56cb3bb6669323c360f796 started: 1560531836875; exited: -; ]
+~> TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: 1560531842327; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 12:44:02.422 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 12:44:06.797 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 32 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382443; id: 138; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/d12eac34b242ab0a84fc7be56f3521 started: 1560531706977; exited: -; ]
+~> TaskHandler[jobId: 382444; id: 140; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/f2dfc17a8ddb5d0ba9987c8522762e started: 1560531707161; exited: -; ]
+~> TaskHandler[jobId: 382445; id: 139; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a3/a7939baf8f7685ab398bd83dac03b1 started: 1560531711960; exited: -; ]
+~> TaskHandler[jobId: 382446; id: 135; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/7c/da6ecf0e38d23df629f33dc29ec531 started: 1560531721877; exited: -; ]
+~> TaskHandler[jobId: 382447; id: 136; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e1/fa69d04aa650981b33668ce09104bf started: 1560531752012; exited: -; ]
+~> TaskHandler[jobId: 382448; id: 137; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01 started: 1560531767010; exited: -; ]
+~> TaskHandler[jobId: 382451; id: 153; name: popgenome_window_kpop (III); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/11827eec56cb3bb6669323c360f796 started: 1560531836875; exited: -; ]
+~> TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: 1560531842327; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 12:49:02.468 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 12:49:06.805 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 32 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382443; id: 138; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/d12eac34b242ab0a84fc7be56f3521 started: 1560531706977; exited: -; ]
+~> TaskHandler[jobId: 382444; id: 140; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/f2dfc17a8ddb5d0ba9987c8522762e started: 1560531707161; exited: -; ]
+~> TaskHandler[jobId: 382445; id: 139; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a3/a7939baf8f7685ab398bd83dac03b1 started: 1560531711960; exited: -; ]
+~> TaskHandler[jobId: 382446; id: 135; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/7c/da6ecf0e38d23df629f33dc29ec531 started: 1560531721877; exited: -; ]
+~> TaskHandler[jobId: 382447; id: 136; name: popgenome_window_kpop (I); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e1/fa69d04aa650981b33668ce09104bf started: 1560531752012; exited: -; ]
+~> TaskHandler[jobId: 382448; id: 137; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01 started: 1560531767010; exited: -; ]
+~> TaskHandler[jobId: 382451; id: 153; name: popgenome_window_kpop (III); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/11827eec56cb3bb6669323c360f796 started: 1560531836875; exited: -; ]
+~> TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: 1560531842327; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 12:49:26.917 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382443; id: 138; name: popgenome_window_kpop (I); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/d12eac34b242ab0a84fc7be56f3521 started: 1560531706977; exited: 2019-06-14T17:49:26.528726Z; ]
+Jun-14 12:49:37.212 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382447; id: 136; name: popgenome_window_kpop (I); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e1/fa69d04aa650981b33668ce09104bf started: 1560531752012; exited: 2019-06-14T17:49:32.908815Z; ]
+Jun-14 12:50:17.204 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382445; id: 139; name: popgenome_window_kpop (I); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a3/a7939baf8f7685ab398bd83dac03b1 started: 1560531711960; exited: 2019-06-14T17:50:15.886801Z; ]
+Jun-14 12:51:06.906 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382444; id: 140; name: popgenome_window_kpop (I); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/f2dfc17a8ddb5d0ba9987c8522762e started: 1560531707161; exited: 2019-06-14T17:51:05.763764Z; ]
+Jun-14 12:51:08.059 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382451; id: 153; name: popgenome_window_kpop (III); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/49/11827eec56cb3bb6669323c360f796 started: 1560531836875; exited: 2019-06-14T17:51:05.453022Z; ]
+Jun-14 12:51:57.166 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382459; id: 162; name: popgenome_window_kpop (III); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f7/b6bab6dd2bbc027014123a9bd2fa44 started: 1560532002190; exited: 2019-06-14T17:51:54.995071Z; ]
+Jun-14 12:52:17.376 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382446; id: 135; name: popgenome_window_kpop (I); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/7c/da6ecf0e38d23df629f33dc29ec531 started: 1560531721877; exited: 2019-06-14T17:52:15.485281Z; ]
+Jun-14 12:52:27.177 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382456; id: 158; name: popgenome_window_kpop (III); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/81/fe57eb2b679e926ce677e47b81df3d started: 1560531902335; exited: 2019-06-14T17:52:22.810415Z; ]
+Jun-14 12:53:21.886 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382458; id: 161; name: popgenome_window_kpop (III); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e6/c53835ece24795b6e0a3f77cde5ee7 started: 1560531997589; exited: 2019-06-14T17:53:18.931952Z; ]
+Jun-14 12:53:51.959 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382461; id: 160; name: popgenome_window_kpop (III); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/35/e055173065a515a61cca5ea36b1a75 started: 1560532023047; exited: 2019-06-14T17:53:48.674307Z; ]
+Jun-14 12:54:02.516 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 12:54:06.811 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 22 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382448; id: 137; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01 started: 1560531767010; exited: -; ]
+~> TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: 1560531842327; exited: -; ]
+~> TaskHandler[jobId: 382453; id: 150; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e6/25a34056fe7515fd0a03318b43ce18 started: 1560531862038; exited: -; ]
+~> TaskHandler[jobId: 382454; id: 152; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/54/179c4e5a83960aaa093e9cfe2df2a1 started: 1560531882661; exited: -; ]
+~> TaskHandler[jobId: 382455; id: 151; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/73/0ed7d0190cb390db28f881b2197f59 started: 1560531887723; exited: -; ]
+~> TaskHandler[jobId: 382460; id: 164; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/18dc9114ebaa002f9fc472b5d0ab62 started: 1560532012362; exited: -; ]
+~> TaskHandler[jobId: 382462; id: 166; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/c1ce48f3e528584320f86f876f4672 started: 1560532027004; exited: -; ]
+~> TaskHandler[jobId: 382463; id: 170; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/3e/59b4f7a978b11930ac801bfca3a744 started: 1560532046839; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 12:59:02.568 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 12:59:06.819 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 22 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382448; id: 137; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01 started: 1560531767010; exited: -; ]
+~> TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: 1560531842327; exited: -; ]
+~> TaskHandler[jobId: 382453; id: 150; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e6/25a34056fe7515fd0a03318b43ce18 started: 1560531862038; exited: -; ]
+~> TaskHandler[jobId: 382454; id: 152; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/54/179c4e5a83960aaa093e9cfe2df2a1 started: 1560531882661; exited: -; ]
+~> TaskHandler[jobId: 382455; id: 151; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/73/0ed7d0190cb390db28f881b2197f59 started: 1560531887723; exited: -; ]
+~> TaskHandler[jobId: 382460; id: 164; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/18dc9114ebaa002f9fc472b5d0ab62 started: 1560532012362; exited: -; ]
+~> TaskHandler[jobId: 382462; id: 166; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/c1ce48f3e528584320f86f876f4672 started: 1560532027004; exited: -; ]
+~> TaskHandler[jobId: 382463; id: 170; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/3e/59b4f7a978b11930ac801bfca3a744 started: 1560532046839; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 13:01:26.928 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382448; id: 137; name: popgenome_window_kpop (II); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/22/025b1081a349e97c88d800831c9d01 started: 1560531767010; exited: 2019-06-14T18:01:23.369889Z; ]
+Jun-14 13:01:56.934 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382453; id: 150; name: popgenome_window_kpop (II); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e6/25a34056fe7515fd0a03318b43ce18 started: 1560531862038; exited: 2019-06-14T18:01:54.95946Z; ]
+Jun-14 13:02:22.045 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382454; id: 152; name: popgenome_window_kpop (II); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/54/179c4e5a83960aaa093e9cfe2df2a1 started: 1560531882661; exited: 2019-06-14T18:02:18.975936Z; ]
+Jun-14 13:03:51.921 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382455; id: 151; name: popgenome_window_kpop (II); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/73/0ed7d0190cb390db28f881b2197f59 started: 1560531887723; exited: 2019-06-14T18:03:50.468574Z; ]
+Jun-14 13:04:02.621 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 13:04:06.829 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 18 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: 1560531842327; exited: -; ]
+~> TaskHandler[jobId: 382460; id: 164; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/18dc9114ebaa002f9fc472b5d0ab62 started: 1560532012362; exited: -; ]
+~> TaskHandler[jobId: 382462; id: 166; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/c1ce48f3e528584320f86f876f4672 started: 1560532027004; exited: -; ]
+~> TaskHandler[jobId: 382463; id: 170; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/3e/59b4f7a978b11930ac801bfca3a744 started: 1560532046839; exited: -; ]
+~> TaskHandler[jobId: 382464; id: 171; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/5a/047961eeb898640052558497206cf6 started: 1560532056881; exited: -; ]
+~> TaskHandler[jobId: 382465; id: 173; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f8/e50134a9ad53dd7db1c3b38aef4610 started: 1560532081905; exited: -; ]
+~> TaskHandler[jobId: 382466; id: 175; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e7/4e3b813729ab41557f7611c3276239 started: 1560532081997; exited: -; ]
+~> TaskHandler[jobId: 382467; id: 176; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/23/c13259f76611683bb2ce2a77cf5ad1 started: 1560532091914; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 13:05:26.887 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382452; id: 149; name: popgenome_window_kpop (II); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/84/1981f8ee65ec6924124b13c6ccd660 started: 1560531842327; exited: 2019-06-14T18:05:25.562056Z; ]
+Jun-14 13:08:47.175 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382465; id: 173; name: popgenome_window_kpop (IV); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f8/e50134a9ad53dd7db1c3b38aef4610 started: 1560532081905; exited: 2019-06-14T18:08:44.804032Z; ]
+Jun-14 13:09:02.671 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 13:09:06.839 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 16 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382460; id: 164; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/18dc9114ebaa002f9fc472b5d0ab62 started: 1560532012362; exited: -; ]
+~> TaskHandler[jobId: 382462; id: 166; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/c1ce48f3e528584320f86f876f4672 started: 1560532027004; exited: -; ]
+~> TaskHandler[jobId: 382463; id: 170; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/3e/59b4f7a978b11930ac801bfca3a744 started: 1560532046839; exited: -; ]
+~> TaskHandler[jobId: 382464; id: 171; name: popgenome_window_kpop (IV); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/5a/047961eeb898640052558497206cf6 started: 1560532056881; exited: -; ]
+~> TaskHandler[jobId: 382466; id: 175; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e7/4e3b813729ab41557f7611c3276239 started: 1560532081997; exited: -; ]
+~> TaskHandler[jobId: 382467; id: 176; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/23/c13259f76611683bb2ce2a77cf5ad1 started: 1560532091914; exited: -; ]
+~> TaskHandler[jobId: 382468; id: 179; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/74/8c0796fa3cdc8c110fe0b3ccdffb99 started: 1560532101830; exited: -; ]
+~> TaskHandler[jobId: 382469; id: 182; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/dc/f223ebbe3fd43997ae9fb1472f108d started: 1560532126844; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 13:09:26.900 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382463; id: 170; name: popgenome_window_kpop (IV); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/3e/59b4f7a978b11930ac801bfca3a744 started: 1560532046839; exited: 2019-06-14T18:09:23.61479Z; ]
+Jun-14 13:10:52.032 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382460; id: 164; name: popgenome_window_kpop (IV); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/57/18dc9114ebaa002f9fc472b5d0ab62 started: 1560532012362; exited: 2019-06-14T18:10:49.846396Z; ]
+Jun-14 13:10:52.583 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382464; id: 171; name: popgenome_window_kpop (IV); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/5a/047961eeb898640052558497206cf6 started: 1560532056881; exited: 2019-06-14T18:10:47.468208Z; ]
+Jun-14 13:12:32.074 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382462; id: 166; name: popgenome_window_kpop (IV); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/c1ce48f3e528584320f86f876f4672 started: 1560532027004; exited: 2019-06-14T18:12:29.775994Z; ]
+Jun-14 13:14:02.726 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] plot_ibdseq
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: haplotype_plot_df.Rda
+  port 1: (cntrl) -     ; channel: $
+
+[process] plot_popgenome_whole_pop
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 13:14:06.849 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 12 -- pending tasks are shown below
+~> TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: -; ]
+~> TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: -; ]
+~> TaskHandler[jobId: 382466; id: 175; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e7/4e3b813729ab41557f7611c3276239 started: 1560532081997; exited: -; ]
+~> TaskHandler[jobId: 382467; id: 176; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/23/c13259f76611683bb2ce2a77cf5ad1 started: 1560532091914; exited: -; ]
+~> TaskHandler[jobId: 382468; id: 179; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/74/8c0796fa3cdc8c110fe0b3ccdffb99 started: 1560532101830; exited: -; ]
+~> TaskHandler[jobId: 382469; id: 182; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/dc/f223ebbe3fd43997ae9fb1472f108d started: 1560532126844; exited: -; ]
+~> TaskHandler[jobId: 382471; id: 184; name: popgenome_window_kpop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a7/a5b2e123ff11ca1a3340d61b6c3129 started: 1560532156913; exited: -; ]
+~> TaskHandler[jobId: 382472; id: 183; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f8/ed497084a61517c5dfaef72f988057 started: 1560532216978; exited: -; ]
+~> TaskHandler[jobId: 382473; id: 188; name: popgenome_window_kpop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/80/f9237abffc1217cbd53a12e547f755 started: 1560532238358; exited: -; ]
+~> TaskHandler[jobId: 382474; id: 189; name: popgenome_window_kpop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/29/8ba0a58ab41c7b873f86faaea013b9 started: 1560532238520; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 13:16:01.875 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382431; id: 25; name: popgenome_whole_pop (X); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/00/617d8feaeca44b77f2f567b5fa0085 started: 1560531571787; exited: 2019-06-14T18:15:57.340113Z; ]
+Jun-14 13:16:02.332 [Actor Thread 63] DEBUG nextflow.Session - <<< barrier arrive (process: popgenome_whole_pop)
+Jun-14 13:16:03.321 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process plot_popgenome_whole_pop > jobId: 384076; workDir: /projects/b1042/AndersenLab/work/stefan/5a/1eee9cfb2658da07fd0a18b02ba2ca
+Jun-14 13:16:03.322 [Task submitter] INFO  nextflow.Session - [5a/1eee9c] Submitted process > plot_popgenome_whole_pop
+Jun-14 13:16:36.898 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382430; id: 27; name: analyze_ibdseq (1); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/6d05f814659b47bd82eb341531cc85 started: 1560531566724; exited: 2019-06-14T18:16:34.530793Z; ]
+Jun-14 13:16:36.906 [Actor Thread 63] DEBUG nextflow.Session - <<< barrier arrive (process: analyze_ibdseq)
+Jun-14 13:16:37.073 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process plot_ibdseq (1) > jobId: 384077; workDir: /projects/b1042/AndersenLab/work/stefan/61/69093d03fcf75b853953bf69f10ca3
+Jun-14 13:16:37.073 [Task submitter] INFO  nextflow.Session - [61/69093d] Submitted process > plot_ibdseq (1)
+Jun-14 13:19:02.782 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 13:19:06.858 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 12 -- pending tasks are shown below
+~> TaskHandler[jobId: 382466; id: 175; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e7/4e3b813729ab41557f7611c3276239 started: 1560532081997; exited: -; ]
+~> TaskHandler[jobId: 382467; id: 176; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/23/c13259f76611683bb2ce2a77cf5ad1 started: 1560532091914; exited: -; ]
+~> TaskHandler[jobId: 382468; id: 179; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/74/8c0796fa3cdc8c110fe0b3ccdffb99 started: 1560532101830; exited: -; ]
+~> TaskHandler[jobId: 382469; id: 182; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/dc/f223ebbe3fd43997ae9fb1472f108d started: 1560532126844; exited: -; ]
+~> TaskHandler[jobId: 382471; id: 184; name: popgenome_window_kpop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a7/a5b2e123ff11ca1a3340d61b6c3129 started: 1560532156913; exited: -; ]
+~> TaskHandler[jobId: 382472; id: 183; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f8/ed497084a61517c5dfaef72f988057 started: 1560532216978; exited: -; ]
+~> TaskHandler[jobId: 382473; id: 188; name: popgenome_window_kpop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/80/f9237abffc1217cbd53a12e547f755 started: 1560532238358; exited: -; ]
+~> TaskHandler[jobId: 382474; id: 189; name: popgenome_window_kpop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/29/8ba0a58ab41c7b873f86faaea013b9 started: 1560532238520; exited: -; ]
+~> TaskHandler[jobId: 382475; id: 193; name: popgenome_window_kpop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a1/f62b6e5d23886787a29529cac50628 started: 1560532261821; exited: -; ]
+~> TaskHandler[jobId: 382476; id: 194; name: popgenome_window_kpop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/c1/d576a4a83dc26b6eb016c5efc8a581 started: 1560532261962; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 13:24:02.837 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 13:24:06.863 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 12 -- pending tasks are shown below
+~> TaskHandler[jobId: 382466; id: 175; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e7/4e3b813729ab41557f7611c3276239 started: 1560532081997; exited: -; ]
+~> TaskHandler[jobId: 382467; id: 176; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/23/c13259f76611683bb2ce2a77cf5ad1 started: 1560532091914; exited: -; ]
+~> TaskHandler[jobId: 382468; id: 179; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/74/8c0796fa3cdc8c110fe0b3ccdffb99 started: 1560532101830; exited: -; ]
+~> TaskHandler[jobId: 382469; id: 182; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/dc/f223ebbe3fd43997ae9fb1472f108d started: 1560532126844; exited: -; ]
+~> TaskHandler[jobId: 382471; id: 184; name: popgenome_window_kpop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a7/a5b2e123ff11ca1a3340d61b6c3129 started: 1560532156913; exited: -; ]
+~> TaskHandler[jobId: 382472; id: 183; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f8/ed497084a61517c5dfaef72f988057 started: 1560532216978; exited: -; ]
+~> TaskHandler[jobId: 382473; id: 188; name: popgenome_window_kpop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/80/f9237abffc1217cbd53a12e547f755 started: 1560532238358; exited: -; ]
+~> TaskHandler[jobId: 382474; id: 189; name: popgenome_window_kpop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/29/8ba0a58ab41c7b873f86faaea013b9 started: 1560532238520; exited: -; ]
+~> TaskHandler[jobId: 382475; id: 193; name: popgenome_window_kpop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a1/f62b6e5d23886787a29529cac50628 started: 1560532261821; exited: -; ]
+~> TaskHandler[jobId: 382476; id: 194; name: popgenome_window_kpop (X); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/c1/d576a4a83dc26b6eb016c5efc8a581 started: 1560532261962; exited: -; ]
+.. remaining tasks omitted.
+Jun-14 13:24:31.954 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382476; id: 194; name: popgenome_window_kpop (X); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/c1/d576a4a83dc26b6eb016c5efc8a581 started: 1560532261962; exited: 2019-06-14T18:24:28.057295Z; ]
+Jun-14 13:25:21.947 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382471; id: 184; name: popgenome_window_kpop (X); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a7/a5b2e123ff11ca1a3340d61b6c3129 started: 1560532156913; exited: 2019-06-14T18:25:20.360491Z; ]
+Jun-14 13:25:51.947 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382474; id: 189; name: popgenome_window_kpop (X); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/29/8ba0a58ab41c7b873f86faaea013b9 started: 1560532238520; exited: 2019-06-14T18:25:47.479219Z; ]
+Jun-14 13:27:11.967 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382475; id: 193; name: popgenome_window_kpop (X); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a1/f62b6e5d23886787a29529cac50628 started: 1560532261821; exited: 2019-06-14T18:27:09.222273Z; ]
+Jun-14 13:28:52.021 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382473; id: 188; name: popgenome_window_kpop (X); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/80/f9237abffc1217cbd53a12e547f755 started: 1560532238358; exited: 2019-06-14T18:28:48.475613Z; ]
+Jun-14 13:29:02.869 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 13:29:06.874 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 7 -- pending tasks are shown below
+~> TaskHandler[jobId: 382466; id: 175; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e7/4e3b813729ab41557f7611c3276239 started: 1560532081997; exited: -; ]
+~> TaskHandler[jobId: 382467; id: 176; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/23/c13259f76611683bb2ce2a77cf5ad1 started: 1560532091914; exited: -; ]
+~> TaskHandler[jobId: 382468; id: 179; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/74/8c0796fa3cdc8c110fe0b3ccdffb99 started: 1560532101830; exited: -; ]
+~> TaskHandler[jobId: 382469; id: 182; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/dc/f223ebbe3fd43997ae9fb1472f108d started: 1560532126844; exited: -; ]
+~> TaskHandler[jobId: 382472; id: 183; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f8/ed497084a61517c5dfaef72f988057 started: 1560532216978; exited: -; ]
+~> TaskHandler[jobId: 384076; id: 195; name: plot_popgenome_whole_pop; status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/5a/1eee9cfb2658da07fd0a18b02ba2ca started: -; exited: -; ]
+~> TaskHandler[jobId: 384077; id: 196; name: plot_ibdseq (1); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/69093d03fcf75b853953bf69f10ca3 started: -; exited: -; ]
+Jun-14 13:34:02.894 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 13:34:06.882 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 7 -- pending tasks are shown below
+~> TaskHandler[jobId: 382466; id: 175; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e7/4e3b813729ab41557f7611c3276239 started: 1560532081997; exited: -; ]
+~> TaskHandler[jobId: 382467; id: 176; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/23/c13259f76611683bb2ce2a77cf5ad1 started: 1560532091914; exited: -; ]
+~> TaskHandler[jobId: 382468; id: 179; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/74/8c0796fa3cdc8c110fe0b3ccdffb99 started: 1560532101830; exited: -; ]
+~> TaskHandler[jobId: 382469; id: 182; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/dc/f223ebbe3fd43997ae9fb1472f108d started: 1560532126844; exited: -; ]
+~> TaskHandler[jobId: 382472; id: 183; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f8/ed497084a61517c5dfaef72f988057 started: 1560532216978; exited: -; ]
+~> TaskHandler[jobId: 384076; id: 195; name: plot_popgenome_whole_pop; status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/5a/1eee9cfb2658da07fd0a18b02ba2ca started: -; exited: -; ]
+~> TaskHandler[jobId: 384077; id: 196; name: plot_ibdseq (1); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/69093d03fcf75b853953bf69f10ca3 started: -; exited: -; ]
+Jun-14 13:39:02.909 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 13:39:06.890 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 7 -- pending tasks are shown below
+~> TaskHandler[jobId: 382466; id: 175; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e7/4e3b813729ab41557f7611c3276239 started: 1560532081997; exited: -; ]
+~> TaskHandler[jobId: 382467; id: 176; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/23/c13259f76611683bb2ce2a77cf5ad1 started: 1560532091914; exited: -; ]
+~> TaskHandler[jobId: 382468; id: 179; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/74/8c0796fa3cdc8c110fe0b3ccdffb99 started: 1560532101830; exited: -; ]
+~> TaskHandler[jobId: 382469; id: 182; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/dc/f223ebbe3fd43997ae9fb1472f108d started: 1560532126844; exited: -; ]
+~> TaskHandler[jobId: 382472; id: 183; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f8/ed497084a61517c5dfaef72f988057 started: 1560532216978; exited: -; ]
+~> TaskHandler[jobId: 384076; id: 195; name: plot_popgenome_whole_pop; status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/5a/1eee9cfb2658da07fd0a18b02ba2ca started: -; exited: -; ]
+~> TaskHandler[jobId: 384077; id: 196; name: plot_ibdseq (1); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/69093d03fcf75b853953bf69f10ca3 started: -; exited: -; ]
+Jun-14 13:44:02.918 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 13:44:06.899 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 7 -- pending tasks are shown below
+~> TaskHandler[jobId: 382466; id: 175; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e7/4e3b813729ab41557f7611c3276239 started: 1560532081997; exited: -; ]
+~> TaskHandler[jobId: 382467; id: 176; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/23/c13259f76611683bb2ce2a77cf5ad1 started: 1560532091914; exited: -; ]
+~> TaskHandler[jobId: 382468; id: 179; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/74/8c0796fa3cdc8c110fe0b3ccdffb99 started: 1560532101830; exited: -; ]
+~> TaskHandler[jobId: 382469; id: 182; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/dc/f223ebbe3fd43997ae9fb1472f108d started: 1560532126844; exited: -; ]
+~> TaskHandler[jobId: 382472; id: 183; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f8/ed497084a61517c5dfaef72f988057 started: 1560532216978; exited: -; ]
+~> TaskHandler[jobId: 384076; id: 195; name: plot_popgenome_whole_pop; status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/5a/1eee9cfb2658da07fd0a18b02ba2ca started: -; exited: -; ]
+~> TaskHandler[jobId: 384077; id: 196; name: plot_ibdseq (1); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/69093d03fcf75b853953bf69f10ca3 started: -; exited: -; ]
+Jun-14 13:47:01.997 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382469; id: 182; name: popgenome_window_kpop (V); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/dc/f223ebbe3fd43997ae9fb1472f108d started: 1560532126844; exited: 2019-06-14T18:47:01.503736Z; ]
+Jun-14 13:47:52.000 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382468; id: 179; name: popgenome_window_kpop (V); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/74/8c0796fa3cdc8c110fe0b3ccdffb99 started: 1560532101830; exited: 2019-06-14T18:47:50.090833Z; ]
+Jun-14 13:49:02.933 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 13:49:06.908 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[jobId: 382466; id: 175; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e7/4e3b813729ab41557f7611c3276239 started: 1560532081997; exited: -; ]
+~> TaskHandler[jobId: 382467; id: 176; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/23/c13259f76611683bb2ce2a77cf5ad1 started: 1560532091914; exited: -; ]
+~> TaskHandler[jobId: 382472; id: 183; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f8/ed497084a61517c5dfaef72f988057 started: 1560532216978; exited: -; ]
+~> TaskHandler[jobId: 384076; id: 195; name: plot_popgenome_whole_pop; status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/5a/1eee9cfb2658da07fd0a18b02ba2ca started: -; exited: -; ]
+~> TaskHandler[jobId: 384077; id: 196; name: plot_ibdseq (1); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/69093d03fcf75b853953bf69f10ca3 started: -; exited: -; ]
+Jun-14 13:50:02.069 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382466; id: 175; name: popgenome_window_kpop (V); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e7/4e3b813729ab41557f7611c3276239 started: 1560532081997; exited: 2019-06-14T18:50:00.586725Z; ]
+Jun-14 13:51:16.936 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382472; id: 183; name: popgenome_window_kpop (V); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f8/ed497084a61517c5dfaef72f988057 started: 1560532216978; exited: 2019-06-14T18:51:15.314895Z; ]
+Jun-14 13:54:02.946 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-14 13:54:06.914 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[jobId: 382467; id: 176; name: popgenome_window_kpop (V); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/23/c13259f76611683bb2ce2a77cf5ad1 started: 1560532091914; exited: -; ]
+~> TaskHandler[jobId: 384076; id: 195; name: plot_popgenome_whole_pop; status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/5a/1eee9cfb2658da07fd0a18b02ba2ca started: -; exited: -; ]
+~> TaskHandler[jobId: 384077; id: 196; name: plot_ibdseq (1); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/69093d03fcf75b853953bf69f10ca3 started: -; exited: -; ]
+Jun-14 13:54:32.033 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 382467; id: 176; name: popgenome_window_kpop (V); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/23/c13259f76611683bb2ce2a77cf5ad1 started: 1560532091914; exited: 2019-06-14T18:54:28.451114Z; ]
+Jun-14 13:54:32.557 [Actor Thread 67] DEBUG nextflow.Session - <<< barrier arrive (process: popgenome_window_kpop)
+Jun-14 13:54:36.162 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process combine_popgenome_subpops > jobId: 384583; workDir: /projects/b1042/AndersenLab/work/stefan/1c/43192fc4e82725f387dc0ba8c9e518
+Jun-14 13:54:36.163 [Task submitter] INFO  nextflow.Session - [1c/43192f] Submitted process > combine_popgenome_subpops
+Jun-14 13:59:02.964 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Jun-14 13:59:06.922 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[jobId: 384076; id: 195; name: plot_popgenome_whole_pop; status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/5a/1eee9cfb2658da07fd0a18b02ba2ca started: -; exited: -; ]
+~> TaskHandler[jobId: 384077; id: 196; name: plot_ibdseq (1); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/69093d03fcf75b853953bf69f10ca3 started: -; exited: -; ]
+~> TaskHandler[jobId: 384583; id: 197; name: combine_popgenome_subpops; status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/1c/43192fc4e82725f387dc0ba8c9e518 started: -; exited: -; ]
+Jun-14 14:04:02.981 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Jun-14 14:04:06.928 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[jobId: 384076; id: 195; name: plot_popgenome_whole_pop; status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/5a/1eee9cfb2658da07fd0a18b02ba2ca started: -; exited: -; ]
+~> TaskHandler[jobId: 384077; id: 196; name: plot_ibdseq (1); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/69093d03fcf75b853953bf69f10ca3 started: -; exited: -; ]
+~> TaskHandler[jobId: 384583; id: 197; name: combine_popgenome_subpops; status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/1c/43192fc4e82725f387dc0ba8c9e518 started: -; exited: -; ]
+Jun-14 14:09:03.005 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Jun-14 14:09:06.934 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[jobId: 384076; id: 195; name: plot_popgenome_whole_pop; status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/5a/1eee9cfb2658da07fd0a18b02ba2ca started: -; exited: -; ]
+~> TaskHandler[jobId: 384077; id: 196; name: plot_ibdseq (1); status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/69093d03fcf75b853953bf69f10ca3 started: -; exited: -; ]
+~> TaskHandler[jobId: 384583; id: 197; name: combine_popgenome_subpops; status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/1c/43192fc4e82725f387dc0ba8c9e518 started: -; exited: -; ]
+Jun-14 14:14:03.025 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Jun-14 14:14:07.036 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[jobId: 384076; id: 195; name: plot_popgenome_whole_pop; status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/5a/1eee9cfb2658da07fd0a18b02ba2ca started: 1560539492066; exited: -; ]
+~> TaskHandler[jobId: 384077; id: 196; name: plot_ibdseq (1); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/69093d03fcf75b853953bf69f10ca3 started: 1560539536958; exited: -; ]
+~> TaskHandler[jobId: 384583; id: 197; name: combine_popgenome_subpops; status: SUBMITTED; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/1c/43192fc4e82725f387dc0ba8c9e518 started: -; exited: -; ]
+Jun-14 14:14:22.093 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 384076; id: 195; name: plot_popgenome_whole_pop; status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/5a/1eee9cfb2658da07fd0a18b02ba2ca started: 1560539492066; exited: 2019-06-14T19:14:19.674809Z; ]
+Jun-14 14:14:22.465 [Actor Thread 67] DEBUG nextflow.Session - <<< barrier arrive (process: plot_popgenome_whole_pop)
+Jun-14 14:15:12.047 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 384077; id: 196; name: plot_ibdseq (1); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/69093d03fcf75b853953bf69f10ca3 started: 1560539536958; exited: 2019-06-14T19:15:07.891227Z; ]
+Jun-14 14:15:12.146 [Actor Thread 67] DEBUG nextflow.Session - <<< barrier arrive (process: plot_ibdseq)
+Jun-14 14:16:42.177 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 384583; id: 197; name: combine_popgenome_subpops; status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/1c/43192fc4e82725f387dc0ba8c9e518 started: 1560539662564; exited: 2019-06-14T19:16:39.037928Z; ]
+Jun-14 14:16:42.538 [Actor Thread 67] DEBUG nextflow.Session - <<< barrier arrive (process: combine_popgenome_subpops)
+Jun-14 14:16:42.539 [main] DEBUG nextflow.Session - Session await > all process finished
+Jun-14 14:16:42.539 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: slurm)
+Jun-14 14:16:42.588 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local)
+Jun-14 14:16:42.588 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jun-14 14:16:42.952 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=35; failedCount=0; ignoredCount=0; cachedCount=162; succeedDuration=1d 11h 34m 1s; failedDuration=0ms; cachedDuration=3d 8h 42m 23s]
+Jun-14 14:16:43.058 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Jun-14 14:16:43.179 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

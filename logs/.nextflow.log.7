@@ -1,0 +1,1281 @@
+Jun-16 22:02:15.559 [main] DEBUG nextflow.cli.Launcher - $> /home/szs315/.linuxbrew/bin/nextflow run cepopgen-nf.nf -profile quest --out_base=GATK-STRELKA-INTERSECT_LD0pt1_COMPLETE --anc=XZ1516 --cpu=8 --snv_vcf=/projects/b1059/projects/Stefan/CePopGen-nf/input_files/Ce330_GATK4_STRELKA2_Intersect.vcf.gz --pops=input_files/strain_sets_admixture.tsv --admix_ld=0.1 --admix_k=20 -resume
+Jun-16 22:02:15.758 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 0.32.0
+Jun-16 22:02:15.814 [main] INFO  nextflow.cli.CmdRun - Launching `cepopgen-nf.nf` [serene_bernard] - revision: 4823cd2b86
+Jun-16 22:02:15.835 [main] DEBUG nextflow.config.ConfigBuilder - Found config home: /home/szs315/.nextflow/config
+Jun-16 22:02:15.836 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /projects/b1059/projects/Stefan/CePopulationGenetics-nf/nextflow.config
+Jun-16 22:02:15.837 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/szs315/.nextflow/config
+Jun-16 22:02:15.837 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /projects/b1059/projects/Stefan/CePopulationGenetics-nf/nextflow.config
+Jun-16 22:02:15.872 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `quest`
+Jun-16 22:02:16.360 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `quest`
+Jun-16 22:02:16.449 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [debug, quest]
+Jun-16 22:02:16.484 [main] DEBUG nextflow.Session - Session uuid: 17bf0dc8-e2e8-478c-9461-69834d5b4505
+Jun-16 22:02:16.485 [main] DEBUG nextflow.Session - Run name: serene_bernard
+Jun-16 22:02:16.486 [main] DEBUG nextflow.Session - Executor pool size: 6
+Jun-16 22:02:16.499 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 0.32.0 build 4897
+  Modified: 27-09-2018 10:17 UTC (05:17 CDT)
+  System: Linux 3.10.0-514.21.1.el7.x86_64
+  Runtime: Groovy 2.5.1 on OpenJDK 64-Bit Server VM 1.8.0_192-b01
+  Encoding: UTF-8 (UTF-8)
+  Process: 26121@qnode5181 [172.20.129.181]
+  CPUs: 6 - Mem: 125.6 GB (113.7 GB) - Swap: 0 (0)
+Jun-16 22:02:16.544 [main] DEBUG nextflow.Session - Work-dir: /projects/b1042/AndersenLab/work/stefan [gpfs]
+Jun-16 22:02:17.042 [main] DEBUG nextflow.Session - Session start invoked
+Jun-16 22:02:17.049 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Jun-16 22:02:17.050 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Jun-16 22:02:18.065 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-16 22:02:18.075 [main] INFO  nextflow.Nextflow - 
+╔═╗   ╔═╗╦  ╔═╗╔═╗╔═╗╔╗╔╔═╗  ╔═╗╔═╗╔═╗╔═╗╔═╗╔╗╔  ╔╗╔╔═╗
+║     ║╣ ║  ║╣ ║ ╦╠═╣║║║╚═╗  ╠═╝║ ║╠═╝║ ╦║╣ ║║║  ║║║╠╣ 
+╚═╝o  ╚═╝╩═╝╚═╝╚═╝╩ ╩╝╚╝╚═╝  ╩  ╚═╝╩  ╚═╝╚═╝╝╚╝  ╝╚╝╚  
+
+Jun-16 22:02:18.075 [main] INFO  nextflow.Nextflow - 
+Jun-16 22:02:18.076 [main] INFO  nextflow.Nextflow - Reference                               = /projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/WS245.fa
+Jun-16 22:02:18.076 [main] INFO  nextflow.Nextflow - Ancestor                                = XZ1516
+Jun-16 22:02:18.076 [main] INFO  nextflow.Nextflow - Small Variant VCF                       = /projects/b1059/projects/Stefan/CePopGen-nf/input_files/Ce330_GATK4_STRELKA2_Intersect.vcf.gz
+Jun-16 22:02:18.076 [main] INFO  nextflow.Nextflow - Structural Variant VCF                  = /projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/Ce330_MERGED_SV.vcf.gz
+Jun-16 22:02:18.076 [main] INFO  nextflow.Nextflow - Population File                         = input_files/strain_sets_admixture.tsv
+Jun-16 22:02:18.076 [main] INFO  nextflow.Nextflow - Max Population                          = 20
+Jun-16 22:02:18.076 [main] INFO  nextflow.Nextflow - LD to test                              = 0.1
+Jun-16 22:02:18.120 [main] INFO  nextflow.Nextflow - cpu                                     = 8
+Jun-16 22:02:18.120 [main] INFO  nextflow.Nextflow - Output folder                           = 20190616-GATK-STRELKA-INTERSECT_LD0pt1_COMPLETE
+Jun-16 22:02:18.120 [main] INFO  nextflow.Nextflow - GFF3 File                               = /projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/Popgenome_files/WS245_exons.gff
+Jun-16 22:02:18.120 [main] INFO  nextflow.Nextflow - 
+Jun-16 22:02:18.428 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.428 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.440 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.442 [main] INFO  nextflow.executor.Executor - [warm up] executor > slurm
+Jun-16 22:02:18.447 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
+Jun-16 22:02:18.450 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: TaskPollingMonitor
+Jun-16 22:02:18.451 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: slurm)
+Jun-16 22:02:18.453 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: slurm
+Jun-16 22:02:18.454 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.482 [main] DEBUG nextflow.Session - >>> barrier register (process: extract_ancestor_bed)
+Jun-16 22:02:18.485 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > extract_ancestor_bed -- maxForks: 6
+Jun-16 22:02:18.509 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.509 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.510 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.510 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.511 [main] DEBUG nextflow.Session - >>> barrier register (process: annotate_small_vcf)
+Jun-16 22:02:18.511 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > annotate_small_vcf -- maxForks: 6
+Jun-16 22:02:18.526 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.526 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.526 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.526 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.527 [main] DEBUG nextflow.Session - >>> barrier register (process: vcf2phylip)
+Jun-16 22:02:18.527 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > vcf2phylip -- maxForks: 6
+Jun-16 22:02:18.531 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.531 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.531 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.532 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.533 [main] DEBUG nextflow.Session - >>> barrier register (process: generate_tree)
+Jun-16 22:02:18.533 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > generate_tree -- maxForks: 6
+Jun-16 22:02:18.552 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.553 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.553 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.553 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.554 [main] DEBUG nextflow.Session - >>> barrier register (process: vcf_to_ped)
+Jun-16 22:02:18.555 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > vcf_to_ped -- maxForks: 6
+Jun-16 22:02:18.605 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.605 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.605 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.605 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.606 [main] DEBUG nextflow.Session - >>> barrier register (process: run_admixture)
+Jun-16 22:02:18.607 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > run_admixture -- maxForks: 6
+Jun-16 22:02:18.616 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: local
+Jun-16 22:02:18.616 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jun-16 22:02:18.619 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jun-16 22:02:18.619 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Jun-16 22:02:18.621 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=6; memory=125.6 GB; capacity=6; pollInterval=100ms; dumpInterval=5m
+Jun-16 22:02:18.623 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Jun-16 22:02:18.623 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jun-16 22:02:18.624 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Jun-16 22:02:18.624 [main] DEBUG nextflow.Session - >>> barrier register (process: concat_replicate_logs)
+Jun-16 22:02:18.625 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > concat_replicate_logs -- maxForks: 6
+Jun-16 22:02:18.633 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: local
+Jun-16 22:02:18.633 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jun-16 22:02:18.633 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jun-16 22:02:18.634 [main] DEBUG nextflow.Session - >>> barrier register (process: concat_pop_logs)
+Jun-16 22:02:18.635 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > concat_pop_logs -- maxForks: 6
+Jun-16 22:02:18.653 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.653 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.654 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.654 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.654 [main] DEBUG nextflow.Session - >>> barrier register (process: run_admixture_besk_k)
+Jun-16 22:02:18.655 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > run_admixture_besk_k -- maxForks: 6
+Jun-16 22:02:18.662 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.662 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.662 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.662 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.665 [main] DEBUG nextflow.Session - >>> barrier register (process: ibdseq_haplotype)
+Jun-16 22:02:18.665 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > ibdseq_haplotype -- maxForks: 6
+Jun-16 22:02:18.667 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.667 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.667 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.667 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.668 [main] DEBUG nextflow.Session - >>> barrier register (process: analyze_ibdseq)
+Jun-16 22:02:18.668 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > analyze_ibdseq -- maxForks: 6
+Jun-16 22:02:18.674 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.674 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.675 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.675 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.675 [main] DEBUG nextflow.Session - >>> barrier register (process: plot_ibdseq)
+Jun-16 22:02:18.675 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > plot_ibdseq -- maxForks: 6
+Jun-16 22:02:18.681 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.681 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.681 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.681 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.682 [main] DEBUG nextflow.Session - >>> barrier register (process: popgenome_whole_pop)
+Jun-16 22:02:18.683 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1]
+Jun-16 22:02:18.688 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > popgenome_whole_pop -- maxForks: 6
+Jun-16 22:02:18.697 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.697 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.697 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.698 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.698 [main] DEBUG nextflow.Session - >>> barrier register (process: plot_popgenome_whole_pop)
+Jun-16 22:02:18.698 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > plot_popgenome_whole_pop -- maxForks: 6
+Jun-16 22:02:18.703 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.703 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.703 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.704 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.704 [main] DEBUG nextflow.Session - >>> barrier register (process: popgenome_window_kpop)
+Jun-16 22:02:18.705 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1, 2]
+Jun-16 22:02:18.705 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > popgenome_window_kpop -- maxForks: 6
+Jun-16 22:02:18.710 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.710 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.711 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.711 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.713 [main] DEBUG nextflow.Session - >>> barrier register (process: combine_popgenome_subpops)
+Jun-16 22:02:18.713 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > combine_popgenome_subpops -- maxForks: 6
+Jun-16 22:02:18.718 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.718 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.718 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.719 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.719 [main] DEBUG nextflow.Session - >>> barrier register (process: popgenome_gene_complete)
+Jun-16 22:02:18.719 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1]
+Jun-16 22:02:18.720 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > popgenome_gene_complete -- maxForks: 6
+Jun-16 22:02:18.724 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.724 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.724 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.727 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.728 [main] DEBUG nextflow.Session - >>> barrier register (process: popgenome_gene_kpop)
+Jun-16 22:02:18.728 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1, 2]
+Jun-16 22:02:18.729 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > popgenome_gene_kpop -- maxForks: 6
+Jun-16 22:02:18.733 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.733 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.733 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.734 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.780 [main] DEBUG nextflow.Session - >>> barrier register (process: vcf_to_h21)
+Jun-16 22:02:18.780 [main] DEBUG nextflow.processor.TaskProcessor - Creating *combiner* operator for each param(s) at index(es): [1]
+Jun-16 22:02:18.781 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > vcf_to_h21 -- maxForks: 6
+Jun-16 22:02:18.784 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.784 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.784 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.784 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.785 [main] DEBUG nextflow.Session - >>> barrier register (process: vcf_to_eigstrat_files)
+Jun-16 22:02:18.785 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > vcf_to_eigstrat_files -- maxForks: 6
+Jun-16 22:02:18.788 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.788 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.788 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.789 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.789 [main] DEBUG nextflow.Session - >>> barrier register (process: run_eigenstrat_no_outlier_removal)
+Jun-16 22:02:18.789 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > run_eigenstrat_no_outlier_removal -- maxForks: 6
+Jun-16 22:02:18.791 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.791 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.791 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.792 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.792 [main] DEBUG nextflow.Session - >>> barrier register (process: run_eigenstrat_with_outlier_removal)
+Jun-16 22:02:18.792 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > run_eigenstrat_with_outlier_removal -- maxForks: 6
+Jun-16 22:02:18.794 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: slurm
+Jun-16 22:02:18.794 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'slurm'
+Jun-16 22:02:18.794 [main] DEBUG nextflow.executor.Executor - Initializing executor: slurm
+Jun-16 22:02:18.794 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Jun-16 22:02:18.794 [main] DEBUG nextflow.Session - >>> barrier register (process: prep_files_for_DAPC)
+Jun-16 22:02:18.794 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > prep_files_for_DAPC -- maxForks: 6
+Jun-16 22:02:18.796 [main] WARN  nextflow.extension.IntoOp - The `into` operator should be used to connect two or more target channels -- consider to replace it with `.set { dapc_pop_input }`
+Jun-16 22:02:18.797 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Jun-16 22:02:18.797 [main] DEBUG nextflow.Session - Session await
+Jun-16 22:02:35.675 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [ca/638370] Cached process > extract_ancestor_bed (1)
+Jun-16 22:02:35.715 [Actor Thread 3] DEBUG nextflow.Session - <<< barrier arrive (process: extract_ancestor_bed)
+Jun-16 22:02:41.487 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [f3/c71cd8] Cached process > annotate_small_vcf (1)
+Jun-16 22:02:41.500 [Actor Thread 12] DEBUG nextflow.Session - <<< barrier arrive (process: annotate_small_vcf)
+Jun-16 22:03:05.991 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [60/22f6b3] Cached process > prep_files_for_DAPC (1)
+Jun-16 22:03:05.997 [Actor Thread 45] DEBUG nextflow.Session - <<< barrier arrive (process: prep_files_for_DAPC)
+Jun-16 22:03:06.142 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [af/a507a3] Cached process > vcf_to_h21 (X)
+Jun-16 22:03:06.713 [Actor Thread 43] INFO  nextflow.processor.TaskProcessor - [00/617d8f] Cached process > popgenome_whole_pop (X)
+Jun-16 22:03:07.022 [Actor Thread 19] INFO  nextflow.processor.TaskProcessor - [08/d20df9] Cached process > popgenome_gene_complete (I)
+Jun-16 22:03:07.078 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [07/ef6f50] Cached process > vcf_to_eigstrat_files (PREPARE EIGENSTRAT FILES)
+Jun-16 22:03:07.082 [Actor Thread 45] DEBUG nextflow.Session - <<< barrier arrive (process: vcf_to_eigstrat_files)
+Jun-16 22:03:07.180 [Actor Thread 35] INFO  nextflow.processor.TaskProcessor - [4f/6e6d9e] Cached process > popgenome_gene_complete (X)
+Jun-16 22:03:07.360 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [f1/444a90] Cached process > popgenome_gene_complete (II)
+Jun-16 22:03:07.429 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [67/310dfc] Cached process > popgenome_gene_complete (III)
+Jun-16 22:03:07.485 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [c5/740ad3] Cached process > vcf_to_h21 (III)
+Jun-16 22:03:07.522 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [58/1bd432] Cached process > vcf_to_h21 (I)
+Jun-16 22:03:07.577 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [63/11f7a9] Cached process > vcf_to_h21 (II)
+Jun-16 22:03:07.754 [Actor Thread 42] INFO  nextflow.processor.TaskProcessor - [6e/972db0] Cached process > popgenome_whole_pop (V)
+Jun-16 22:03:07.838 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [85/fdcf6d] Cached process > vcf2phylip (1)
+Jun-16 22:03:07.841 [Actor Thread 45] DEBUG nextflow.Session - <<< barrier arrive (process: vcf2phylip)
+Jun-16 22:03:07.850 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [a4/3de652] Cached process > popgenome_whole_pop (II)
+Jun-16 22:03:08.146 [Actor Thread 28] INFO  nextflow.processor.TaskProcessor - [89/dc102c] Cached process > popgenome_gene_complete (IV)
+Jun-16 22:03:08.175 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [42/b077ad] Cached process > popgenome_whole_pop (I)
+Jun-16 22:03:08.196 [Actor Thread 39] INFO  nextflow.processor.TaskProcessor - [1c/f2ea1c] Cached process > vcf_to_h21 (IV)
+Jun-16 22:03:08.198 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [8a/2d4436] Cached process > popgenome_gene_complete (V)
+Jun-16 22:03:08.200 [Actor Thread 45] DEBUG nextflow.Session - <<< barrier arrive (process: popgenome_gene_complete)
+Jun-16 22:03:08.231 [Actor Thread 34] INFO  nextflow.processor.TaskProcessor - [fc/303f93] Cached process > popgenome_whole_pop (III)
+Jun-16 22:03:08.483 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [9a/b61c0e] Cached process > popgenome_whole_pop (IV)
+Jun-16 22:03:08.485 [Actor Thread 45] DEBUG nextflow.Session - <<< barrier arrive (process: popgenome_whole_pop)
+Jun-16 22:03:08.614 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [e0/4b2d27] Cached process > ibdseq_haplotype (1)
+Jun-16 22:03:08.615 [Actor Thread 30] DEBUG nextflow.Session - <<< barrier arrive (process: ibdseq_haplotype)
+Jun-16 22:03:08.747 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [f1/6d05f8] Cached process > analyze_ibdseq (1)
+Jun-16 22:03:08.749 [Actor Thread 45] DEBUG nextflow.Session - <<< barrier arrive (process: analyze_ibdseq)
+Jun-16 22:03:08.768 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [61/69093d] Cached process > plot_ibdseq (1)
+Jun-16 22:03:08.769 [Actor Thread 45] DEBUG nextflow.Session - <<< barrier arrive (process: plot_ibdseq)
+Jun-16 22:03:08.796 [Actor Thread 41] INFO  nextflow.processor.TaskProcessor - [65/54e45b] Cached process > vcf_to_h21 (V)
+Jun-16 22:03:08.796 [Actor Thread 45] DEBUG nextflow.Session - <<< barrier arrive (process: vcf_to_h21)
+Jun-16 22:03:08.868 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [a1/f9ab9f] Cached process > vcf_to_ped (PRUNING VCF FOR ADMIXTURE)
+Jun-16 22:03:08.869 [Actor Thread 45] DEBUG nextflow.Session - <<< barrier arrive (process: vcf_to_ped)
+Jun-16 22:03:09.288 [Actor Thread 34] INFO  nextflow.processor.TaskProcessor - [5a/1eee9c] Cached process > plot_popgenome_whole_pop
+Jun-16 22:03:09.303 [Actor Thread 45] DEBUG nextflow.Session - <<< barrier arrive (process: plot_popgenome_whole_pop)
+Jun-16 22:03:09.821 [Actor Thread 19] INFO  nextflow.processor.TaskProcessor - [f5/7ca772] Cached process > run_eigenstrat_no_outlier_removal (1)
+Jun-16 22:03:09.823 [Actor Thread 45] DEBUG nextflow.Session - <<< barrier arrive (process: run_eigenstrat_no_outlier_removal)
+Jun-16 22:03:09.832 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [52/b5196f] Cached process > run_eigenstrat_with_outlier_removal (1)
+Jun-16 22:03:09.834 [Actor Thread 45] DEBUG nextflow.Session - <<< barrier arrive (process: run_eigenstrat_with_outlier_removal)
+Jun-16 22:03:13.149 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [3b/3113f3] Cached process > generate_tree (1)
+Jun-16 22:03:13.152 [Actor Thread 45] DEBUG nextflow.Session - <<< barrier arrive (process: generate_tree)
+Jun-16 22:03:17.498 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [06/c174cd] Cached process > run_admixture ( 2 - 1999 )
+Jun-16 22:03:17.538 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [20/d95d10] Cached process > run_admixture ( 2 - 1123 )
+Jun-16 22:03:17.548 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [e5/7498fd] Cached process > run_admixture ( 2 - 1336 )
+Jun-16 22:03:17.549 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [24/fa447e] Cached process > run_admixture ( 2 - 1365 )
+Jun-16 22:03:17.579 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [aa/be3992] Cached process > run_admixture ( 2 - 1593 )
+Jun-16 22:03:17.594 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [80/896458] Cached process > run_admixture ( 2 - 1942 )
+Jun-16 22:03:24.870 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [ae/de7859] Cached process > run_admixture ( 2 - 1499 )
+Jun-16 22:03:24.896 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [cd/5e3e21] Cached process > run_admixture ( 2 - 1103 )
+Jun-16 22:03:25.020 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [e3/5e353c] Cached process > run_admixture ( 2 - 1854 )
+Jun-16 22:03:25.027 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [05/c027e5] Cached process > run_admixture ( 2 - 1907 )
+Jun-16 22:03:25.071 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [f8/ceac7b] Cached process > run_admixture ( 3 - 1123 )
+Jun-16 22:03:27.447 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [c0/675a5e] Cached process > run_admixture ( 3 - 1365 )
+Jun-16 22:03:31.844 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [14/bb67a8] Cached process > run_admixture ( 3 - 1854 )
+Jun-16 22:03:31.924 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [66/60f3b4] Cached process > run_admixture ( 3 - 1999 )
+Jun-16 22:03:32.213 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [be/6ad2ec] Cached process > run_admixture ( 3 - 1942 )
+Jun-16 22:03:32.241 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [5f/ab9b1a] Cached process > run_admixture ( 3 - 1593 )
+Jun-16 22:03:34.199 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [39/cb8e16] Cached process > run_admixture ( 3 - 1336 )
+Jun-16 22:03:35.126 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [4e/d0d734] Cached process > run_admixture ( 3 - 1907 )
+Jun-16 22:03:37.876 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [56/9629b6] Cached process > run_admixture ( 4 - 1123 )
+Jun-16 22:03:37.913 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [74/ed65ae] Cached process > run_admixture ( 3 - 1499 )
+Jun-16 22:03:38.763 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [19/0deb26] Cached process > run_admixture ( 4 - 1365 )
+Jun-16 22:03:39.818 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [28/b72f62] Cached process > run_admixture ( 3 - 1103 )
+Jun-16 22:03:40.280 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [7f/efc2f7] Cached process > run_admixture ( 4 - 1336 )
+Jun-16 22:03:45.017 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [57/825c66] Cached process > run_admixture ( 4 - 1942 )
+Jun-16 22:03:45.112 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [98/eef0b7] Cached process > run_admixture ( 4 - 1593 )
+Jun-16 22:03:45.129 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [84/949b3a] Cached process > run_admixture ( 4 - 1999 )
+Jun-16 22:03:45.311 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [8e/773308] Cached process > run_admixture ( 4 - 1854 )
+Jun-16 22:03:46.890 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [89/b7fe01] Cached process > run_admixture ( 4 - 1103 )
+Jun-16 22:03:49.608 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [e9/ef2e10] Cached process > run_admixture ( 4 - 1907 )
+Jun-16 22:03:51.830 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [73/01032c] Cached process > run_admixture ( 5 - 1365 )
+Jun-16 22:03:52.371 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [52/c02600] Cached process > run_admixture ( 5 - 1336 )
+Jun-16 22:03:52.404 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [36/10eb8e] Cached process > run_admixture ( 4 - 1499 )
+Jun-16 22:03:53.750 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [df/d2cca1] Cached process > run_admixture ( 5 - 1999 )
+Jun-16 22:03:55.500 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [3e/200578] Cached process > run_admixture ( 5 - 1123 )
+Jun-16 22:03:56.363 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [5b/958cdd] Cached process > run_admixture ( 5 - 1942 )
+Jun-16 22:03:59.113 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [07/760d07] Cached process > run_admixture ( 5 - 1854 )
+Jun-16 22:03:59.194 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [71/901828] Cached process > run_admixture ( 5 - 1907 )
+Jun-16 22:04:00.562 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [aa/203fe8] Cached process > run_admixture ( 5 - 1103 )
+Jun-16 22:04:00.869 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [52/822cb7] Cached process > run_admixture ( 5 - 1593 )
+Jun-16 22:04:02.765 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [3b/82e158] Cached process > run_admixture ( 5 - 1499 )
+Jun-16 22:04:05.468 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [b9/7418b0] Cached process > run_admixture ( 6 - 1123 )
+Jun-16 22:04:05.562 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [37/eeb87b] Cached process > run_admixture ( 6 - 1365 )
+Jun-16 22:04:05.652 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [56/6327cf] Cached process > run_admixture ( 6 - 1336 )
+Jun-16 22:04:07.328 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [73/da9fb1] Cached process > run_admixture ( 6 - 1942 )
+Jun-16 22:04:09.053 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [d2/3bc6cf] Cached process > run_admixture ( 6 - 1593 )
+Jun-16 22:04:09.366 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [e4/f7981e] Cached process > run_admixture ( 6 - 1999 )
+Jun-16 22:04:11.876 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [f7/5e4527] Cached process > run_admixture ( 6 - 1907 )
+Jun-16 22:04:12.168 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [dd/9cce9a] Cached process > run_admixture ( 6 - 1103 )
+Jun-16 22:04:14.389 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [4c/d3ba23] Cached process > run_admixture ( 6 - 1854 )
+Jun-16 22:04:15.245 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [4d/4425eb] Cached process > run_admixture ( 7 - 1365 )
+Jun-16 22:04:16.351 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [a7/c02e6c] Cached process > run_admixture ( 6 - 1499 )
+Jun-16 22:04:18.730 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [dc/807b93] Cached process > run_admixture ( 7 - 1999 )
+Jun-16 22:04:19.041 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [6b/e4fe35] Cached process > run_admixture ( 7 - 1336 )
+Jun-16 22:04:19.115 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [a3/25c895] Cached process > run_admixture ( 7 - 1123 )
+Jun-16 22:04:20.675 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [f7/980ea3] Cached process > run_admixture ( 7 - 1942 )
+Jun-16 22:04:22.774 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [3b/e7b9c0] Cached process > run_admixture ( 7 - 1854 )
+Jun-16 22:04:25.347 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [9f/efb741] Cached process > run_admixture ( 7 - 1593 )
+Jun-16 22:04:26.076 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [e4/c8703b] Cached process > run_admixture ( 7 - 1907 )
+Jun-16 22:04:26.183 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [ac/0a9cbb] Cached process > run_admixture ( 7 - 1103 )
+Jun-16 22:04:26.902 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [c6/06abb7] Cached process > run_admixture ( 8 - 1365 )
+Jun-16 22:04:29.051 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [c5/0961a2] Cached process > run_admixture ( 7 - 1499 )
+Jun-16 22:04:29.322 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [cc/0a0164] Cached process > run_admixture ( 8 - 1123 )
+Jun-16 22:04:32.396 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [f1/abe21d] Cached process > run_admixture ( 8 - 1999 )
+Jun-16 22:04:33.169 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [9f/0213a8] Cached process > run_admixture ( 8 - 1593 )
+Jun-16 22:04:34.267 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [96/2d2732] Cached process > run_admixture ( 8 - 1336 )
+Jun-16 22:04:35.395 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [2c/eb2a4d] Cached process > run_admixture ( 8 - 1942 )
+Jun-16 22:04:35.490 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [3e/5bf1b0] Cached process > run_admixture ( 8 - 1854 )
+Jun-16 22:04:37.678 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [f2/85b471] Cached process > run_admixture ( 8 - 1907 )
+Jun-16 22:04:38.971 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [ad/116169] Cached process > run_admixture ( 8 - 1103 )
+Jun-16 22:04:39.861 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [ac/6c59d5] Cached process > run_admixture ( 8 - 1499 )
+Jun-16 22:04:42.141 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [e0/bb3365] Cached process > run_admixture ( 9 - 1123 )
+Jun-16 22:04:43.556 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [39/cd6e38] Cached process > run_admixture ( 9 - 1365 )
+Jun-16 22:04:44.340 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [71/2b5a43] Cached process > run_admixture ( 9 - 1999 )
+Jun-16 22:04:45.810 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [34/f2d604] Cached process > run_admixture ( 9 - 1942 )
+Jun-16 22:04:46.146 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [e3/975959] Cached process > run_admixture ( 9 - 1336 )
+Jun-16 22:04:47.003 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [ea/ef1581] Cached process > run_admixture ( 9 - 1593 )
+Jun-16 22:04:49.412 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [83/7543b1] Cached process > run_admixture ( 9 - 1854 )
+Jun-16 22:04:51.190 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [c5/cc64cb] Cached process > run_admixture ( 9 - 1103 )
+Jun-16 22:04:52.445 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [c2/4eb044] Cached process > run_admixture ( 9 - 1499 )
+Jun-16 22:04:53.052 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [d9/7e9ffd] Cached process > run_admixture ( 9 - 1907 )
+Jun-16 22:04:54.271 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [07/7b6980] Cached process > run_admixture ( 10 - 1123 )
+Jun-16 22:04:56.302 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [c8/4b8ef9] Cached process > run_admixture ( 10 - 1336 )
+Jun-16 22:04:56.644 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [21/42ad6a] Cached process > run_admixture ( 10 - 1365 )
+Jun-16 22:04:58.202 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [24/20898a] Cached process > run_admixture ( 10 - 1999 )
+Jun-16 22:04:59.749 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [01/37b689] Cached process > run_admixture ( 10 - 1942 )
+Jun-16 22:05:00.034 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [da/169e0f] Cached process > run_admixture ( 10 - 1593 )
+Jun-16 22:05:01.612 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [07/f0652d] Cached process > run_admixture ( 10 - 1854 )
+Jun-16 22:05:02.755 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [66/7971c3] Cached process > run_admixture ( 10 - 1103 )
+Jun-16 22:05:04.724 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [b6/a1177a] Cached process > run_admixture ( 10 - 1907 )
+Jun-16 22:05:06.987 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [41/7d0afe] Cached process > run_admixture ( 11 - 1365 )
+Jun-16 22:05:07.913 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [99/3e9894] Cached process > run_admixture ( 11 - 1123 )
+Jun-16 22:05:07.944 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [41/f0f0d3] Cached process > run_admixture ( 10 - 1499 )
+Jun-16 22:05:08.861 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [5a/e35ac9] Cached process > run_admixture ( 11 - 1336 )
+Jun-16 22:05:10.144 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [48/0a30a8] Cached process > run_admixture ( 11 - 1999 )
+Jun-16 22:05:11.977 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [76/2e2a9a] Cached process > run_admixture ( 11 - 1942 )
+Jun-16 22:05:15.279 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [99/dadbf8] Cached process > run_admixture ( 11 - 1907 )
+Jun-16 22:05:15.496 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [76/f0edce] Cached process > run_admixture ( 11 - 1854 )
+Jun-16 22:05:16.231 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [c5/254554] Cached process > run_admixture ( 11 - 1103 )
+Jun-16 22:05:17.120 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [43/b59d85] Cached process > run_admixture ( 11 - 1593 )
+Jun-16 22:05:17.790 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [55/51d9b0] Cached process > run_admixture ( 11 - 1499 )
+Jun-16 22:05:19.705 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [e9/39025f] Cached process > run_admixture ( 12 - 1365 )
+Jun-16 22:05:22.487 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [77/63c444] Cached process > run_admixture ( 12 - 1336 )
+Jun-16 22:05:22.919 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [c1/d9fb46] Cached process > run_admixture ( 12 - 1123 )
+Jun-16 22:05:23.771 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [ca/cf2746] Cached process > run_admixture ( 12 - 1999 )
+Jun-16 22:05:25.175 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [8d/f577e6] Cached process > run_admixture ( 12 - 1593 )
+Jun-16 22:05:26.666 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [5a/7d395b] Cached process > run_admixture ( 12 - 1854 )
+Jun-16 22:05:27.071 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [5d/141ce5] Cached process > run_admixture ( 12 - 1942 )
+Jun-16 22:05:29.975 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [26/3f4a28] Cached process > run_admixture ( 12 - 1907 )
+Jun-16 22:05:30.733 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [2e/93e963] Cached process > run_admixture ( 12 - 1103 )
+Jun-16 22:05:30.919 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [04/bd1c23] Cached process > run_admixture ( 12 - 1499 )
+Jun-16 22:05:32.472 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [01/a8c23a] Cached process > run_admixture ( 13 - 1365 )
+Jun-16 22:05:34.109 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [5b/81c0d0] Cached process > run_admixture ( 13 - 1123 )
+Jun-16 22:05:34.449 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [44/988cdd] Cached process > run_admixture ( 13 - 1336 )
+Jun-16 22:05:38.062 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [23/a0cb13] Cached process > run_admixture ( 13 - 1593 )
+Jun-16 22:05:38.361 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [2f/14a82f] Cached process > run_admixture ( 13 - 1942 )
+Jun-16 22:05:38.944 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [2c/0520cb] Cached process > run_admixture ( 13 - 1854 )
+Jun-16 22:05:39.760 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [6f/263391] Cached process > run_admixture ( 13 - 1999 )
+Jun-16 22:05:41.491 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [8e/f96373] Cached process > run_admixture ( 13 - 1907 )
+Jun-16 22:05:41.494 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [1a/0ded98] Cached process > run_admixture ( 13 - 1103 )
+Jun-16 22:05:44.719 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [0f/4039bc] Cached process > run_admixture ( 13 - 1499 )
+Jun-16 22:05:46.326 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [39/c08c9b] Cached process > run_admixture ( 14 - 1123 )
+Jun-16 22:05:46.371 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [b8/991359] Cached process > run_admixture ( 14 - 1365 )
+Jun-16 22:05:48.639 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [72/f811bc] Cached process > run_admixture ( 14 - 1999 )
+Jun-16 22:05:48.902 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [73/1f2fcf] Cached process > run_admixture ( 14 - 1942 )
+Jun-16 22:05:50.118 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [85/1c7241] Cached process > run_admixture ( 14 - 1336 )
+Jun-16 22:05:53.297 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [63/0f41ad] Cached process > run_admixture ( 14 - 1593 )
+Jun-16 22:05:53.728 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [19/e8c750] Cached process > run_admixture ( 14 - 1907 )
+Jun-16 22:05:54.283 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [8c/10ed5c] Cached process > run_admixture ( 14 - 1854 )
+Jun-16 22:05:56.650 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [da/feaef8] Cached process > run_admixture ( 14 - 1103 )
+Jun-16 22:05:57.739 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [e2/1f375f] Cached process > run_admixture ( 14 - 1499 )
+Jun-16 22:05:58.354 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [5f/c4ae18] Cached process > run_admixture ( 15 - 1365 )
+Jun-16 22:06:01.285 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [a0/8348eb] Cached process > run_admixture ( 15 - 1123 )
+Jun-16 22:06:01.554 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [68/2292a2] Cached process > run_admixture ( 15 - 1336 )
+Jun-16 22:06:02.108 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [60/2d9e33] Cached process > run_admixture ( 15 - 1999 )
+Jun-16 22:06:03.817 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [6c/1235fa] Cached process > run_admixture ( 15 - 1942 )
+Jun-16 22:06:04.933 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [70/85e131] Cached process > run_admixture ( 15 - 1593 )
+Jun-16 22:06:05.211 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [d6/8e3d48] Cached process > run_admixture ( 15 - 1854 )
+Jun-16 22:06:09.544 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [2a/0346a9] Cached process > run_admixture ( 15 - 1499 )
+Jun-16 22:06:09.571 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [89/cf7297] Cached process > run_admixture ( 15 - 1103 )
+Jun-16 22:06:11.321 [Actor Thread 51] INFO  nextflow.processor.TaskProcessor - [71/5c3758] Cached process > run_admixture ( 15 - 1907 )
+Jun-16 22:06:13.304 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 16 - 1365 ) > jobId: 472722; workDir: /projects/b1042/AndersenLab/work/stefan/f0/dc53e5e13fde7671a1bfbdaaa0d314
+Jun-16 22:06:13.314 [Task submitter] INFO  nextflow.Session - [f0/dc53e5] Submitted process > run_admixture ( 16 - 1365 )
+Jun-16 22:06:13.378 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 16 - 1336 ) > jobId: 472724; workDir: /projects/b1042/AndersenLab/work/stefan/3c/57011a7783b26de16cccaf36c97e92
+Jun-16 22:06:13.379 [Task submitter] INFO  nextflow.Session - [3c/57011a] Submitted process > run_admixture ( 16 - 1336 )
+Jun-16 22:06:13.439 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 16 - 1123 ) > jobId: 472726; workDir: /projects/b1042/AndersenLab/work/stefan/cc/186598d805e802c2b3e5ccc3c53b0d
+Jun-16 22:06:13.439 [Task submitter] INFO  nextflow.Session - [cc/186598] Submitted process > run_admixture ( 16 - 1123 )
+Jun-16 22:06:15.760 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 16 - 1999 ) > jobId: 472743; workDir: /projects/b1042/AndersenLab/work/stefan/77/a93e24d00103763ec63b5cd4c3da9e
+Jun-16 22:06:15.760 [Task submitter] INFO  nextflow.Session - [77/a93e24] Submitted process > run_admixture ( 16 - 1999 )
+Jun-16 22:06:15.791 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 16 - 1942 ) > jobId: 472744; workDir: /projects/b1042/AndersenLab/work/stefan/46/c6d16d0e0c2c18568ba40c88c8dc4e
+Jun-16 22:06:15.792 [Task submitter] INFO  nextflow.Session - [46/c6d16d] Submitted process > run_admixture ( 16 - 1942 )
+Jun-16 22:06:17.836 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 16 - 1854 ) > jobId: 472776; workDir: /projects/b1042/AndersenLab/work/stefan/8f/b85e2cf26202644a7c62df482ffef2
+Jun-16 22:06:17.837 [Task submitter] INFO  nextflow.Session - [8f/b85e2c] Submitted process > run_admixture ( 16 - 1854 )
+Jun-16 22:06:20.641 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 16 - 1593 ) > jobId: 472810; workDir: /projects/b1042/AndersenLab/work/stefan/de/44e0445ead63f948f6046e30f91b65
+Jun-16 22:06:20.641 [Task submitter] INFO  nextflow.Session - [de/44e044] Submitted process > run_admixture ( 16 - 1593 )
+Jun-16 22:06:20.672 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 16 - 1103 ) > jobId: 472812; workDir: /projects/b1042/AndersenLab/work/stefan/85/f13ee13cecd89d51632e58105f8877
+Jun-16 22:06:20.672 [Task submitter] INFO  nextflow.Session - [85/f13ee1] Submitted process > run_admixture ( 16 - 1103 )
+Jun-16 22:06:20.707 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 16 - 1907 ) > jobId: 472814; workDir: /projects/b1042/AndersenLab/work/stefan/72/68b1fe472c941783375d4fa47dd6bb
+Jun-16 22:06:20.707 [Task submitter] INFO  nextflow.Session - [72/68b1fe] Submitted process > run_admixture ( 16 - 1907 )
+Jun-16 22:06:23.134 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 16 - 1499 ) > jobId: 472847; workDir: /projects/b1042/AndersenLab/work/stefan/75/2cde5bee23c900b699ddb01b8cb6c9
+Jun-16 22:06:23.142 [Task submitter] INFO  nextflow.Session - [75/2cde5b] Submitted process > run_admixture ( 16 - 1499 )
+Jun-16 22:06:23.183 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 17 - 1365 ) > jobId: 472849; workDir: /projects/b1042/AndersenLab/work/stefan/94/1164f631a3cd9b1b75f62b31964ae4
+Jun-16 22:06:23.184 [Task submitter] INFO  nextflow.Session - [94/1164f6] Submitted process > run_admixture ( 17 - 1365 )
+Jun-16 22:06:25.324 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 17 - 1123 ) > jobId: 472888; workDir: /projects/b1042/AndersenLab/work/stefan/ff/076ed64d0726a4ff9823caaf7a504b
+Jun-16 22:06:25.324 [Task submitter] INFO  nextflow.Session - [ff/076ed6] Submitted process > run_admixture ( 17 - 1123 )
+Jun-16 22:06:28.335 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 17 - 1999 ) > jobId: 472936; workDir: /projects/b1042/AndersenLab/work/stefan/d6/bc4e9df2dc4f229febd86e69d7f1f5
+Jun-16 22:06:28.335 [Task submitter] INFO  nextflow.Session - [d6/bc4e9d] Submitted process > run_admixture ( 17 - 1999 )
+Jun-16 22:06:29.170 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 17 - 1942 ) > jobId: 472950; workDir: /projects/b1042/AndersenLab/work/stefan/c6/0b418353285a2003b2f63c79d5e7c1
+Jun-16 22:06:29.170 [Task submitter] INFO  nextflow.Session - [c6/0b4183] Submitted process > run_admixture ( 17 - 1942 )
+Jun-16 22:06:29.902 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 17 - 1854 ) > jobId: 472957; workDir: /projects/b1042/AndersenLab/work/stefan/2b/01be6b0aa7f898dd9ec69e54f076aa
+Jun-16 22:06:29.902 [Task submitter] INFO  nextflow.Session - [2b/01be6b] Submitted process > run_admixture ( 17 - 1854 )
+Jun-16 22:06:31.418 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 17 - 1593 ) > jobId: 472980; workDir: /projects/b1042/AndersenLab/work/stefan/fc/6e4c88db4cd530e06a87b6ca6ff996
+Jun-16 22:06:31.418 [Task submitter] INFO  nextflow.Session - [fc/6e4c88] Submitted process > run_admixture ( 17 - 1593 )
+Jun-16 22:06:31.738 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 17 - 1336 ) > jobId: 472984; workDir: /projects/b1042/AndersenLab/work/stefan/ac/8ac08e0ba60b42f4ec0ed87f108c7b
+Jun-16 22:06:31.739 [Task submitter] INFO  nextflow.Session - [ac/8ac08e] Submitted process > run_admixture ( 17 - 1336 )
+Jun-16 22:06:33.139 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 17 - 1907 ) > jobId: 472997; workDir: /projects/b1042/AndersenLab/work/stefan/78/7486d27dfb2648104a171a4b6147ea
+Jun-16 22:06:33.139 [Task submitter] INFO  nextflow.Session - [78/7486d2] Submitted process > run_admixture ( 17 - 1907 )
+Jun-16 22:06:36.143 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 17 - 1103 ) > jobId: 473017; workDir: /projects/b1042/AndersenLab/work/stefan/b4/468222f9bc93c00b402465b3f26b7b
+Jun-16 22:06:36.143 [Task submitter] INFO  nextflow.Session - [b4/468222] Submitted process > run_admixture ( 17 - 1103 )
+Jun-16 22:06:36.980 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 17 - 1499 ) > jobId: 473026; workDir: /projects/b1042/AndersenLab/work/stefan/db/207442b5e7fddd322808b1f923d2ab
+Jun-16 22:06:36.980 [Task submitter] INFO  nextflow.Session - [db/207442] Submitted process > run_admixture ( 17 - 1499 )
+Jun-16 22:06:37.431 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 18 - 1365 ) > jobId: 473032; workDir: /projects/b1042/AndersenLab/work/stefan/3c/b50ff70307f72b056e655dd9515bee
+Jun-16 22:06:37.431 [Task submitter] INFO  nextflow.Session - [3c/b50ff7] Submitted process > run_admixture ( 18 - 1365 )
+Jun-16 22:06:38.947 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 18 - 1123 ) > jobId: 473050; workDir: /projects/b1042/AndersenLab/work/stefan/bc/e6df4c733c022a79d7016546beabf1
+Jun-16 22:06:38.949 [Task submitter] INFO  nextflow.Session - [bc/e6df4c] Submitted process > run_admixture ( 18 - 1123 )
+Jun-16 22:06:40.143 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 18 - 1999 ) > jobId: 473060; workDir: /projects/b1042/AndersenLab/work/stefan/64/4c6b901864df6683aff7766a8c0980
+Jun-16 22:06:40.144 [Task submitter] INFO  nextflow.Session - [64/4c6b90] Submitted process > run_admixture ( 18 - 1999 )
+Jun-16 22:06:42.286 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 18 - 1336 ) > jobId: 473083; workDir: /projects/b1042/AndersenLab/work/stefan/4f/e0af7341ba9308b49e633a8079c64c
+Jun-16 22:06:42.287 [Task submitter] INFO  nextflow.Session - [4f/e0af73] Submitted process > run_admixture ( 18 - 1336 )
+Jun-16 22:06:42.809 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 18 - 1942 ) > jobId: 473091; workDir: /projects/b1042/AndersenLab/work/stefan/a6/5962183b8f9a8239893acac2edf6e9
+Jun-16 22:06:42.810 [Task submitter] INFO  nextflow.Session - [a6/596218] Submitted process > run_admixture ( 18 - 1942 )
+Jun-16 22:06:45.787 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 18 - 1593 ) > jobId: 473099; workDir: /projects/b1042/AndersenLab/work/stefan/a0/6bf15f4540bcc67b7030fb86972037
+Jun-16 22:06:45.788 [Task submitter] INFO  nextflow.Session - [a0/6bf15f] Submitted process > run_admixture ( 18 - 1593 )
+Jun-16 22:06:45.857 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 18 - 1854 ) > jobId: 473102; workDir: /projects/b1042/AndersenLab/work/stefan/f1/39f73fff7cd9b1badcf59943427c0d
+Jun-16 22:06:45.858 [Task submitter] INFO  nextflow.Session - [f1/39f73f] Submitted process > run_admixture ( 18 - 1854 )
+Jun-16 22:06:45.924 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 18 - 1907 ) > jobId: 473104; workDir: /projects/b1042/AndersenLab/work/stefan/fb/8e36e0bce12ac2bc294542492def54
+Jun-16 22:06:45.925 [Task submitter] INFO  nextflow.Session - [fb/8e36e0] Submitted process > run_admixture ( 18 - 1907 )
+Jun-16 22:06:47.494 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 18 - 1103 ) > jobId: 473126; workDir: /projects/b1042/AndersenLab/work/stefan/ae/addd4c8f21d25b7b5e6fdb38703839
+Jun-16 22:06:47.494 [Task submitter] INFO  nextflow.Session - [ae/addd4c] Submitted process > run_admixture ( 18 - 1103 )
+Jun-16 22:06:50.232 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 19 - 1365 ) > jobId: 473159; workDir: /projects/b1042/AndersenLab/work/stefan/f2/bf673fe8c542a6a8c66f7270dae1af
+Jun-16 22:06:50.232 [Task submitter] INFO  nextflow.Session - [f2/bf673f] Submitted process > run_admixture ( 19 - 1365 )
+Jun-16 22:06:51.837 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 19 - 1123 ) > jobId: 473182; workDir: /projects/b1042/AndersenLab/work/stefan/d1/67c37795c9349d1f192064a8354f5d
+Jun-16 22:06:51.837 [Task submitter] INFO  nextflow.Session - [d1/67c377] Submitted process > run_admixture ( 19 - 1123 )
+Jun-16 22:06:53.324 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 19 - 1999 ) > jobId: 473205; workDir: /projects/b1042/AndersenLab/work/stefan/65/767cf1bf887ab72099f3164565f3df
+Jun-16 22:06:53.325 [Task submitter] INFO  nextflow.Session - [65/767cf1] Submitted process > run_admixture ( 19 - 1999 )
+Jun-16 22:06:53.467 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 18 - 1499 ) > jobId: 473208; workDir: /projects/b1042/AndersenLab/work/stefan/8f/f790068560d438fcde9dda183fb35a
+Jun-16 22:06:53.474 [Task submitter] INFO  nextflow.Session - [8f/f79006] Submitted process > run_admixture ( 18 - 1499 )
+Jun-16 22:06:54.514 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 19 - 1336 ) > jobId: 473224; workDir: /projects/b1042/AndersenLab/work/stefan/89/3897140cb22c10229dd55cce97615e
+Jun-16 22:06:54.514 [Task submitter] INFO  nextflow.Session - [89/389714] Submitted process > run_admixture ( 19 - 1336 )
+Jun-16 22:06:54.824 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 19 - 1942 ) > jobId: 473230; workDir: /projects/b1042/AndersenLab/work/stefan/79/df20cac6b1a7819fb630787231e6b5
+Jun-16 22:06:54.824 [Task submitter] INFO  nextflow.Session - [79/df20ca] Submitted process > run_admixture ( 19 - 1942 )
+Jun-16 22:06:58.214 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 19 - 1593 ) > jobId: 473262; workDir: /projects/b1042/AndersenLab/work/stefan/ba/6076825ae274b22d75b609d2f03c26
+Jun-16 22:06:58.214 [Task submitter] INFO  nextflow.Session - [ba/607682] Submitted process > run_admixture ( 19 - 1593 )
+Jun-16 22:06:59.336 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 19 - 1854 ) > jobId: 473268; workDir: /projects/b1042/AndersenLab/work/stefan/b2/05ff89a1d51f9762b238254354514e
+Jun-16 22:06:59.337 [Task submitter] INFO  nextflow.Session - [b2/05ff89] Submitted process > run_admixture ( 19 - 1854 )
+Jun-16 22:07:01.134 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 19 - 1907 ) > jobId: 473288; workDir: /projects/b1042/AndersenLab/work/stefan/3a/6072bb5bb466a5934685d0b31de5ff
+Jun-16 22:07:01.134 [Task submitter] INFO  nextflow.Session - [3a/6072bb] Submitted process > run_admixture ( 19 - 1907 )
+Jun-16 22:07:01.558 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 20 - 1365 ) > jobId: 473298; workDir: /projects/b1042/AndersenLab/work/stefan/23/66af48fe5b2436593c1458923ef901
+Jun-16 22:07:01.558 [Task submitter] INFO  nextflow.Session - [23/66af48] Submitted process > run_admixture ( 20 - 1365 )
+Jun-16 22:07:02.316 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 19 - 1499 ) > jobId: 473311; workDir: /projects/b1042/AndersenLab/work/stefan/8a/43bf7dc5ea95eff5f7dfb0b47ada48
+Jun-16 22:07:02.317 [Task submitter] INFO  nextflow.Session - [8a/43bf7d] Submitted process > run_admixture ( 19 - 1499 )
+Jun-16 22:07:05.628 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 19 - 1103 ) > jobId: 473359; workDir: /projects/b1042/AndersenLab/work/stefan/82/5268ca5aeef23de4ea47d61c4b4fed
+Jun-16 22:07:05.629 [Task submitter] INFO  nextflow.Session - [82/5268ca] Submitted process > run_admixture ( 19 - 1103 )
+Jun-16 22:07:05.904 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 20 - 1123 ) > jobId: 473363; workDir: /projects/b1042/AndersenLab/work/stefan/a1/6c2613fad6b747fbd071dbb1a2b1c7
+Jun-16 22:07:05.904 [Task submitter] INFO  nextflow.Session - [a1/6c2613] Submitted process > run_admixture ( 20 - 1123 )
+Jun-16 22:07:06.808 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 20 - 1336 ) > jobId: 473376; workDir: /projects/b1042/AndersenLab/work/stefan/a9/2b8d53675e7d4d48076cd3c0970c55
+Jun-16 22:07:06.808 [Task submitter] INFO  nextflow.Session - [a9/2b8d53] Submitted process > run_admixture ( 20 - 1336 )
+Jun-16 22:07:08.802 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 20 - 1999 ) > jobId: 473398; workDir: /projects/b1042/AndersenLab/work/stefan/d1/16cfae4c498f7d66ef51e9f64d63be
+Jun-16 22:07:08.802 [Task submitter] INFO  nextflow.Session - [d1/16cfae] Submitted process > run_admixture ( 20 - 1999 )
+Jun-16 22:07:09.107 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 20 - 1942 ) > jobId: 473402; workDir: /projects/b1042/AndersenLab/work/stefan/90/eca8445b04c4134d7bc5c6109f0335
+Jun-16 22:07:09.120 [Task submitter] INFO  nextflow.Session - [90/eca844] Submitted process > run_admixture ( 20 - 1942 )
+Jun-16 22:07:09.815 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 20 - 1593 ) > jobId: 473413; workDir: /projects/b1042/AndersenLab/work/stefan/bc/4166439038f4cb9ee3702d87e38f6b
+Jun-16 22:07:09.815 [Task submitter] INFO  nextflow.Session - [bc/416643] Submitted process > run_admixture ( 20 - 1593 )
+Jun-16 22:07:11.153 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 20 - 1907 ) > jobId: 473422; workDir: /projects/b1042/AndersenLab/work/stefan/8d/a14085ca6d1ced0aedb4accb7c091b
+Jun-16 22:07:11.154 [Task submitter] INFO  nextflow.Session - [8d/a14085] Submitted process > run_admixture ( 20 - 1907 )
+Jun-16 22:07:11.451 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 20 - 1103 ) > jobId: 473428; workDir: /projects/b1042/AndersenLab/work/stefan/cb/f88a9673bc233c7e5cbe9b963c0907
+Jun-16 22:07:11.451 [Task submitter] INFO  nextflow.Session - [cb/f88a96] Submitted process > run_admixture ( 20 - 1103 )
+Jun-16 22:07:12.083 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 20 - 1854 ) > jobId: 473435; workDir: /projects/b1042/AndersenLab/work/stefan/94/1c5ff578a987748da2eb0bbed21104
+Jun-16 22:07:12.084 [Task submitter] INFO  nextflow.Session - [94/1c5ff5] Submitted process > run_admixture ( 20 - 1854 )
+Jun-16 22:07:12.219 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process run_admixture ( 20 - 1499 ) > jobId: 473438; workDir: /projects/b1042/AndersenLab/work/stefan/ee/88adea2bfb71fea133445483c38247
+Jun-16 22:07:12.220 [Task submitter] INFO  nextflow.Session - [ee/88adea] Submitted process > run_admixture ( 20 - 1499 )
+Jun-16 22:07:18.867 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 22:07:23.466 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 50 -- pending tasks are shown below
+~> TaskHandler[jobId: 472722; id: 172; name: run_admixture ( 16 - 1365 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f0/dc53e5e13fde7671a1bfbdaaa0d314 started: 1560740778648; exited: -; ]
+~> TaskHandler[jobId: 472724; id: 174; name: run_admixture ( 16 - 1336 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/3c/57011a7783b26de16cccaf36c97e92 started: 1560740778814; exited: -; ]
+~> TaskHandler[jobId: 472726; id: 173; name: run_admixture ( 16 - 1123 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/cc/186598d805e802c2b3e5ccc3c53b0d started: 1560740778925; exited: -; ]
+~> TaskHandler[jobId: 472743; id: 175; name: run_admixture ( 16 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/77/a93e24d00103763ec63b5cd4c3da9e started: 1560740779069; exited: -; ]
+~> TaskHandler[jobId: 472744; id: 176; name: run_admixture ( 16 - 1942 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/46/c6d16d0e0c2c18568ba40c88c8dc4e started: 1560740783553; exited: -; ]
+~> TaskHandler[jobId: 472776; id: 178; name: run_admixture ( 16 - 1854 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/8f/b85e2cf26202644a7c62df482ffef2 started: 1560740783608; exited: -; ]
+~> TaskHandler[jobId: 472810; id: 177; name: run_admixture ( 16 - 1593 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/44e0445ead63f948f6046e30f91b65 started: 1560740783671; exited: -; ]
+~> TaskHandler[jobId: 472812; id: 180; name: run_admixture ( 16 - 1103 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/85/f13ee13cecd89d51632e58105f8877 started: 1560740788507; exited: -; ]
+~> TaskHandler[jobId: 472814; id: 179; name: run_admixture ( 16 - 1907 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/72/68b1fe472c941783375d4fa47dd6bb started: 1560740788582; exited: -; ]
+~> TaskHandler[jobId: 472847; id: 181; name: run_admixture ( 16 - 1499 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/75/2cde5bee23c900b699ddb01b8cb6c9 started: 1560740788707; exited: -; ]
+.. remaining tasks omitted.
+Jun-16 22:12:18.891 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 22:12:23.479 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 50 -- pending tasks are shown below
+~> TaskHandler[jobId: 472722; id: 172; name: run_admixture ( 16 - 1365 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f0/dc53e5e13fde7671a1bfbdaaa0d314 started: 1560740778648; exited: -; ]
+~> TaskHandler[jobId: 472724; id: 174; name: run_admixture ( 16 - 1336 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/3c/57011a7783b26de16cccaf36c97e92 started: 1560740778814; exited: -; ]
+~> TaskHandler[jobId: 472726; id: 173; name: run_admixture ( 16 - 1123 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/cc/186598d805e802c2b3e5ccc3c53b0d started: 1560740778925; exited: -; ]
+~> TaskHandler[jobId: 472743; id: 175; name: run_admixture ( 16 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/77/a93e24d00103763ec63b5cd4c3da9e started: 1560740779069; exited: -; ]
+~> TaskHandler[jobId: 472744; id: 176; name: run_admixture ( 16 - 1942 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/46/c6d16d0e0c2c18568ba40c88c8dc4e started: 1560740783553; exited: -; ]
+~> TaskHandler[jobId: 472776; id: 178; name: run_admixture ( 16 - 1854 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/8f/b85e2cf26202644a7c62df482ffef2 started: 1560740783608; exited: -; ]
+~> TaskHandler[jobId: 472810; id: 177; name: run_admixture ( 16 - 1593 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/44e0445ead63f948f6046e30f91b65 started: 1560740783671; exited: -; ]
+~> TaskHandler[jobId: 472812; id: 180; name: run_admixture ( 16 - 1103 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/85/f13ee13cecd89d51632e58105f8877 started: 1560740788507; exited: -; ]
+~> TaskHandler[jobId: 472814; id: 179; name: run_admixture ( 16 - 1907 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/72/68b1fe472c941783375d4fa47dd6bb started: 1560740788582; exited: -; ]
+~> TaskHandler[jobId: 472847; id: 181; name: run_admixture ( 16 - 1499 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/75/2cde5bee23c900b699ddb01b8cb6c9 started: 1560740788707; exited: -; ]
+.. remaining tasks omitted.
+Jun-16 22:17:18.996 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 22:17:23.488 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 50 -- pending tasks are shown below
+~> TaskHandler[jobId: 472722; id: 172; name: run_admixture ( 16 - 1365 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f0/dc53e5e13fde7671a1bfbdaaa0d314 started: 1560740778648; exited: -; ]
+~> TaskHandler[jobId: 472724; id: 174; name: run_admixture ( 16 - 1336 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/3c/57011a7783b26de16cccaf36c97e92 started: 1560740778814; exited: -; ]
+~> TaskHandler[jobId: 472726; id: 173; name: run_admixture ( 16 - 1123 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/cc/186598d805e802c2b3e5ccc3c53b0d started: 1560740778925; exited: -; ]
+~> TaskHandler[jobId: 472743; id: 175; name: run_admixture ( 16 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/77/a93e24d00103763ec63b5cd4c3da9e started: 1560740779069; exited: -; ]
+~> TaskHandler[jobId: 472744; id: 176; name: run_admixture ( 16 - 1942 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/46/c6d16d0e0c2c18568ba40c88c8dc4e started: 1560740783553; exited: -; ]
+~> TaskHandler[jobId: 472776; id: 178; name: run_admixture ( 16 - 1854 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/8f/b85e2cf26202644a7c62df482ffef2 started: 1560740783608; exited: -; ]
+~> TaskHandler[jobId: 472810; id: 177; name: run_admixture ( 16 - 1593 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/44e0445ead63f948f6046e30f91b65 started: 1560740783671; exited: -; ]
+~> TaskHandler[jobId: 472812; id: 180; name: run_admixture ( 16 - 1103 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/85/f13ee13cecd89d51632e58105f8877 started: 1560740788507; exited: -; ]
+~> TaskHandler[jobId: 472814; id: 179; name: run_admixture ( 16 - 1907 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/72/68b1fe472c941783375d4fa47dd6bb started: 1560740788582; exited: -; ]
+~> TaskHandler[jobId: 472847; id: 181; name: run_admixture ( 16 - 1499 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/75/2cde5bee23c900b699ddb01b8cb6c9 started: 1560740788707; exited: -; ]
+.. remaining tasks omitted.
+Jun-16 22:22:19.080 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 22:22:23.494 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 50 -- pending tasks are shown below
+~> TaskHandler[jobId: 472722; id: 172; name: run_admixture ( 16 - 1365 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f0/dc53e5e13fde7671a1bfbdaaa0d314 started: 1560740778648; exited: -; ]
+~> TaskHandler[jobId: 472724; id: 174; name: run_admixture ( 16 - 1336 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/3c/57011a7783b26de16cccaf36c97e92 started: 1560740778814; exited: -; ]
+~> TaskHandler[jobId: 472726; id: 173; name: run_admixture ( 16 - 1123 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/cc/186598d805e802c2b3e5ccc3c53b0d started: 1560740778925; exited: -; ]
+~> TaskHandler[jobId: 472743; id: 175; name: run_admixture ( 16 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/77/a93e24d00103763ec63b5cd4c3da9e started: 1560740779069; exited: -; ]
+~> TaskHandler[jobId: 472744; id: 176; name: run_admixture ( 16 - 1942 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/46/c6d16d0e0c2c18568ba40c88c8dc4e started: 1560740783553; exited: -; ]
+~> TaskHandler[jobId: 472776; id: 178; name: run_admixture ( 16 - 1854 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/8f/b85e2cf26202644a7c62df482ffef2 started: 1560740783608; exited: -; ]
+~> TaskHandler[jobId: 472810; id: 177; name: run_admixture ( 16 - 1593 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/44e0445ead63f948f6046e30f91b65 started: 1560740783671; exited: -; ]
+~> TaskHandler[jobId: 472812; id: 180; name: run_admixture ( 16 - 1103 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/85/f13ee13cecd89d51632e58105f8877 started: 1560740788507; exited: -; ]
+~> TaskHandler[jobId: 472814; id: 179; name: run_admixture ( 16 - 1907 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/72/68b1fe472c941783375d4fa47dd6bb started: 1560740788582; exited: -; ]
+~> TaskHandler[jobId: 472847; id: 181; name: run_admixture ( 16 - 1499 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/75/2cde5bee23c900b699ddb01b8cb6c9 started: 1560740788707; exited: -; ]
+.. remaining tasks omitted.
+Jun-16 22:22:43.590 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472776; id: 178; name: run_admixture ( 16 - 1854 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/8f/b85e2cf26202644a7c62df482ffef2 started: 1560740783608; exited: 2019-06-17T03:22:40.630344Z; ]
+Jun-16 22:24:43.705 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472722; id: 172; name: run_admixture ( 16 - 1365 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f0/dc53e5e13fde7671a1bfbdaaa0d314 started: 1560740778648; exited: 2019-06-17T03:24:41.389044Z; ]
+Jun-16 22:25:18.627 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472814; id: 179; name: run_admixture ( 16 - 1907 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/72/68b1fe472c941783375d4fa47dd6bb started: 1560740788582; exited: 2019-06-17T03:25:16.894355Z; ]
+Jun-16 22:25:58.562 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472724; id: 174; name: run_admixture ( 16 - 1336 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/3c/57011a7783b26de16cccaf36c97e92 started: 1560740778814; exited: 2019-06-17T03:25:54.642034Z; ]
+Jun-16 22:26:03.634 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473060; id: 195; name: run_admixture ( 18 - 1999 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/64/4c6b901864df6683aff7766a8c0980 started: 1560740813552; exited: 2019-06-17T03:26:00.63952Z; ]
+Jun-16 22:27:08.618 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472810; id: 177; name: run_admixture ( 16 - 1593 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/de/44e0445ead63f948f6046e30f91b65 started: 1560740783671; exited: 2019-06-17T03:27:03.84972Z; ]
+Jun-16 22:27:13.541 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473208; id: 201; name: run_admixture ( 18 - 1499 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/8f/f790068560d438fcde9dda183fb35a started: 1560740828752; exited: 2019-06-17T03:27:10.162379Z; ]
+Jun-16 22:27:18.701 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473398; id: 215; name: run_admixture ( 20 - 1999 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/d1/16cfae4c498f7d66ef51e9f64d63be started: 1560740848718; exited: 2019-06-17T03:27:16.088463Z; ]
+Jun-16 22:27:19.156 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 22:27:23.503 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 42 -- pending tasks are shown below
+~> TaskHandler[jobId: 472726; id: 173; name: run_admixture ( 16 - 1123 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/cc/186598d805e802c2b3e5ccc3c53b0d started: 1560740778925; exited: -; ]
+~> TaskHandler[jobId: 472743; id: 175; name: run_admixture ( 16 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/77/a93e24d00103763ec63b5cd4c3da9e started: 1560740779069; exited: -; ]
+~> TaskHandler[jobId: 472744; id: 176; name: run_admixture ( 16 - 1942 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/46/c6d16d0e0c2c18568ba40c88c8dc4e started: 1560740783553; exited: -; ]
+~> TaskHandler[jobId: 472812; id: 180; name: run_admixture ( 16 - 1103 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/85/f13ee13cecd89d51632e58105f8877 started: 1560740788507; exited: -; ]
+~> TaskHandler[jobId: 472847; id: 181; name: run_admixture ( 16 - 1499 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/75/2cde5bee23c900b699ddb01b8cb6c9 started: 1560740788707; exited: -; ]
+~> TaskHandler[jobId: 472849; id: 182; name: run_admixture ( 17 - 1365 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/94/1164f631a3cd9b1b75f62b31964ae4 started: 1560740793554; exited: -; ]
+~> TaskHandler[jobId: 472888; id: 183; name: run_admixture ( 17 - 1123 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ff/076ed64d0726a4ff9823caaf7a504b started: 1560740793585; exited: -; ]
+~> TaskHandler[jobId: 472936; id: 186; name: run_admixture ( 17 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/d6/bc4e9df2dc4f229febd86e69d7f1f5 started: 1560740793727; exited: -; ]
+~> TaskHandler[jobId: 472950; id: 185; name: run_admixture ( 17 - 1942 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/c6/0b418353285a2003b2f63c79d5e7c1 started: 1560740793857; exited: -; ]
+~> TaskHandler[jobId: 472957; id: 188; name: run_admixture ( 17 - 1854 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/2b/01be6b0aa7f898dd9ec69e54f076aa started: 1560740793962; exited: -; ]
+.. remaining tasks omitted.
+Jun-16 22:27:33.658 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472936; id: 186; name: run_admixture ( 17 - 1999 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/d6/bc4e9df2dc4f229febd86e69d7f1f5 started: 1560740793727; exited: 2019-06-17T03:27:28.823095Z; ]
+Jun-16 22:27:38.578 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472950; id: 185; name: run_admixture ( 17 - 1942 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/c6/0b418353285a2003b2f63c79d5e7c1 started: 1560740793857; exited: 2019-06-17T03:27:36.82391Z; ]
+Jun-16 22:27:58.630 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472726; id: 173; name: run_admixture ( 16 - 1123 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/cc/186598d805e802c2b3e5ccc3c53b0d started: 1560740778925; exited: 2019-06-17T03:27:54.31217Z; ]
+Jun-16 22:28:08.660 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473050; id: 193; name: run_admixture ( 18 - 1123 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/e6df4c733c022a79d7016546beabf1 started: 1560740808765; exited: 2019-06-17T03:28:06.719812Z; ]
+Jun-16 22:28:48.548 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473032; id: 192; name: run_admixture ( 18 - 1365 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/3c/b50ff70307f72b056e655dd9515bee started: 1560740808646; exited: 2019-06-17T03:28:45.244164Z; ]
+Jun-16 22:28:48.920 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473224; id: 205; name: run_admixture ( 19 - 1336 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/89/3897140cb22c10229dd55cce97615e started: 1560740828838; exited: 2019-06-17T03:28:46.994189Z; ]
+Jun-16 22:29:03.648 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473099; id: 197; name: run_admixture ( 18 - 1593 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a0/6bf15f4540bcc67b7030fb86972037 started: 1560740818609; exited: 2019-06-17T03:29:00.335667Z; ]
+Jun-16 22:29:43.599 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473311; id: 211; name: run_admixture ( 19 - 1499 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/8a/43bf7dc5ea95eff5f7dfb0b47ada48 started: 1560740838672; exited: 2019-06-17T03:29:39.513725Z; ]
+Jun-16 22:29:58.570 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473017; id: 190; name: run_admixture ( 17 - 1103 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/b4/468222f9bc93c00b402465b3f26b7b started: 1560740808526; exited: 2019-06-17T03:29:57.37853Z; ]
+Jun-16 22:30:13.613 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473026; id: 191; name: run_admixture ( 17 - 1499 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/db/207442b5e7fddd322808b1f923d2ab started: 1560740808589; exited: 2019-06-17T03:30:10.872169Z; ]
+Jun-16 22:30:18.562 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472997; id: 189; name: run_admixture ( 17 - 1907 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/78/7486d27dfb2648104a171a4b6147ea started: 1560740798704; exited: 2019-06-17T03:30:16.540005Z; ]
+Jun-16 22:30:33.676 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472744; id: 176; name: run_admixture ( 16 - 1942 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/46/c6d16d0e0c2c18568ba40c88c8dc4e started: 1560740783553; exited: 2019-06-17T03:30:32.506345Z; ]
+Jun-16 22:30:38.581 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473268; id: 208; name: run_admixture ( 19 - 1854 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/b2/05ff89a1d51f9762b238254354514e started: 1560740829065; exited: 2019-06-17T03:30:35.736197Z; ]
+Jun-16 22:30:43.574 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473102; id: 198; name: run_admixture ( 18 - 1854 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f1/39f73fff7cd9b1badcf59943427c0d started: 1560740818852; exited: 2019-06-17T03:30:38.747962Z; ]
+Jun-16 22:31:18.595 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473298; id: 212; name: run_admixture ( 20 - 1365 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/23/66af48fe5b2436593c1458923ef901 started: 1560740833493; exited: 2019-06-17T03:31:16.222248Z; ]
+Jun-16 22:31:43.644 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473182; id: 203; name: run_admixture ( 19 - 1123 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/d1/67c37795c9349d1f192064a8354f5d started: 1560740823681; exited: 2019-06-17T03:31:38.897251Z; ]
+Jun-16 22:32:19.222 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 22:32:23.512 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 26 -- pending tasks are shown below
+~> TaskHandler[jobId: 472743; id: 175; name: run_admixture ( 16 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/77/a93e24d00103763ec63b5cd4c3da9e started: 1560740779069; exited: -; ]
+~> TaskHandler[jobId: 472812; id: 180; name: run_admixture ( 16 - 1103 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/85/f13ee13cecd89d51632e58105f8877 started: 1560740788507; exited: -; ]
+~> TaskHandler[jobId: 472847; id: 181; name: run_admixture ( 16 - 1499 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/75/2cde5bee23c900b699ddb01b8cb6c9 started: 1560740788707; exited: -; ]
+~> TaskHandler[jobId: 472849; id: 182; name: run_admixture ( 17 - 1365 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/94/1164f631a3cd9b1b75f62b31964ae4 started: 1560740793554; exited: -; ]
+~> TaskHandler[jobId: 472888; id: 183; name: run_admixture ( 17 - 1123 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ff/076ed64d0726a4ff9823caaf7a504b started: 1560740793585; exited: -; ]
+~> TaskHandler[jobId: 472957; id: 188; name: run_admixture ( 17 - 1854 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/2b/01be6b0aa7f898dd9ec69e54f076aa started: 1560740793962; exited: -; ]
+~> TaskHandler[jobId: 472980; id: 187; name: run_admixture ( 17 - 1593 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/fc/6e4c88db4cd530e06a87b6ca6ff996 started: 1560740794047; exited: -; ]
+~> TaskHandler[jobId: 472984; id: 184; name: run_admixture ( 17 - 1336 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ac/8ac08e0ba60b42f4ec0ed87f108c7b started: 1560740798609; exited: -; ]
+~> TaskHandler[jobId: 473083; id: 194; name: run_admixture ( 18 - 1336 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/4f/e0af7341ba9308b49e633a8079c64c started: 1560740813627; exited: -; ]
+~> TaskHandler[jobId: 473091; id: 196; name: run_admixture ( 18 - 1942 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a6/5962183b8f9a8239893acac2edf6e9 started: 1560740818524; exited: -; ]
+.. remaining tasks omitted.
+Jun-16 22:32:33.585 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473413; id: 217; name: run_admixture ( 20 - 1593 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/bc/4166439038f4cb9ee3702d87e38f6b started: 1560740853553; exited: 2019-06-17T03:32:31.556009Z; ]
+Jun-16 22:32:48.588 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472812; id: 180; name: run_admixture ( 16 - 1103 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/85/f13ee13cecd89d51632e58105f8877 started: 1560740788507; exited: 2019-06-17T03:32:43.94201Z; ]
+Jun-16 22:33:18.575 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473435; id: 218; name: run_admixture ( 20 - 1854 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/94/1c5ff578a987748da2eb0bbed21104 started: 1560740858563; exited: 2019-06-17T03:33:15.603808Z; ]
+Jun-16 22:33:43.584 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472743; id: 175; name: run_admixture ( 16 - 1999 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/77/a93e24d00103763ec63b5cd4c3da9e started: 1560740779069; exited: 2019-06-17T03:33:40.477893Z; ]
+Jun-16 22:33:53.571 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472984; id: 184; name: run_admixture ( 17 - 1336 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ac/8ac08e0ba60b42f4ec0ed87f108c7b started: 1560740798609; exited: 2019-06-17T03:33:51.22945Z; ]
+Jun-16 22:34:23.607 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473159; id: 202; name: run_admixture ( 19 - 1365 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/f2/bf673fe8c542a6a8c66f7270dae1af started: 1560740823572; exited: 2019-06-17T03:34:20.260212Z; ]
+Jun-16 22:36:33.678 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473288; id: 209; name: run_admixture ( 19 - 1907 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/3a/6072bb5bb466a5934685d0b31de5ff started: 1560740829132; exited: 2019-06-17T03:36:31.635662Z; ]
+Jun-16 22:37:19.294 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 22:37:23.518 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 19 -- pending tasks are shown below
+~> TaskHandler[jobId: 472847; id: 181; name: run_admixture ( 16 - 1499 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/75/2cde5bee23c900b699ddb01b8cb6c9 started: 1560740788707; exited: -; ]
+~> TaskHandler[jobId: 472849; id: 182; name: run_admixture ( 17 - 1365 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/94/1164f631a3cd9b1b75f62b31964ae4 started: 1560740793554; exited: -; ]
+~> TaskHandler[jobId: 472888; id: 183; name: run_admixture ( 17 - 1123 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ff/076ed64d0726a4ff9823caaf7a504b started: 1560740793585; exited: -; ]
+~> TaskHandler[jobId: 472957; id: 188; name: run_admixture ( 17 - 1854 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/2b/01be6b0aa7f898dd9ec69e54f076aa started: 1560740793962; exited: -; ]
+~> TaskHandler[jobId: 472980; id: 187; name: run_admixture ( 17 - 1593 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/fc/6e4c88db4cd530e06a87b6ca6ff996 started: 1560740794047; exited: -; ]
+~> TaskHandler[jobId: 473083; id: 194; name: run_admixture ( 18 - 1336 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/4f/e0af7341ba9308b49e633a8079c64c started: 1560740813627; exited: -; ]
+~> TaskHandler[jobId: 473091; id: 196; name: run_admixture ( 18 - 1942 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a6/5962183b8f9a8239893acac2edf6e9 started: 1560740818524; exited: -; ]
+~> TaskHandler[jobId: 473104; id: 199; name: run_admixture ( 18 - 1907 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/fb/8e36e0bce12ac2bc294542492def54 started: 1560740819400; exited: -; ]
+~> TaskHandler[jobId: 473126; id: 200; name: run_admixture ( 18 - 1103 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ae/addd4c8f21d25b7b5e6fdb38703839 started: 1560740823510; exited: -; ]
+~> TaskHandler[jobId: 473205; id: 204; name: run_admixture ( 19 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/65/767cf1bf887ab72099f3164565f3df started: 1560740828658; exited: -; ]
+.. remaining tasks omitted.
+Jun-16 22:37:48.604 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473402; id: 216; name: run_admixture ( 20 - 1942 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/90/eca8445b04c4134d7bc5c6109f0335 started: 1560740848766; exited: 2019-06-17T03:37:47.952905Z; ]
+Jun-16 22:38:38.680 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472847; id: 181; name: run_admixture ( 16 - 1499 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/75/2cde5bee23c900b699ddb01b8cb6c9 started: 1560740788707; exited: 2019-06-17T03:38:37.72145Z; ]
+Jun-16 22:41:28.605 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472849; id: 182; name: run_admixture ( 17 - 1365 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/94/1164f631a3cd9b1b75f62b31964ae4 started: 1560740793554; exited: 2019-06-17T03:41:25.971333Z; ]
+Jun-16 22:41:28.917 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473422; id: 219; name: run_admixture ( 20 - 1907 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/8d/a14085ca6d1ced0aedb4accb7c091b started: 1560740853647; exited: 2019-06-17T03:41:25.410664Z; ]
+Jun-16 22:42:13.660 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473359; id: 210; name: run_admixture ( 19 - 1103 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/82/5268ca5aeef23de4ea47d61c4b4fed started: 1560740838817; exited: 2019-06-17T03:42:13.518239Z; ]
+Jun-16 22:42:19.360 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 22:42:23.539 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 14 -- pending tasks are shown below
+~> TaskHandler[jobId: 472888; id: 183; name: run_admixture ( 17 - 1123 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ff/076ed64d0726a4ff9823caaf7a504b started: 1560740793585; exited: -; ]
+~> TaskHandler[jobId: 472957; id: 188; name: run_admixture ( 17 - 1854 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/2b/01be6b0aa7f898dd9ec69e54f076aa started: 1560740793962; exited: -; ]
+~> TaskHandler[jobId: 472980; id: 187; name: run_admixture ( 17 - 1593 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/fc/6e4c88db4cd530e06a87b6ca6ff996 started: 1560740794047; exited: -; ]
+~> TaskHandler[jobId: 473083; id: 194; name: run_admixture ( 18 - 1336 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/4f/e0af7341ba9308b49e633a8079c64c started: 1560740813627; exited: -; ]
+~> TaskHandler[jobId: 473091; id: 196; name: run_admixture ( 18 - 1942 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a6/5962183b8f9a8239893acac2edf6e9 started: 1560740818524; exited: -; ]
+~> TaskHandler[jobId: 473104; id: 199; name: run_admixture ( 18 - 1907 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/fb/8e36e0bce12ac2bc294542492def54 started: 1560740819400; exited: -; ]
+~> TaskHandler[jobId: 473126; id: 200; name: run_admixture ( 18 - 1103 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ae/addd4c8f21d25b7b5e6fdb38703839 started: 1560740823510; exited: -; ]
+~> TaskHandler[jobId: 473205; id: 204; name: run_admixture ( 19 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/65/767cf1bf887ab72099f3164565f3df started: 1560740828658; exited: -; ]
+~> TaskHandler[jobId: 473230; id: 206; name: run_admixture ( 19 - 1942 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/79/df20cac6b1a7819fb630787231e6b5 started: 1560740828971; exited: -; ]
+~> TaskHandler[jobId: 473262; id: 207; name: run_admixture ( 19 - 1593 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ba/6076825ae274b22d75b609d2f03c26 started: 1560740829016; exited: -; ]
+.. remaining tasks omitted.
+Jun-16 22:42:33.660 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472980; id: 187; name: run_admixture ( 17 - 1593 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/fc/6e4c88db4cd530e06a87b6ca6ff996 started: 1560740794047; exited: 2019-06-17T03:42:28.621169Z; ]
+Jun-16 22:42:48.727 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472888; id: 183; name: run_admixture ( 17 - 1123 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ff/076ed64d0726a4ff9823caaf7a504b started: 1560740793585; exited: 2019-06-17T03:42:46.685466Z; ]
+Jun-16 22:43:18.673 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 472957; id: 188; name: run_admixture ( 17 - 1854 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/2b/01be6b0aa7f898dd9ec69e54f076aa started: 1560740793962; exited: 2019-06-17T03:43:17.905143Z; ]
+Jun-16 22:43:19.037 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473126; id: 200; name: run_admixture ( 18 - 1103 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ae/addd4c8f21d25b7b5e6fdb38703839 started: 1560740823510; exited: 2019-06-17T03:43:14.450567Z; ]
+Jun-16 22:44:08.643 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473428; id: 220; name: run_admixture ( 20 - 1103 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/cb/f88a9673bc233c7e5cbe9b963c0907 started: 1560740853764; exited: 2019-06-17T03:44:04.115626Z; ]
+Jun-16 22:45:28.606 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473230; id: 206; name: run_admixture ( 19 - 1942 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/79/df20cac6b1a7819fb630787231e6b5 started: 1560740828971; exited: 2019-06-17T03:45:23.731018Z; ]
+Jun-16 22:45:53.621 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473091; id: 196; name: run_admixture ( 18 - 1942 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a6/5962183b8f9a8239893acac2edf6e9 started: 1560740818524; exited: 2019-06-17T03:45:51.496029Z; ]
+Jun-16 22:46:38.805 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473376; id: 214; name: run_admixture ( 20 - 1336 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a9/2b8d53675e7d4d48076cd3c0970c55 started: 1560740843527; exited: 2019-06-17T03:46:34.872942Z; ]
+Jun-16 22:47:19.428 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 22:47:23.559 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 6 -- pending tasks are shown below
+~> TaskHandler[jobId: 473083; id: 194; name: run_admixture ( 18 - 1336 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/4f/e0af7341ba9308b49e633a8079c64c started: 1560740813627; exited: -; ]
+~> TaskHandler[jobId: 473104; id: 199; name: run_admixture ( 18 - 1907 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/fb/8e36e0bce12ac2bc294542492def54 started: 1560740819400; exited: -; ]
+~> TaskHandler[jobId: 473205; id: 204; name: run_admixture ( 19 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/65/767cf1bf887ab72099f3164565f3df started: 1560740828658; exited: -; ]
+~> TaskHandler[jobId: 473262; id: 207; name: run_admixture ( 19 - 1593 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ba/6076825ae274b22d75b609d2f03c26 started: 1560740829016; exited: -; ]
+~> TaskHandler[jobId: 473363; id: 213; name: run_admixture ( 20 - 1123 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a1/6c2613fad6b747fbd071dbb1a2b1c7 started: 1560740838898; exited: -; ]
+~> TaskHandler[jobId: 473438; id: 221; name: run_admixture ( 20 - 1499 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ee/88adea2bfb71fea133445483c38247 started: 1560740863631; exited: -; ]
+Jun-16 22:49:43.668 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473438; id: 221; name: run_admixture ( 20 - 1499 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ee/88adea2bfb71fea133445483c38247 started: 1560740863631; exited: 2019-06-17T03:49:41.042889Z; ]
+Jun-16 22:51:28.617 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473104; id: 199; name: run_admixture ( 18 - 1907 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/fb/8e36e0bce12ac2bc294542492def54 started: 1560740819400; exited: 2019-06-17T03:51:26.985524Z; ]
+Jun-16 22:52:08.761 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473262; id: 207; name: run_admixture ( 19 - 1593 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ba/6076825ae274b22d75b609d2f03c26 started: 1560740829016; exited: 2019-06-17T03:52:04.973353Z; ]
+Jun-16 22:52:19.497 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 22:52:23.567 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[jobId: 473083; id: 194; name: run_admixture ( 18 - 1336 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/4f/e0af7341ba9308b49e633a8079c64c started: 1560740813627; exited: -; ]
+~> TaskHandler[jobId: 473205; id: 204; name: run_admixture ( 19 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/65/767cf1bf887ab72099f3164565f3df started: 1560740828658; exited: -; ]
+~> TaskHandler[jobId: 473363; id: 213; name: run_admixture ( 20 - 1123 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a1/6c2613fad6b747fbd071dbb1a2b1c7 started: 1560740838898; exited: -; ]
+Jun-16 22:54:33.597 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473083; id: 194; name: run_admixture ( 18 - 1336 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/4f/e0af7341ba9308b49e633a8079c64c started: 1560740813627; exited: 2019-06-17T03:54:28.772644Z; ]
+Jun-16 22:57:19.569 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 22:57:23.579 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 473205; id: 204; name: run_admixture ( 19 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/65/767cf1bf887ab72099f3164565f3df started: 1560740828658; exited: -; ]
+~> TaskHandler[jobId: 473363; id: 213; name: run_admixture ( 20 - 1123 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a1/6c2613fad6b747fbd071dbb1a2b1c7 started: 1560740838898; exited: -; ]
+Jun-16 23:02:19.634 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 23:02:23.604 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 473205; id: 204; name: run_admixture ( 19 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/65/767cf1bf887ab72099f3164565f3df started: 1560740828658; exited: -; ]
+~> TaskHandler[jobId: 473363; id: 213; name: run_admixture ( 20 - 1123 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a1/6c2613fad6b747fbd071dbb1a2b1c7 started: 1560740838898; exited: -; ]
+Jun-16 23:07:19.701 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 23:07:23.605 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[jobId: 473205; id: 204; name: run_admixture ( 19 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/65/767cf1bf887ab72099f3164565f3df started: 1560740828658; exited: -; ]
+~> TaskHandler[jobId: 473363; id: 213; name: run_admixture ( 20 - 1123 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a1/6c2613fad6b747fbd071dbb1a2b1c7 started: 1560740838898; exited: -; ]
+Jun-16 23:08:48.647 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473363; id: 213; name: run_admixture ( 20 - 1123 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/a1/6c2613fad6b747fbd071dbb1a2b1c7 started: 1560740838898; exited: 2019-06-17T04:08:46.699193Z; ]
+Jun-16 23:12:19.769 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] concat_replicate_logs
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] concat_pop_logs
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: clog
+  port 1: (cntrl) -     ; channel: $
+
+[process] run_admixture_besk_k
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) OPEN  ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 23:12:23.616 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[jobId: 473205; id: 204; name: run_admixture ( 19 - 1999 ); status: RUNNING; exit: -; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/65/767cf1bf887ab72099f3164565f3df started: 1560740828658; exited: -; ]
+Jun-16 23:15:33.738 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 473205; id: 204; name: run_admixture ( 19 - 1999 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/65/767cf1bf887ab72099f3164565f3df started: 1560740828658; exited: 2019-06-17T04:15:29.157008Z; ]
+Jun-16 23:15:33.995 [Actor Thread 54] DEBUG nextflow.Session - <<< barrier arrive (process: run_admixture)
+Jun-16 23:15:34.378 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [6f/4487fe] Cached process > concat_replicate_logs ( 2 )
+Jun-16 23:15:34.378 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [76/27b577] Cached process > concat_replicate_logs ( 3 )
+Jun-16 23:15:34.408 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [fa/a14d5f] Cached process > concat_replicate_logs ( 4 )
+Jun-16 23:15:34.451 [Actor Thread 60] INFO  nextflow.processor.TaskProcessor - [31/17a68e] Cached process > concat_replicate_logs ( 5 )
+Jun-16 23:15:34.532 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [7f/78f7bb] Cached process > concat_replicate_logs ( 6 )
+Jun-16 23:15:34.544 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [f7/f068a1] Cached process > concat_replicate_logs ( 7 )
+Jun-16 23:15:34.856 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [3d/90e8b5] Cached process > concat_replicate_logs ( 10 )
+Jun-16 23:15:34.880 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [42/c87eb0] Cached process > concat_replicate_logs ( 8 )
+Jun-16 23:15:34.887 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [43/b50829] Cached process > concat_replicate_logs ( 9 )
+Jun-16 23:15:34.945 [Actor Thread 60] INFO  nextflow.processor.TaskProcessor - [c5/b83250] Cached process > concat_replicate_logs ( 11 )
+Jun-16 23:15:35.083 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [4f/45e73f] Cached process > concat_replicate_logs ( 12 )
+Jun-16 23:15:35.083 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [39/2eac86] Cached process > concat_replicate_logs ( 13 )
+Jun-16 23:15:35.434 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [ee/1b7a95] Cached process > concat_replicate_logs ( 14 )
+Jun-16 23:15:35.448 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [61/d86455] Cached process > concat_replicate_logs ( 15 )
+Jun-16 23:15:35.496 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-16 23:15:35.499 [Task submitter] INFO  nextflow.Session - [78/24dfcf] Submitted process > concat_replicate_logs ( 16 )
+Jun-16 23:15:35.663 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 236; name: concat_replicate_logs ( 16 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/78/24dfcf36d1cd533e7a2d87a449663d]
+Jun-16 23:15:35.777 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-16 23:15:35.777 [Task submitter] INFO  nextflow.Session - [14/34bfa7] Submitted process > concat_replicate_logs ( 17 )
+Jun-16 23:15:35.888 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 239; name: concat_replicate_logs ( 17 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/14/34bfa73836240b7ae9d64ab713d63b]
+Jun-16 23:15:35.893 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-16 23:15:35.893 [Task submitter] INFO  nextflow.Session - [aa/2d0003] Submitted process > concat_replicate_logs ( 20 )
+Jun-16 23:15:36.003 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 238; name: concat_replicate_logs ( 20 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/aa/2d0003fbcfb7128564b83d36905337]
+Jun-16 23:15:36.007 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-16 23:15:36.008 [Task submitter] INFO  nextflow.Session - [ce/04e204] Submitted process > concat_replicate_logs ( 18 )
+Jun-16 23:15:36.124 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 237; name: concat_replicate_logs ( 18 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/ce/04e2046327f5023c87594fc2362539]
+Jun-16 23:15:36.128 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-16 23:15:36.129 [Task submitter] INFO  nextflow.Session - [e5/2bad2d] Submitted process > concat_replicate_logs ( 19 )
+Jun-16 23:15:36.227 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 240; name: concat_replicate_logs ( 19 ); status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/e5/2bad2dadaea2073372429b5f2921f4]
+Jun-16 23:15:36.228 [Actor Thread 55] DEBUG nextflow.Session - <<< barrier arrive (process: concat_replicate_logs)
+Jun-16 23:15:36.236 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-16 23:15:36.236 [Task submitter] INFO  nextflow.Session - [61/19ea7f] Submitted process > concat_pop_logs
+Jun-16 23:15:36.485 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 241; name: concat_pop_logs; status: COMPLETED; exit: 0; error: -; workDir: /projects/b1042/AndersenLab/work/stefan/61/19ea7f26f1033e9ecb34c64244e6ce]
+Jun-16 23:15:36.487 [Actor Thread 55] DEBUG nextflow.Session - <<< barrier arrive (process: concat_pop_logs)
+Jun-16 23:15:36.503 [Actor Thread 57] DEBUG n.splitter.AbstractTextSplitter - Splitter `Text` collector path: nextflow.splitter.TextFileCollector$CachePath(/projects/b1042/AndersenLab/work/stefan/12/ab132f70b6e4dfcfa2253f460a0d8d/bestK.txt, null)
+Jun-16 23:15:39.993 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [86/abe218] Cached process > run_admixture_besk_k (4)
+Jun-16 23:15:39.993 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [8d/5d6008] Cached process > run_admixture_besk_k (3)
+Jun-16 23:15:39.993 [Actor Thread 57] INFO  nextflow.processor.TaskProcessor - [b3/ccfbbe] Cached process > run_admixture_besk_k (2)
+Jun-16 23:15:39.993 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [55/7ca226] Cached process > run_admixture_besk_k (5)
+Jun-16 23:15:40.015 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [c6/881468] Cached process > run_admixture_besk_k (1)
+Jun-16 23:15:40.017 [Actor Thread 54] DEBUG nextflow.Session - <<< barrier arrive (process: run_admixture_besk_k)
+Jun-16 23:15:58.437 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [e1/fa69d0] Cached process > popgenome_window_kpop (I)
+Jun-16 23:15:59.708 [Actor Thread 63] INFO  nextflow.processor.TaskProcessor - [7e/d3da32] Cached process > popgenome_gene_kpop (I)
+Jun-16 23:15:59.898 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [de/d12eac] Cached process > popgenome_window_kpop (I)
+Jun-16 23:15:59.917 [Actor Thread 66] INFO  nextflow.processor.TaskProcessor - [92/d8e3ce] Cached process > popgenome_gene_kpop (I)
+Jun-16 23:15:59.940 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [7c/da6ecf] Cached process > popgenome_window_kpop (I)
+Jun-16 23:16:00.039 [Actor Thread 57] INFO  nextflow.processor.TaskProcessor - [57/f2dfc1] Cached process > popgenome_window_kpop (I)
+Jun-16 23:16:00.214 [Actor Thread 65] INFO  nextflow.processor.TaskProcessor - [67/989f62] Cached process > popgenome_gene_kpop (I)
+Jun-16 23:16:00.370 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [6f/c06a78] Cached process > popgenome_gene_kpop (I)
+Jun-16 23:16:00.561 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [a3/a7939b] Cached process > popgenome_window_kpop (I)
+Jun-16 23:16:00.646 [Actor Thread 67] INFO  nextflow.processor.TaskProcessor - [41/97ed96] Cached process > popgenome_gene_kpop (I)
+Jun-16 23:16:00.688 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [e6/25a340] Cached process > popgenome_window_kpop (II)
+Jun-16 23:16:00.877 [Actor Thread 68] INFO  nextflow.processor.TaskProcessor - [3a/d0a0e1] Cached process > popgenome_gene_kpop (II)
+Jun-16 23:16:18.656 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [5d/d4b16f] Cached process > popgenome_gene_kpop (II)
+Jun-16 23:16:19.122 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [73/0ed7d0] Cached process > popgenome_window_kpop (II)
+Jun-16 23:16:20.282 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [22/025b10] Cached process > popgenome_window_kpop (II)
+Jun-16 23:16:20.329 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [81/fe57eb] Cached process > popgenome_window_kpop (III)
+Jun-16 23:16:20.611 [Actor Thread 57] INFO  nextflow.processor.TaskProcessor - [54/179c4e] Cached process > popgenome_window_kpop (II)
+Jun-16 23:16:20.697 [Actor Thread 68] INFO  nextflow.processor.TaskProcessor - [f6/312fc7] Cached process > popgenome_gene_kpop (III)
+Jun-16 23:16:20.841 [Actor Thread 67] INFO  nextflow.processor.TaskProcessor - [8e/7dafa1] Cached process > popgenome_gene_kpop (III)
+Jun-16 23:16:20.876 [Actor Thread 66] INFO  nextflow.processor.TaskProcessor - [35/e05517] Cached process > popgenome_window_kpop (III)
+Jun-16 23:16:20.941 [Actor Thread 63] INFO  nextflow.processor.TaskProcessor - [a0/d8463b] Cached process > popgenome_gene_kpop (II)
+Jun-16 23:16:21.235 [Actor Thread 65] INFO  nextflow.processor.TaskProcessor - [c7/0ae40a] Cached process > popgenome_gene_kpop (II)
+Jun-16 23:16:21.980 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [84/1981f8] Cached process > popgenome_window_kpop (II)
+Jun-16 23:16:22.517 [Actor Thread 69] INFO  nextflow.processor.TaskProcessor - [42/6b552f] Cached process > popgenome_gene_kpop (II)
+Jun-16 23:16:39.539 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [e6/c53835] Cached process > popgenome_window_kpop (III)
+Jun-16 23:16:39.909 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [98/514e46] Cached process > popgenome_gene_kpop (III)
+Jun-16 23:16:40.992 [Actor Thread 73] INFO  nextflow.processor.TaskProcessor - [3e/59b4f7] Cached process > popgenome_window_kpop (IV)
+Jun-16 23:16:41.017 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [49/11827e] Cached process > popgenome_window_kpop (III)
+Jun-16 23:16:41.111 [Actor Thread 67] INFO  nextflow.processor.TaskProcessor - [1d/a4be36] Cached process > popgenome_gene_kpop (IV)
+Jun-16 23:16:41.591 [Actor Thread 66] INFO  nextflow.processor.TaskProcessor - [bc/c1ce48] Cached process > popgenome_window_kpop (IV)
+Jun-16 23:16:41.747 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [f7/b6bab6] Cached process > popgenome_window_kpop (III)
+Jun-16 23:16:42.060 [Actor Thread 68] INFO  nextflow.processor.TaskProcessor - [13/d438bb] Cached process > popgenome_gene_kpop (III)
+Jun-16 23:16:42.912 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [57/18dc91] Cached process > popgenome_window_kpop (IV)
+Jun-16 23:16:43.047 [Actor Thread 72] INFO  nextflow.processor.TaskProcessor - [1c/725afa] Cached process > popgenome_gene_kpop (III)
+Jun-16 23:16:43.107 [Actor Thread 65] INFO  nextflow.processor.TaskProcessor - [3a/4ae5d9] Cached process > popgenome_gene_kpop (IV)
+Jun-16 23:16:43.927 [Actor Thread 63] INFO  nextflow.processor.TaskProcessor - [f1/3bd449] Cached process > popgenome_gene_kpop (IV)
+Jun-16 23:16:58.409 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [9a/aa379c] Cached process > popgenome_gene_kpop (IV)
+Jun-16 23:17:00.723 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [5a/047961] Cached process > popgenome_window_kpop (IV)
+Jun-16 23:17:01.390 [Actor Thread 73] INFO  nextflow.processor.TaskProcessor - [f8/e50134] Cached process > popgenome_window_kpop (IV)
+Jun-16 23:17:01.891 [Actor Thread 67] INFO  nextflow.processor.TaskProcessor - [84/633342] Cached process > popgenome_gene_kpop (IV)
+Jun-16 23:17:01.916 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [74/8c0796] Cached process > popgenome_window_kpop (V)
+Jun-16 23:17:01.920 [Actor Thread 66] INFO  nextflow.processor.TaskProcessor - [23/c13259] Cached process > popgenome_window_kpop (V)
+Jun-16 23:17:02.472 [Actor Thread 68] INFO  nextflow.processor.TaskProcessor - [5a/d08f49] Cached process > popgenome_gene_kpop (V)
+Jun-16 23:17:02.591 [Actor Thread 74] INFO  nextflow.processor.TaskProcessor - [fd/e375d2] Cached process > popgenome_gene_kpop (V)
+Jun-16 23:17:02.759 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [e7/4e3b81] Cached process > popgenome_window_kpop (V)
+Jun-16 23:17:03.862 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [dc/f223eb] Cached process > popgenome_window_kpop (V)
+Jun-16 23:17:05.369 [Actor Thread 72] INFO  nextflow.processor.TaskProcessor - [e8/1f6358] Cached process > popgenome_gene_kpop (V)
+Jun-16 23:17:05.423 [Actor Thread 63] INFO  nextflow.processor.TaskProcessor - [9e/71b786] Cached process > popgenome_gene_kpop (V)
+Jun-16 23:17:19.807 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] popgenome_window_kpop
+  status=ACTIVE
+  port 0: (queue) closed; channel: -
+  port 1: (value) bound ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+[process] popgenome_gene_kpop
+  status=ACTIVE
+  port 0: (queue) closed; channel: -
+  port 1: (value) bound ; channel: __$eachinparam<1>
+  port 2: (value) bound ; channel: __$eachinparam<2>
+  port 3: (cntrl) -     ; channel: $
+
+Jun-16 23:17:20.989 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [df/7028f9] Cached process > popgenome_gene_kpop (V)
+Jun-16 23:17:21.124 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [f8/ed4970] Cached process > popgenome_window_kpop (V)
+Jun-16 23:17:22.168 [Actor Thread 73] INFO  nextflow.processor.TaskProcessor - [29/8ba0a5] Cached process > popgenome_window_kpop (X)
+Jun-16 23:17:22.283 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [80/f9237a] Cached process > popgenome_window_kpop (X)
+Jun-16 23:17:22.308 [Actor Thread 67] INFO  nextflow.processor.TaskProcessor - [32/c0ee1f] Cached process > popgenome_gene_kpop (X)
+Jun-16 23:17:22.951 [Actor Thread 76] INFO  nextflow.processor.TaskProcessor - [a7/a5b2e1] Cached process > popgenome_window_kpop (X)
+Jun-16 23:17:23.008 [Actor Thread 66] INFO  nextflow.processor.TaskProcessor - [27/7216a6] Cached process > popgenome_gene_kpop (X)
+Jun-16 23:17:23.097 [Actor Thread 74] INFO  nextflow.processor.TaskProcessor - [3f/9cd8f3] Cached process > popgenome_gene_kpop (X)
+Jun-16 23:17:23.171 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [c1/d576a4] Cached process > popgenome_window_kpop (X)
+Jun-16 23:17:23.200 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [a1/f62b6e] Cached process > popgenome_window_kpop (X)
+Jun-16 23:17:23.201 [Actor Thread 78] DEBUG nextflow.Session - <<< barrier arrive (process: popgenome_window_kpop)
+Jun-16 23:17:23.540 [Actor Thread 63] INFO  nextflow.processor.TaskProcessor - [a8/9db2c1] Cached process > popgenome_gene_kpop (X)
+Jun-16 23:17:23.570 [Actor Thread 72] INFO  nextflow.processor.TaskProcessor - [f5/097051] Cached process > popgenome_gene_kpop (X)
+Jun-16 23:17:23.571 [Actor Thread 78] DEBUG nextflow.Session - <<< barrier arrive (process: popgenome_gene_kpop)
+Jun-16 23:17:23.628 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] combine_popgenome_subpops
+  status=ACTIVE
+  port 0: (value) bound ; channel: *
+  port 1: (cntrl) -     ; channel: $
+
+Jun-16 23:17:26.480 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [1c/43192f] Cached process > combine_popgenome_subpops
+Jun-16 23:17:26.482 [Actor Thread 78] DEBUG nextflow.Session - <<< barrier arrive (process: combine_popgenome_subpops)
+Jun-16 23:17:26.482 [main] DEBUG nextflow.Session - Session await > all process finished
+Jun-16 23:17:26.515 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local)
+Jun-16 23:17:28.628 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: slurm)
+Jun-16 23:17:28.628 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jun-16 23:17:28.646 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=56; failedCount=0; ignoredCount=0; cachedCount=251; succeedDuration=4d 2h 35m 4s; failedDuration=0ms; cachedDuration=7d 6h 54m 3s]
+Jun-16 23:17:28.756 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Jun-16 23:17:28.863 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

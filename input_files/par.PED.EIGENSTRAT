@@ -1,0 +1,8 @@
+genotypename:    eigenstrat_input.ped
+snpname:         eigenstrat_input.pedsnp # or example.map, either works 
+indivname:       eigenstrat_input.pedind # or example.ped, either works
+outputformat:    EIGENSTRAT
+genotypeoutname: samples.eigenstratgeno
+snpoutname:      samples.snp
+indivoutname:    samples.ind
+familynames:     NO

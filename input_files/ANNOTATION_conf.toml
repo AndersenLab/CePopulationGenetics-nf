@@ -1,0 +1,65 @@
+[[annotation]]
+file="/projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/annotations/exons.bed.gz"
+columns = [4]
+names=["exon"]
+ops=["self"]
+
+[[annotation]]
+file="/projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/annotations/gquarted.bed.gz"
+columns = [4]
+names=["Gquartet"]
+ops=["self"]
+
+[[annotation]]
+file="/projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/annotations/TF_bindingsite.bed.gz"
+columns = [4, 5, 6]
+names=["WBname", "TFid", "TFname"]
+ops=["self", "self", "self"]
+
+[[annotation]]
+file="/projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/annotations/TF_bindingsite_paper.bed.gz"
+columns = [4]
+names=["TF_paperSource"]
+ops=["self"]
+
+[[annotation]]
+file="/projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/annotations/promoter.bed.gz"
+columns = [4]
+names=["TF_paperSource"]
+ops=["self"]
+
+[[annotation]]
+file="/projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/annotations/histone_binding.bed.gz"
+columns = [4]
+names=["Histone_Binding"]
+ops=["self"]
+
+[[annotation]]
+file="/projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/annotations/mirna_binding.bed.gz"
+columns = [4]
+names=["miRNA_binding"]
+ops=["self"]
+
+[[annotation]]
+file="/projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/annotations/splice_sites.bed.gz"
+columns = [4]
+names=["Splice_Sites"]
+ops=["self"]
+
+[[annotation]]
+file="/projects/b1059/projects/Stefan/CePopulationGenetics-nf/20210308-163_PCA_0.6_hawaii/ANNOTATE_VCF/ANC.bed.gz"
+columns = [4]
+names=["AA"]
+ops=["self"]
+
+[[annotation]]
+file="/projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/annotations/Ce_Genetic_Map_WS235.bed.gz"
+columns = [4]
+names=["cM"]
+ops=["self"]
+
+[[annotation]]
+file="/projects/b1059/projects/Stefan/CePopulationGenetics-nf/input_files/annotations/WS266_Masked_Regions_sorted.bed.gz"
+columns = [4]
+names=["MASKED"]
+ops=["self"]
