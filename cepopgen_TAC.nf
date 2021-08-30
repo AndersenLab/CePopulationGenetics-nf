@@ -208,6 +208,8 @@ process annotate_small_vcf {
 
     publishDir "${params.out}/ANNOTATE_VCF", mode: 'copy'
 
+    conda '/projects/b1059/software/conda_envs/vcffixup'
+
     cpus 1
 
     input:
@@ -336,6 +338,9 @@ process vcf_to_ped {
   tag {"PRUNING VCF FOR ADMIXTURE"}
 
   publishDir "${params.out}/ADMIXTURE/PLINK/", mode: 'copy'
+
+    conda '/projects/b1059/software/conda_envs/vcffixup'
+
 
   input:
     set file(vcf), file(vcfindex), val(nSM), val(maf), val(samples), val(ld) from vcf_admix_plink
@@ -889,6 +894,8 @@ process vcf_to_eigstrat_files {
 
   tag {"PREPARE EIGENSTRAT FILES"}
 
+  conda '/projects/b1059/software/conda_envs/vcffixup'
+
   publishDir "${params.out}/EIGESTRAT/INPUTFILES/", mode: 'copy'
 
   input:
@@ -951,6 +958,8 @@ process run_eigenstrat_no_outlier_removal {
 
   publishDir "${params.out}/EIGESTRAT/NO_REMOVAL/", mode: 'copy'
 
+  conda '/projects/b1059/software/conda_envs/vcffixup'
+
   input:
     set file("eigenstrat_input.ped"), file("eigenstrat_input.pedsnp"), file("eigenstrat_input.pedind") from eigenstrat_no_outlier
     file(eigenparameters) from eigenstrat_noremoval
@@ -981,6 +990,8 @@ process run_eigenstrat_no_outlier_removal {
 */
 
 process run_eigenstrat_with_outlier_removal {
+
+    conda '/projects/b1059/software/conda_envs/vcffixup'
 
 
   publishDir "${params.out}/EIGESTRAT/OUTLIER_REMOVAL/", mode: 'copy'
