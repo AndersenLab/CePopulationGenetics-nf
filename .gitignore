@@ -1,5 +1,7 @@
 2021*
+debug/*
 .nextflow/*
+.nextflow/history
 .nextflow.log*
 # History files
 .Rhistory

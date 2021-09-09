@@ -8,25 +8,27 @@ params.help                   = null
 params.config                 = null
 params.out_base               = null
 params.anc                    = null
-params.ref                    = params.reference
+// params.ref                    = params.reference
 params.cpu                    = "4"
 params.snv_vcf                = params.snv_vcf
 params.sv_vcf                 = params.sv_vcf
-params.admix_k                = params.admix_k
-params.admix_ld               = params.admix_ld
+// params.admix_k                = params.admix_k
+// params.admix_ld               = params.admix_ld
 params.pops                   = params.pops
+params.eigen_ld               = null
 params.out                    = "${date}-${params.out_base}"
 
-params.best_Ks                = null
-params.haplotype              = params.haplotype
-params.popgene_window         = params.popgene_window
-params.popgene_window_subpop  = params.popgene_window_subpop
-params.popgene_gene           = params.popgene_gene
-params.popgene_gene_subpop    = params.popgene_gene_subpop
+// params.best_Ks                = null
+// params.haplotype              = params.haplotype
+// params.popgene_window         = params.popgene_window
+// params.popgene_window_subpop  = params.popgene_window_subpop
+// params.popgene_gene           = params.popgene_gene
+// params.popgene_gene_subpop    = params.popgene_gene_subpop
 
-params.admixture_100          = params.admixture_100
-params.admixture_seed         = params.admixture_seed
-params.phylo                  = params.phylo
+// params.admixture_100          = params.admixture_100
+// params.admixture_seed         = params.admixture_seed
+// params.phylo                  = params.phylo
+params.species                = "c_elegans" //make sure to change species for trop or briggsae
 
 
 if (params.help) {
@@ -44,19 +46,21 @@ if (params.help) {
     log.info "Mandatory arguments:"
     log.info "--out_base             String                Name of folder to output results"
     log.info "--anc                  String                Name of ancestor strain to use"
+    log.info "--snv_vcf              FILE                 Location to the small variant VCF to use for analysis"
+    log.info "--pops                 FILE                 Location to sample population file"    
+    log.info "--eigen_ld             String               Provide one or more LD values to test ('0.2' or '0.2,0.4,0.6'"
     log.info ""
     log.info "--------------------------------------------------------"
     log.info "Optional arguments:"
     log.info "Information describing the stucture of the input files can be located in input_files/README.txt"
     log.info ""
-    log.info "--ref                  FILE                 Location of the reference genome to use"
+    log.info "--species              String               c_elegans, c_briggsae, or c_tropicalis"
+    // log.info "--ref                  FILE                 Location of the reference genome to use"
     log.info "--config               FILE                 Location of a custom configuration file"    
-    log.info "--snv_vcf              FILE                 Location to the small variant VCF to use for analysis"
-    log.info "--sv_vcf               FILE                 Location to the structural variant VCF to use for analysis"
-    log.info "--pops                 FILE                 Location to sample population file"    
-    log.info "--admix_ld             STRING               Comma separated string of LDs to test for admixture analysis"
+    // log.info "--sv_vcf               FILE                 Location to the structural variant VCF to use for analysis"
+    // log.info "--admix_ld             STRING               Comma separated string of LDs to test for admixture analysis"
     log.info "--cpu                  INTEGER              Number of cpu to use (default=2)"
-    log.info "--email                STRING               email address for job notifications"
+    // log.info "--email                STRING               email address for job notifications"
     log.info ""
     log.info "Flags:"
     log.info "--help                                      Display this message"
@@ -66,12 +70,12 @@ if (params.help) {
     log.info " Required software packages to be in users path"
     log.info "BCFtools               v1.9"
     log.info "plink                  v1.9"
-    log.info "RAxML-ng               v0.5.1b"
+    // log.info "RAxML-ng               v0.5.1b"
     log.info "VCFtools               v0.1.16"
-    log.info "ADMIXTURE              v1.3"
+    // log.info "ADMIXTURE              v1.3"
     log.info "vcfanno                v0.2.8"
     log.info "EIGENSOFT              v6.1.4"
-    log.info "VARISCAN               v2.0"
+    // log.info "VARISCAN               v2.0"
     log.info "--------------------------------------------------------"    
     exit 1
 } else {
@@ -83,22 +87,23 @@ log.info '''
 ╚═╝o  ╚═╝╩═╝╚═╝╚═╝╩ ╩╝╚╝╚═╝  ╩  ╚═╝╩  ╚═╝╚═╝╝╚╝  ╝╚╝╚  
 '''
 log.info ""
-log.info "Reference                               = ${params.ref}"
+log.info "Species                                 = ${params.species}"
+//log.info "Reference                               = ${params.ref}"
 log.info "Ancestor                                = ${params.anc}"
 log.info "Small Variant VCF                       = ${params.snv_vcf}"
 log.info "Population File                         = ${params.pops}"
 log.info "Max Population                          = ${params.admix_k}"
-log.info "LD to test                              = ${params.admix_ld}"
-log.info "cpu                                     = ${params.cpu}"
+// log.info "LD to test                              = ${params.admix_ld}"
+// log.info "cpu                                     = ${params.cpu}"
 log.info "Output folder                           = ${params.out}"
-log.info "GFF3 File                               = ${params.gff}"
-log.info "Run Haplotype                           = ${params.haplotype}"
-log.info "Run Popgen window                       = ${params.popgene_window}"
-log.info "Run Popgen window subpops               = ${params.popgene_window_subpop}"
-log.info "Run Popgen gene subpops                 = ${params.popgene_gene_subpop}"
-log.info "Run Admixture cv100                     = ${params.admixture_100}"
-log.info "Run Admixture replicates                = ${params.admixture_seed}"
-log.info "Run Phylo                               = ${params.phylo}"
+// log.info "GFF3 File                               = ${params.gff}"
+// log.info "Run Haplotype                           = ${params.haplotype}"
+// log.info "Run Popgen window                       = ${params.popgene_window}"
+// log.info "Run Popgen window subpops               = ${params.popgene_window_subpop}"
+// log.info "Run Popgen gene subpops                 = ${params.popgene_gene_subpop}"
+// log.info "Run Admixture cv100                     = ${params.admixture_100}"
+// log.info "Run Admixture replicates                = ${params.admixture_seed}"
+// log.info "Run Phylo                               = ${params.phylo}"
 log.info ""
 }
 
@@ -201,9 +206,13 @@ process annotate_small_vcf {
 
 
       """
+        # get vcfanno files
+        cp ${workflow.projectDir}/input_files/annotations/${params.species}/* .
+        cat ${params.vcfanno_config} | sed 's/species/${params.species}/' > anno_config.toml
+
         bcftools view -s ${sm} ${vcf} -Oz -o ${pop}_pop.vcf.gz 
 
-        vcfanno ${params.vcfanno_config} ${pop}_pop.vcf.gz |\\
+        vcfanno anno_config.toml ${pop}_pop.vcf.gz |\\
         awk '\$0 ~ "#" || \$0 !~ "Masked" {print}' |\\
         vcffixup - |\\
         bcftools filter -i N_MISSING=0 -Oz -o Ce330_annotated.vcf.gz

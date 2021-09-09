@@ -1,0 +1,65 @@
+[[annotation]]
+file="exons.bed.gz"
+columns = [4]
+names=["exon"]
+ops=["self"]
+
+[[annotation]]
+file="gquarted.bed.gz"
+columns = [4]
+names=["Gquartet"]
+ops=["self"]
+
+[[annotation]]
+file="TF_bindingsite.bed.gz"
+columns = [4, 5, 6]
+names=["WBname", "TFid", "TFname"]
+ops=["self", "self", "self"]
+
+[[annotation]]
+file="TF_bindingsite_paper.bed.gz"
+columns = [4]
+names=["TF_paperSource"]
+ops=["self"]
+
+[[annotation]]
+file="promoter.bed.gz"
+columns = [4]
+names=["TF_paperSource"]
+ops=["self"]
+
+[[annotation]]
+file="histone_binding.bed.gz"
+columns = [4]
+names=["Histone_Binding"]
+ops=["self"]
+
+[[annotation]]
+file="mirna_binding.bed.gz"
+columns = [4]
+names=["miRNA_binding"]
+ops=["self"]
+
+[[annotation]]
+file="splice_sites.bed.gz"
+columns = [4]
+names=["Splice_Sites"]
+ops=["self"]
+
+[[annotation]]
+file="ANC.bed.gz"
+columns = [4]
+names=["AA"]
+ops=["self"]
+
+[[annotation]]
+file="Ce_Genetic_Map_WS276.bed.gz"
+columns = [4]
+names=["cM"]
+ops=["self"]
+
+[[annotation]]
+file="WS266_Masked_Regions_sorted.bed.gz"
+columns = [4]
+names=["MASKED"]
+ops=["self"]
